@@ -12,7 +12,7 @@ The node contains a number of specific options:
 - **disheveled**: coefficient (weight) of the disheveled effect
 - **nationality_1**: sets the first ethnicity
 - **nationality_2**: sets the second ethnicity
-- **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]
+- **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control)
 - **age**: the age of the subject portrayed
 - **freckles**: coefficient (weight) of freckles
 - **skin_details**: coefficient (weight) of the skin detail

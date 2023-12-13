@@ -7,7 +7,7 @@ This node was designed to help AI image creators to generate prompts for human p
 The node contains a number of specific options:
 
 - **shot**: sets the shot
-- **shot_weight**: sets the coefficient (weight) of the shot
+- **shot_weight**: sets the coefficient (weight) of the type shot
 - **hairs_style**: hairstyle selector
 - **disheveled**: coefficient (weight) of the disheveled effect
 - **nationality_1**: sets the first ethnicity

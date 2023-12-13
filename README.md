@@ -37,3 +37,7 @@ The _lists_ subfolder contains the .txt files that generate the lists for some n
 The _prompt-master-sample-workflow.json_ file contains a basic workflow to immediately test how the node works.
 
 ![Example workflow](/screenshot/comfyui-prompt-master-01.png)
+
+## Note
+
+When the generation of an image is started in the console you can read the complete prompt created by the node.

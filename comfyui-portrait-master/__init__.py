@@ -151,7 +151,7 @@ class PortraitMaster:
                     "multiline": True,
                     "default": "raw photo, (realistic:1.5)"
                 }),
-                "promp_additional": ("STRING", {
+                "prompt_additional": ("STRING", {
                     "multiline": True,
                     "default": ""
                 }),
@@ -168,7 +168,7 @@ class PortraitMaster:
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot, shot_weight=1, gender="-", nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", disheveled=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, promp_additional="", prompt_start="", prompt_end=""):
+    def pm(self, shot, shot_weight=1, gender="-", nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", disheveled=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, prompt_additional="", prompt_start="", prompt_end=""):
 
         prompt = []
 
@@ -200,8 +200,8 @@ class PortraitMaster:
         if disheveled != "-":
             prompt.append(f"(disheveled:{round(disheveled, 2)})")
 
-        if promp_additional != "":
-            prompt.append(f"{promp_additional}")
+        if prompt_additional != "":
+            prompt.append(f"{prompt_additional}")
 
         if skin_details > 0:
             prompt.append(f"(skin details, skin texture:{round(skin_details, 2)})")

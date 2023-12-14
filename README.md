@@ -31,9 +31,10 @@ The node generates an output string. The generated text can then be used flexibl
 
 To install comfyui-portrait-master in addition to an existing installation of ComfyUI, you can follow the following steps:
 
-1. cd custom_nodes
-2. `git clone https://github.com/florestefano1975/comfyui-portrait-master`
-3. restart ComfyUI
+1. open the terminal on the ComfyUI installation folder
+2. digit: `cd custom_nodes`
+3. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
+4. restart ComfyUI
 
 ## Customizations
 

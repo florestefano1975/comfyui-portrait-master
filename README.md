@@ -4,7 +4,7 @@ This node was designed to help AI image creators to generate prompts for human p
 
 ![ComfyUI Portrait Master Node](/screenshot/comfyui-portrait-master-node.png)
 
-## Instal
+## Install
 
 To install comfyui-portrait-master in addition to an existing installation of ComfyUI, you can follow the following steps:
 

@@ -1,10 +1,8 @@
 # ComfyUI Portrait Master
 
-## Description
-
 This node was designed to help AI image creators to generate prompts for human portraits.
 
-The node contains a number of specific options:
+## Available Options
 
 - **shot**: sets the shot
 - **shot_weight**: sets the coefficient (weight) of the type shot
@@ -31,8 +29,17 @@ The node generates an output string. The generated text can then be used flexibl
 
 ## Instal
 
-To install the node, download the _comfyui-portrait-master_ folder inside the _custom_nodes_ folder of your ComfyUI installation.
+To install comfyui-portrait-master in addition to an existing installation of ComfyUI, you can follow the following steps:
+
+1. cd custom_nodes
+2. `git clone https://github.com/florestefano1975/comfyui-portrait-master`
+3. restart ComfyUI
+
+## Customizations
+
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.
+
+## Workflow
 
 The [_prompt-master-sample-workflow.json_](https://github.com/florestefano1975/comfyui-portrait-master/blob/main/prompt-master-sample-workflow.json) file contains a basic workflow to immediately test how the node works.
 

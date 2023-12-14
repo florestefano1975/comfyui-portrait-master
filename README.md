@@ -45,3 +45,7 @@ The [_prompt-master-sample-workflow.json_](https://github.com/florestefano1975/c
 ## Note
 
 When the generation of an image is started in the console you can read the complete prompt created by the node.
+
+## Practical advice
+
+Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes.

@@ -1,0 +1,12 @@
+Oval
+Round
+Square
+Heart-shaped
+Long
+Rectangle
+Triangle
+Inverted Triangle
+Pear-shaped
+Oblong
+Square Round
+Square Oval

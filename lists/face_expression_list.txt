@@ -1,0 +1,24 @@
+Happy
+Sad
+Angry
+Surprised
+Fearful
+Disgusted
+Contemptuous
+Excited
+Nervous
+Confused
+Amused
+Content
+Disappointed
+Bored
+Relieved
+In love
+Shy
+Envious
+Proud
+Cautious
+Serious
+Serene
+Peaceful
+Calm

@@ -50,9 +50,13 @@ The [_prompt-master-sample-workflow.json_](https://github.com/florestefano1975/c
 
 ![Example workflow](/screenshot/comfyui-prompt-master-07.png)
 
-## Note
+## Notes
 
 When the generation of an image is started in the console you can read the complete prompt created by the node.
+
+The effectiveness of the parameters depends on the quality of the checkpoint used.
+
+For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525).
 
 ## Practical advice
 

@@ -29,7 +29,7 @@ The node contains a number of specific options:
 
 The node generates an output string. The generated text can then be used flexibly within your preferred workflow.
 
-## Installation
+## Instal
 
 To install the node, download the _comfyui-portrait-master_ folder inside the _custom_nodes_ folder of your ComfyUI installation.
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.

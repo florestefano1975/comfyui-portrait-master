@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.0
+# Version: 1.05
 
 import os
 
@@ -168,7 +168,7 @@ class PortraitMaster:
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot, shot_weight=1, gender="-", nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", disheveled=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, prompt_additional="", prompt_start="", prompt_end=""):
+    def pm(self, shot="-", shot_weight=1, gender="-", nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", disheveled=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, prompt_additional="", prompt_start="", prompt_end=""):
 
         prompt = []
 
@@ -189,7 +189,7 @@ class PortraitMaster:
         if prompt_start != "":
             prompt.append(f"{prompt_start}")
 
-        if shot != "":
+        if shot != "-":
             prompt.append(f"({shot}:{round(shot_weight, 2)})")
 
         prompt.append(f"{nationality}{gender}{round(age)}-years-old")

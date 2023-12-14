@@ -35,7 +35,7 @@ To install the node, download the _comfyui-portrait-master_ folder inside the _c
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.
 
 The [_prompt-master-sample-workflow.json_](https://github.com/florestefano1975/comfyui-portrait-master/blob/main/prompt-master-sample-workflow.json) file contains a basic workflow to immediately test how the node works.
-The [_prompt-master-sample-workflow.json_]([https://github.com/florestefano1975/comfyui-portrait-master/blob/main/prompt-master-sample-workflow.json](https://github.com/florestefano1975/comfyui-portrait-master/blob/main/prompt-master-prompt-control-workflow.json)) file contains a basic workflow with the prompt-control node.
+The [_prompt-master-sample-workflow.json_](https://github.com/florestefano1975/comfyui-portrait-master/blob/main/prompt-master-prompt-control-workflow.json) file contains a basic workflow with the prompt-control node.
 
 ![Example workflow](/screenshot/comfyui-prompt-master-01.png)
 

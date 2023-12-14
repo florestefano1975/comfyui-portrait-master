@@ -67,7 +67,7 @@ The [_prompt-master-sample-workflow.json_](prompt-master-sample-workflow.json) f
 
 ![Example workflow](/screenshot/prompt-master-sample-workflow.png)
 
-The [_prompt-master-sample-workflow.json_](prompt-master-sample-workflow-prompt-control.json) file contains a basic workflow to immediately test the node.
+The [_prompt-master-sample-workflow-prompt-control.json_](prompt-master-sample-workflow-prompt-control.json) file contains a basic workflow to immediately test the node.
 
 ![Example workflow](/screenshot/prompt-master-sample-workflow-prompt-control.png)
 

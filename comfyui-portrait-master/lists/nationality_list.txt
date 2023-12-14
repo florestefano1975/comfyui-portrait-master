@@ -1,14 +1,193 @@
-African
-Japanese
-Arab
-Cinese
-Brasilian
-Indian
+Afghan
+Albanian
+Algerian
+Andorran
+Angolan
+Antiguans Barbudans
+Argentine
+Armenian
+Australian
+Austrian
+Azerbaijani
+Bahamian
+Bahraini
+Bangladeshi
+Barbadian
+Belarusian
+Belgian
+Belizean
+Beninese
+Bhutanese
+Bolivian
+Bosnian Herzegovinian
+Brazilian
+British
+Bruneian
+Bulgarian
+Burkinabe
+Burundian
+Cambodian
+Cameroonian
+Canadian
+Cape Verdian
+Central African
+Chadian
+Chilean
+Chinese
+Colombian
+Comoran
+Congolese
+Costa Rican
+Croatian
+Cuban
+Cypriot
+Czech
+Danish
+Djibouti
+Dominican
+Dutch
+East Timorese
+Ecuadorean
+Egyptian
+Emirian
+Equatorial Guinean
+Eritrean
+Estonian
+Ethiopian
+Fijian
+Filipino
+Finnish
 French
-Italian
-English
-Mongolian
-American
-Moroccan
-Indonesian
+Gabonese
+Gambian
+Georgian
 German
+Ghanaian
+Greek
+Grenadian
+Guatemalan
+Guinean
+Guyanese
+Haitian
+Herzegovinian
+Honduran
+Hungarian
+Icelander
+Indian
+Indonesian
+Iranian
+Iraqi
+Irish
+Israeli
+Italian
+Ivorian
+Jamaican
+Japanese
+Jordanian
+Kazakhstani
+Kenyan
+Kiribati
+North Korean
+South Korean
+Kuwaiti
+Kyrgyz
+Laotian
+Latvian
+Lebanese
+Liberian
+Libyan
+Liechtensteiner
+Lithuanian
+Luxembourgish
+Macedonian
+Malagasy
+Malawian
+Malaysian
+Maldivan
+Malian
+Maltese
+Marshallese
+Mauritanian
+Mauritian
+Mexican
+Micronesian
+Moldovan
+Monegasque
+Mongolian
+Montenegrin
+Moroccan
+Mosotho
+Motswana
+Mozambican
+Namibian
+Nauruan
+Nepalese
+New Zealander
+Ni-Vanuatu
+Nicaraguan
+Nigerian
+Nigerien
+North Korean
+Northern Irish
+Norwegian
+Omani
+Pakistani
+Palauan
+Palestinian
+Panamanian
+Papua New Guinean
+Paraguayan
+Peruvian
+Polish
+Portuguese
+Qatari
+Romanian
+Russian
+Rwandan
+Saint Lucian
+Salvadoran
+Samoan
+San Marinese
+Sao Tomean
+Saudi
+Scottish
+Senegalese
+Serbian
+Seychellois
+Sierra Leonean
+Singaporean
+Slovakian
+Slovenian
+Solomon Islander
+Somali
+South African
+South Korean
+South Sudanese
+Spanish
+Sri Lankan
+Sudanese
+Surinamer
+Swazi
+Swedish
+Swiss
+Syrian
+Tajikistani
+Tanzanian
+Thai
+Togolese
+Tongan
+Trinidadian Tobagonian
+Tunisian
+Turkish
+Turkmen
+Tuvaluan
+Ugandan
+Ukrainian
+Uruguayan
+Uzbekistani
+Venezuelan
+Vietnamese
+Welsh
+Yemeni
+Zambian
+Zimbabwean

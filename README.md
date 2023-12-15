@@ -94,6 +94,12 @@ The [_prompt-master-sample-workflow-prompt-control.json_](/workflow/prompt-maste
 
 ![Example workflow](/screenshot/prompt-master-sample-workflow-prompt-control.png)
 
+## SDXL Turbo
+
+ComfyUI Portrait Master also works correctly with SDXL Turbo.
+
+[![Video](https://img.youtube.com/vi/9UbtfEH_iSk)(https://www.youtube.com/watch?9UbtfEH_iSk)]
+
 ## Notes
 
 When the generation of an image is started in the console you can read the complete prompt created by the node.

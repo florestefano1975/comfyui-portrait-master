@@ -98,7 +98,7 @@ The [_prompt-master-sample-workflow-prompt-control.json_](/workflow/prompt-maste
 
 ComfyUI Portrait Master also works correctly with SDXL Turbo.
 
-[![Video](https://www.youtube.com/watch?9UbtfEH_iSk)]
+[[![Video](https://www.youtube.com/watch?9UbtfEH_iSk)]](https://www.youtube.com/watch?v=9UbtfEH_iSk)
 
 ## Notes
 

@@ -60,7 +60,7 @@ The node generates an output string. The generated text can then be used flexibl
 ## Prompt composition order
 
 - prompt_start
-- shot + shot_wight
+- shot + shot_weight
 - nationality + gender + age
 - facial_expression + facial_expression_weight
 - face_shape + face_shapen_weight

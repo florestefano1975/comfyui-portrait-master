@@ -84,6 +84,10 @@ The node generates an output string. The generated text can then be used flexibl
 
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.
 
+## Practical advice
+
+Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes.
+
 ## Workflow
 
 The [_prompt-master-sample-workflow.json_](/workflow/prompt-master-sample-workflow.json) file contains a basic workflow to immediately test the node.
@@ -107,7 +111,3 @@ When the generation of an image is started in the console you can read the compl
 The effectiveness of the parameters depends on the quality of the checkpoint used.
 
 For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525).
-
-## Practical advice
-
-Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes.

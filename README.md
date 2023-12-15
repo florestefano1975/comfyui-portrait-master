@@ -86,7 +86,7 @@ The _lists_ subfolder contains the .txt files that generate the lists for some n
 
 ## Practical advice
 
-Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes.
+Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes, or insert in the negative prompt (closeup, close up, close-up:1.5), modifying the weight as needed.
 
 ## Workflow
 

@@ -1,3 +1,7 @@
+## 15.12.2023
+
+- Bug fixes and optimizations
+
 ## 14.12.2023
 
 Version 1.5 - New features added
@@ -11,4 +15,4 @@ Version 1.5 - New features added
 
 ## 13.12.2023
 
-Version 1.0 - First release
+- First release

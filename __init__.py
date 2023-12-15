@@ -224,7 +224,7 @@ class PortraitMaster:
 
         if nationality_1 != '-' and nationality_2 != '-':
             nationality_mix_diff = 1 - round(nationality_mix, 2)
-            nationality = f"[{nationality_1}:{nationality_2}:{round(nationality_mix, 2)}:{round(nationality_mix_diff},2)]"
+            nationality = f"[{nationality_1}:{nationality_2}:{round(nationality_mix, 2)}:{round(nationality_mix_diff, 2)}]"
         elif nationality_1 != '-':
             nationality = nationality_1 + " "
         elif nationality_2 != '-':

@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 1.5
+# Version: 2.0
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -42,6 +42,22 @@ hair_style_list = pmReadTxt(os.path.join(script_dir, "lists/hair_style_list.txt"
 hair_style_list.sort()
 hair_style_list = ['-'] + hair_style_list
 
+light_type_list = pmReadTxt(os.path.join(script_dir, "lists/light_type_list.txt"))
+light_type_list.sort()
+light_type_list = ['-'] + light_type_list
+
+light_direction_list = pmReadTxt(os.path.join(script_dir, "lists/light_direction_list.txt"))
+light_direction_list.sort()
+light_direction_list = ['-'] + light_direction_list
+
+eyes_color_list = pmReadTxt(os.path.join(script_dir, "lists/eyes_color_list.txt"))
+eyes_color_list.sort()
+eyes_color_list = ['-'] + eyes_color_list
+
+hair_color_list = pmReadTxt(os.path.join(script_dir, "lists/hair_color_list.txt"))
+hair_color_list.sort()
+hair_color_list = ['-'] + hair_color_list
+
 class PortraitMaster:
 
     def __init__(self):
@@ -49,7 +65,7 @@ class PortraitMaster:
 
     @classmethod
     def INPUT_TYPES(s):
-        max_float_value = 1.75
+        max_float_value = 1.95
         return {
             "required": {
                 "shot": (shot_list, {
@@ -77,6 +93,9 @@ class PortraitMaster:
                     "max": 1,
                     "step": 0.05,
                     "display": "slider",
+                }),
+                "eyes_color": (eyes_color_list, {
+                    "default": eyes_color_list[0],
                 }),
                 "facial_expression": (facial_expressions_list, {
                     "default": facial_expressions_list[0],
@@ -107,6 +126,9 @@ class PortraitMaster:
                 }),
                 "hair_style": (hair_style_list, {
                     "default": hair_style_list[0],
+                }),
+                "hair_color": (hair_color_list, {
+                    "default": hair_color_list[0],
                 }),
                 "disheveled": ("FLOAT", {
                     "default": 0,
@@ -192,6 +214,20 @@ class PortraitMaster:
                     "step": 0.05,
                     "display": "slider",
                 }),
+                "light_type": (light_type_list, {
+                    "default": light_type_list[0],
+                }),
+                "light_direction": (light_direction_list, {
+                    "default": light_direction_list[0],
+                }),
+                "light_weight": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
+                "photorealism_improvement": (["enable", "disable"],),
                 "prompt_start": ("STRING", {
                     "multiline": True,
                     "default": "raw photo, (realistic:1.5)"
@@ -204,16 +240,21 @@ class PortraitMaster:
                     "multiline": True,
                     "default": ""
                 }),
+                "negative_prompt": ("STRING", {
+                    "multiline": True,
+                    "default": ""
+                }),
             }
         }
 
-    RETURN_TYPES = ("STRING",)
+    RETURN_TYPES = ("STRING","STRING",)
+    RETURN_NAMES = ("positive", "negative",)
 
     FUNCTION = "pm"
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot="-", shot_weight=1, gender="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end=""):
+    def pm(self, shot="-", shot_weight=1, gender="-", eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable"):
 
         prompt = []
 
@@ -223,8 +264,7 @@ class PortraitMaster:
             gender = " " + gender + " "
 
         if nationality_1 != '-' and nationality_2 != '-':
-            nationality_mix_diff = 1 - round(nationality_mix, 2)
-            nationality = f"[{nationality_1}:{nationality_2}:{round(nationality_mix, 2)}:{round(nationality_mix_diff, 2)}]"
+            nationality = f"[{nationality_1}:{nationality_2}:{round(nationality_mix, 2)}]"
         elif nationality_1 != '-':
             nationality = nationality_1 + " "
         elif nationality_2 != '-':
@@ -235,21 +275,27 @@ class PortraitMaster:
         if prompt_start != "":
             prompt.append(f"{prompt_start}")
 
-        if shot != "-":
+        if shot != "-" and shot_weight > 0:
             prompt.append(f"({shot}:{round(shot_weight, 2)})")
 
-        prompt.append(f"{nationality}{gender}{round(age)}-years-old")
+        prompt.append(f"({nationality}{gender}{round(age)}-years-old:1.5)")
 
-        if facial_expression != "-":
-            prompt.append(f"({facial_expression}, {facial_expression} expression:{facial_expression_weight})")
+        if eyes_color != "-":
+            prompt.append(f"({eyes_color} eyes:1.25)")
 
-        if face_shape != "-":
-            prompt.append(f"({face_shape} shape face:{face_shape_weight})")
+        if facial_expression != "-" and facial_expression_weight > 0:
+            prompt.append(f"({facial_expression}, {facial_expression} expression:{round(facial_expression_weight, 2)})")
+
+        if face_shape != "-" and face_shape_weight > 0:
+            prompt.append(f"({face_shape} shape face:{round(face_shape_weight, 2)})")
 
         if hair_style != "-":
             prompt.append(f"({hair_style} hairstyle:1.25)")
 
-        if disheveled != "-":
+        if hair_color != "-":
+            prompt.append(f"({hair_color} hair:1.25)")
+
+        if disheveled != "-" and disheveled > 0:
             prompt.append(f"(disheveled:{round(disheveled, 2)})")
 
         if prompt_additional != "":
@@ -288,21 +334,33 @@ class PortraitMaster:
         if facial_asymmetry > 0:
             prompt.append(f"(facial asymmetry, face asymmetry:{round(facial_asymmetry, 2)})")
 
+        if light_type != '-' and light_weight > 0:
+            if light_direction != '-':
+                prompt.append(f"({light_type} {light_direction}:{round(light_weight, 2)})")
+            else:
+                prompt.append(f"({light_type}:{round(light_weight, 2)})")
+
         if prompt_end != "":
             prompt.append(f"{prompt_end}")
 
         prompt = ", ".join(prompt)
         prompt = prompt.lower()
 
+        if photorealism_improvement == "enable":
+            prompt = prompt + ", (detailed, professional photo, perfect exposition:1.25), (film grain:1.5)"
+
+        if photorealism_improvement == "enable":
+            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.5)"
+
         print("Portrait Master as generate the prompt:")
         print(prompt)
 
-        return (prompt,)
+        return (prompt,negative_prompt,)
     
 NODE_CLASS_MAPPINGS = {
     "PortraitMaster": PortraitMaster
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore)"
+    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore) v.2.0"
 }

@@ -1,3 +1,13 @@
+## 17.12.2023
+
+Version 2.0
+
+- Added some new options
+- Added upscaler in the workflow
+- Added ControlNet in the workflow for the pose control
+- Added examples files PNG
+- Bug fixes and optimizations
+
 ## 15.12.2023
 
 - Bug fixes and optimizations

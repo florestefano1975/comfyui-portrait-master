@@ -91,7 +91,7 @@ The workflow is designed to obtain the right balance between quality and generat
 
 Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
 
-The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains a basic workflow to immediately test the node.
+The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow.
 
 ![Workflow](/screenshot/portrait-master-workflow.png)
 

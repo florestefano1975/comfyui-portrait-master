@@ -122,7 +122,7 @@ The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-contr
 
 In the future, several example images in PNG format will be uploaded to the examples folder, which can be uploaded to ComfyUI to use their settings.
 
-![Example image](/screenshot/examples/comfyui-portrait-master-example-001.png)
+![Example image](/examples/comfyui-portrait-master-example-001.png)
 
 ## SDXL Turbo
 

@@ -65,29 +65,6 @@ Parameters with null value (-) or set to 0.00 are not included in the prompt gen
 
 The node generates two output string, postive and negative prompt.
 
-## Prompt composition order
-
-- prompt_start
-- shot + shot_weight
-- nationality + gender + age
-- facial_expression + facial_expression_weight
-- face_shape + face_shapen_weight
-- hair_style
-- disheveled
-- prompt_additional
-- skin_details
-- skin_pores
-- skin_imperfections
-- dimples
-- freckles
-- moles
-- eyes_details
-- iris_details
-- circular_iris
-- circular_pupil
-- facial_asymmetry
-- prompt_end
-
 ## Customizations
 
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.

@@ -1,0 +1,10 @@
+from top
+from bottom
+from right
+from left
+from front
+from rear
+from top-right
+from top-left
+from bottom-right
+from bottom-left

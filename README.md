@@ -77,23 +77,21 @@ For total control of the pose, use the ControlNet nodes integrated into the work
 
 ## Workflow
 
-The workflow provided has been designed to work properly with Portrait Master.
+The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow designed to work properly with Portrait Master.
 
 An upscaler and ControlNet have been integrated to manage the pose of the characters. I inserted 2 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.
 
 For the correct functioning of ControlNet with SDXL checkpoints, download the _control-lora-openposeXL2-rank256.safetensors_ file from [this link](https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/blob/main/control-lora-openposeXL2-rank256.safetensors) and copy it into the _./models/controlnet/_ folder of ComfyUI.
 
-There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder.
-
-To generate other poses use the free portal https://openposeai.com/
-
-The workflow is designed to obtain the right balance between quality and generative performance. You can vary the KSampler parameters to suit your needs.
-
-Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
+There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
 
 The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow.
 
 ![Workflow](/screenshot/portrait-master-workflow.png)
+
+## Workflow performances
+
+The workflow is designed to obtain the right balance between quality and generative performance. You can vary the KSampler parameters to suit your needs. Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
 
 ## Examples
 

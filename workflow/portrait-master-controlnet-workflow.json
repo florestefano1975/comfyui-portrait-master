@@ -379,7 +379,7 @@
 				"Node name for S&R": "CheckpointLoaderSimple"
 			},
 			"widgets_values": [
-				"FormulaPediaXL1.safetensors"
+				"FormulaXL2.safetensors"
 			],
 			"color": "#432",
 			"bgcolor": "#653",

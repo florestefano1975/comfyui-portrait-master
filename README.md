@@ -85,8 +85,6 @@ For the correct functioning of ControlNet with SDXL checkpoints, download the _c
 
 There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
 
-The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow.
-
 ![Workflow](/screenshot/portrait-master-workflow.png)
 
 ## Workflow performances

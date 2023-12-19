@@ -87,6 +87,10 @@ There are some files that can be used with ControlNet in the Portrait Master _op
 
 ![Workflow](/screenshot/portrait-master-workflow.png)
 
+The [_portrait-master-controlnet2x-workflow.json_](/workflow/portrait-master-controlnet2x-workflowjson) file contains a dual ControlNet workflow to simultaneously manage the character's pose and hands. There are two switches to individually enable and disable the two blocks of nodes.
+
+![Workflow](/screenshot/portrait-master-workflow-controlnet-2x.png)
+
 ## Workflow performances
 
 The workflow is designed to obtain the right balance between quality and generative performance. You can vary the KSampler parameters to suit your needs. Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.

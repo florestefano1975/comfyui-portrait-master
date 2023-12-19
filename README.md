@@ -93,7 +93,9 @@ The [_portrait-master-controlnet2x-workflow.json_](/workflow/portrait-master-con
 
 ## Workflow performances
 
-The workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs. Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
+The workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
+
+Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
 
 ## Examples
 

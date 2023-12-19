@@ -6,7 +6,7 @@ This node was designed to help AI image creators to generate prompts for human p
 
 ## Install
 
-To install comfyui-portrait-master in addition to an existing installation of ComfyUI, you can follow the following steps:
+To install comfyui-portrait-master:
 
 1. open the terminal on the ComfyUI installation folder
 2. digit: `cd custom_nodes`
@@ -17,7 +17,7 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 
 ## Update
 
-To install comfyui-portrait-master in addition to an existing installation of ComfyUI, you can follow the following steps:
+To update comfyui-portrait-master:
 
 1. open the terminal on the ComfyUI installation folder
 2. digit: `cd custom_nodes`

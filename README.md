@@ -73,6 +73,8 @@ The _lists_ subfolder contains the .txt files that generate the lists for some n
 
 ## Workflow
 
+**NOTICE: The workflows provided are designed for the use of XL type checkpoints. To use other types of checkpoints you need to make adaptations.**
+
 The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow designed to work properly with Portrait Master.
 
 An upscaler and ControlNet have been integrated to manage the pose of the characters. I inserted 2 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.

@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 2.0
+# Version: 2.1
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -58,6 +58,14 @@ hair_color_list = pmReadTxt(os.path.join(script_dir, "lists/hair_color_list.txt"
 hair_color_list.sort()
 hair_color_list = ['-'] + hair_color_list
 
+body_type_list = pmReadTxt(os.path.join(script_dir, "lists/body_type_list.txt"))
+body_type_list.sort()
+body_type_list = ['-'] + body_type_list
+
+beard_list = pmReadTxt(os.path.join(script_dir, "lists/beard_list.txt"))
+beard_list.sort()
+beard_list = ['-'] + beard_list
+
 class PortraitMaster:
 
     def __init__(self):
@@ -81,6 +89,13 @@ class PortraitMaster:
                 "gender": (gender_list, {
                     "default": gender_list[0],
                 }),
+                "age": ("INT", {
+                    "default": 30,
+                    "min": 18,
+                    "max": 90,
+                    "step": 1,
+                    "display": "slider",
+                }),
                 "nationality_1": (nationality_list, {
                     "default": nationality_list[0],
                 }),
@@ -92,6 +107,16 @@ class PortraitMaster:
                     "min": 0,
                     "max": 1,
                     "step": 0.05,
+                    "display": "slider",
+                }),
+                "body_type": (body_type_list, {
+                    "default": body_type_list[0],
+                }),
+                "body_type_weight": ("FLOAT", {
+                    "default": 0,
+                    "step": 0.05,
+                    "min": 0,
+                    "max": max_float_value,
                     "display": "slider",
                 }),
                 "eyes_color": (eyes_color_list, {
@@ -137,12 +162,8 @@ class PortraitMaster:
                     "step": 0.05,
                     "display": "slider",
                 }),
-                "age": ("INT", {
-                    "default": 30,
-                    "min": 18,
-                    "max": 90,
-                    "step": 1,
-                    "display": "slider",
+                "beard": (beard_list, {
+                    "default": beard_list[0],
                 }),
                 "skin_details": ("FLOAT", {
                     "default": 0,
@@ -165,6 +186,13 @@ class PortraitMaster:
                     "step": 0.05,
                     "display": "slider",
                 }),
+                "wrinkles": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
                 "freckles": ("FLOAT", {
                     "default": 0,
                     "min": 0,
@@ -180,6 +208,13 @@ class PortraitMaster:
                     "display": "slider",
                 }),
                 "skin_imperfections": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
+                "tanned_skin": ("FLOAT", {
                     "default": 0,
                     "min": 0,
                     "max": max_float_value,
@@ -254,7 +289,7 @@ class PortraitMaster:
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot="-", shot_weight=1, gender="-", eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable"):
+    def pm(self, shot="-", shot_weight=1, gender="-", body_type="-", body_type_weight=0, eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, wrinkles=0, tanned_skin=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable", beard="-"):
 
         prompt = []
 
@@ -280,6 +315,9 @@ class PortraitMaster:
 
         prompt.append(f"({nationality}{gender}{round(age)}-years-old:1.5)")
 
+        if body_type != "-" and body_type_weight > 0:
+            prompt.append(f"({body_type}, {body_type} body:{round(body_type_weight, 2)})")
+
         if eyes_color != "-":
             prompt.append(f"({eyes_color} eyes:1.25)")
 
@@ -295,6 +333,9 @@ class PortraitMaster:
         if hair_color != "-":
             prompt.append(f"({hair_color} hair:1.25)")
 
+        if beard != "-":
+            prompt.append(f"({beard}:1.15)")
+
         if disheveled != "-" and disheveled > 0:
             prompt.append(f"(disheveled:{round(disheveled, 2)})")
 
@@ -309,6 +350,12 @@ class PortraitMaster:
 
         if skin_imperfections > 0:
             prompt.append(f"(skin imperfections:{round(skin_imperfections, 2)})")
+
+        if wrinkles > 0:
+            prompt.append(f"(skin imperfections:{round(wrinkles, 2)})")
+
+        if tanned_skin > 0:
+            prompt.append(f"(tanned skin:{round(tanned_skin, 2)})")
 
         if dimples > 0:
             prompt.append(f"(dimples:{round(dimples, 2)})")

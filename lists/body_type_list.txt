@@ -1,0 +1,4 @@
+Underweight
+Normal weight
+Overweight
+Obese

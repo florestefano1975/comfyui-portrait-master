@@ -2,6 +2,9 @@
 
 Version 2.1
 
+- Added body type option
+- Added wrinkles option
+- Added beard option
 - Added a new workflow with 2 groups of ControlNet nodes for pose and hand control
 - Added examples
 

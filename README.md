@@ -91,6 +91,8 @@ The [_portrait-master-controlnet2x-workflow.json_](/workflow/portrait-master-con
 
 ![Workflow](/screenshot/portrait-master-workflow-controlnet-2x.png)
 
+There are some sample files in the _openpose_ folder for use with ControlNet nodes.
+
 ## Workflow performances
 
 The workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.

@@ -1,3 +1,9 @@
+## 19.12.2023
+
+Version 2.1
+
+- Added a new workflow with 2 groups of ControlNet nodes for pose and hand control
+
 ## 17.12.2023
 
 Version 2.0

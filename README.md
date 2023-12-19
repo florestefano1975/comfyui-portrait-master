@@ -71,12 +71,6 @@ The node generates two output string, postive and negative prompt.
 
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.
 
-## Practical advice
-
-Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes, or insert in the negative prompt (closeup, close up, close-up:1.5), modifying the weight as needed.
-
-For total control of the pose, use the ControlNet nodes integrated into the workflow, setting the _shot_ parameter to null (-).
-
 ## Workflow
 
 The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow designed to work properly with Portrait Master.
@@ -105,6 +99,12 @@ There are some sample files in the _openpose_ folder for use with ControlNet nod
 The workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
 
 Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
+
+## Practical advice
+
+Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes, or insert in the negative prompt (closeup, close up, close-up:1.5), modifying the weight as needed.
+
+For total control of the pose, use the ControlNet nodes integrated into the workflow, setting the _shot_ parameter to null (-).
 
 ## Examples
 

@@ -25,7 +25,7 @@ To install comfyui-portrait-master in addition to an existing installation of Co
 4. digit: `git pull`
 5. restart ComfyUI
 
-**Warning: the update overwrites files modified and customized by users.**
+**Warning: update command overwrites files modified and customized by users.**
 
 ## Available Options
 

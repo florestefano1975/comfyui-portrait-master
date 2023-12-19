@@ -81,7 +81,12 @@ The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-contr
 
 An upscaler and ControlNet have been integrated to manage the pose of the characters. I inserted 2 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.
 
-For the correct functioning of ControlNet with SDXL checkpoints, download the _control-lora-openposeXL2-rank256.safetensors_ file from [this link](https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/blob/main/control-lora-openposeXL2-rank256.safetensors) and copy it into the _./models/controlnet/_ folder of ComfyUI.
+For the correct functioning of ControlNet with SDXL checkpoints, download this files:
+
+- [_control-lora-openposeXL2-rank256.safetensors_](https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/blob/main/control-lora-openposeXL2-rank256.safetensors)
+- [sai_xl_depth_256lora.safetensors](https://huggingface.co/lllyasviel/sd_control_collection/blob/main/sai_xl_depth_256lora.safetensors)
+
+and copy it into the _./models/controlnet/_ folder of ComfyUI. Other similar files for ControlNet are available at [this link](https://huggingface.co/lllyasviel/sd_control_collection/tree/main).
 
 There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
 

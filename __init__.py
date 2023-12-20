@@ -429,5 +429,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore) v.2.0"
+    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore) v.2.2"
 }

@@ -1,53 +1,7 @@
 {
-  "last_node_id": 142,
-  "last_link_id": 203,
+  "last_node_id": 145,
+  "last_link_id": 204,
   "nodes": [
-    {
-      "id": 10,
-      "type": "VAEDecodeTiled",
-      "pos": [
-        1980,
-        1420
-      ],
-      "size": {
-        "0": 320,
-        "1": 80
-      },
-      "flags": {},
-      "order": 20,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 149
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 150
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            164
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEDecodeTiled"
-      },
-      "widgets_values": [
-        512
-      ],
-      "color": "#332922",
-      "bgcolor": "#593930"
-    },
     {
       "id": 83,
       "type": "Fast Bypasser (rgthree)",
@@ -67,7 +21,9 @@
         "0": 400,
         "1": 58
       },
-      "flags": {},
+      "flags": {
+        "pinned": true
+      },
       "order": 19,
       "mode": 0,
       "inputs": [
@@ -113,11 +69,13 @@
         1980,
         640
       ],
-      "size": {
-        "0": 320,
-        "1": 350
+      "size": [
+        320,
+        350
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 18,
       "mode": 0,
       "inputs": [
@@ -163,7 +121,8 @@
         ""
       ],
       "color": "#232",
-      "bgcolor": "#353"
+      "bgcolor": "#353",
+      "locked": true
     },
     {
       "id": 137,
@@ -172,11 +131,13 @@
         0,
         370
       ],
-      "size": {
-        "0": 400,
-        "1": 80
+      "size": [
+        400,
+        80
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 9,
       "mode": 0,
       "inputs": [
@@ -217,7 +178,8 @@
         1
       ],
       "color": "#432",
-      "bgcolor": "#653"
+      "bgcolor": "#653",
+      "locked": true
     },
     {
       "id": 2,
@@ -226,11 +188,13 @@
         0,
         660
       ],
-      "size": {
-        "0": 400,
-        "1": 60
+      "size": [
+        400,
+        60
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 10,
       "mode": 0,
       "inputs": [
@@ -255,7 +219,8 @@
         -2
       ],
       "color": "#432",
-      "bgcolor": "#653"
+      "bgcolor": "#653",
+      "locked": true
     },
     {
       "id": 136,
@@ -264,11 +229,13 @@
         0,
         170
       ],
-      "size": {
-        "0": 400,
-        "1": 162
+      "size": [
+        400,
+        162
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 0,
       "mode": 0,
       "outputs": [
@@ -320,7 +287,8 @@
         1728
       ],
       "color": "#432",
-      "bgcolor": "#653"
+      "bgcolor": "#653",
+      "locked": true
     },
     {
       "id": 96,
@@ -333,7 +301,9 @@
         "0": 400,
         "1": 60
       },
-      "flags": {},
+      "flags": {
+        "pinned": true
+      },
       "order": 1,
       "mode": 0,
       "outputs": [
@@ -362,11 +332,13 @@
         0,
         860
       ],
-      "size": {
-        "0": 400,
-        "1": 210
+      "size": [
+        400,
+        210
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 11,
       "mode": 0,
       "inputs": [
@@ -460,187 +432,130 @@
         1
       ],
       "color": "#432",
-      "bgcolor": "#653"
+      "bgcolor": "#653",
+      "locked": true
     },
     {
-      "id": 108,
-      "type": "ControlNetApply",
-      "pos": [
-        1520,
-        1170
-      ],
-      "size": {
-        "0": 450,
-        "1": 100
+      "id": 131,
+      "type": "Fast Bypasser (rgthree)",
+      "pos": {
+        "0": 0,
+        "1": 1210,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
       },
-      "flags": {},
-      "order": 12,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 190
-        },
-        {
-          "name": "control_net",
-          "type": "CONTROL_NET",
-          "link": 169,
-          "slot_index": 1
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 183,
-          "slot_index": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            181,
-            201
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetApply"
-      },
-      "widgets_values": [
-        1
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 109,
-      "type": "ControlNetLoader",
-      "pos": [
-        1520,
-        1030
-      ],
-      "size": {
-        "0": 450,
-        "1": 100
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "CONTROL_NET",
-          "type": "CONTROL_NET",
-          "links": [
-            169
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetLoader"
-      },
-      "widgets_values": [
-        null
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 140,
-      "type": "ControlNetApply",
-      "pos": [
-        1520,
-        1450
-      ],
-      "size": {
-        "0": 450,
-        "1": 100
-      },
-      "flags": {},
-      "order": 15,
-      "mode": 4,
-      "inputs": [
-        {
-          "name": "conditioning",
-          "type": "CONDITIONING",
-          "link": 201
-        },
-        {
-          "name": "control_net",
-          "type": "CONTROL_NET",
-          "link": 199,
-          "slot_index": 1
-        },
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 197,
-          "slot_index": 2
-        }
-      ],
-      "outputs": [
-        {
-          "name": "CONDITIONING",
-          "type": "CONDITIONING",
-          "links": [
-            202,
-            203
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetApply"
-      },
-      "widgets_values": [
-        1
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 105,
-      "type": "Seed (rgthree)",
-      "pos": [
-        0,
-        490
-      ],
       "size": {
         "0": 400,
-        "1": 130
+        "1": 58
       },
-      "flags": {},
-      "order": 3,
+      "flags": {
+        "pinned": true
+      },
+      "order": 14,
       "mode": 0,
-      "outputs": [
+      "inputs": [
         {
-          "name": "SEED",
-          "type": "INT",
-          "links": [
-            152,
-            153
-          ],
-          "shape": 3,
-          "dir": 4
+          "name": "Apply ControlNet",
+          "type": "*",
+          "link": 181,
+          "dir": 3,
+          "has_old_label": true,
+          "label": " ",
+          "slot_index": 0
+        },
+        {
+          "name": "",
+          "type": "*",
+          "link": null,
+          "dir": 3,
+          "has_old_label": true,
+          "label": " "
         }
       ],
-      "properties": {
-        "Node name for S&R": "Seed (rgthree)"
-      },
-      "widgets_values": [
-        -1,
-        null,
-        null,
-        null
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": [],
+          "dir": 4,
+          "has_old_label": true,
+          "label": " ",
+          "slot_index": 0
+        }
       ],
-      "color": "#432",
-      "bgcolor": "#653"
+      "title": "CONTROLNET - POSE",
+      "properties": {
+        "collapse_connections": true
+      },
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 142,
+      "type": "Fast Bypasser (rgthree)",
+      "pos": {
+        "0": 0,
+        "1": 1310,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0,
+        "7": 0,
+        "8": 0,
+        "9": 0
+      },
+      "size": {
+        "0": 400,
+        "1": 58
+      },
+      "flags": {
+        "pinned": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Apply ControlNet",
+          "type": "*",
+          "link": 202,
+          "dir": 3,
+          "has_old_label": true,
+          "label": " ",
+          "slot_index": 0
+        },
+        {
+          "name": "",
+          "type": "*",
+          "link": null,
+          "dir": 3,
+          "has_old_label": true,
+          "label": " "
+        }
+      ],
+      "outputs": [
+        {
+          "name": "OPT_CONNECTION",
+          "type": "*",
+          "links": [],
+          "dir": 4,
+          "has_old_label": true,
+          "label": " ",
+          "slot_index": 0
+        }
+      ],
+      "title": "CONTROLNET - DEPTH",
+      "properties": {
+        "collapse_connections": true
+      },
+      "color": "#233",
+      "bgcolor": "#355"
     },
     {
       "id": 30,
@@ -649,11 +564,13 @@
         1980,
         30
       ],
-      "size": {
-        "0": 320,
-        "1": 570
+      "size": [
+        320,
+        570
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 17,
       "mode": 0,
       "inputs": [
@@ -705,7 +622,7 @@
         "Node name for S&R": "KSampler //Inspire"
       },
       "widgets_values": [
-        746753878739137,
+        718560964250686,
         "randomize",
         30,
         7,
@@ -718,7 +635,8 @@
         0
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159"
+      "bgcolor": "#3f5159",
+      "locked": true
     },
     {
       "id": 50,
@@ -727,11 +645,13 @@
         1980,
         1030
       ],
-      "size": {
-        "0": 320,
-        "1": 350
+      "size": [
+        320,
+        350
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
       "order": 13,
       "mode": 0,
       "inputs": [
@@ -795,7 +715,7 @@
       },
       "widgets_values": [
         "nearest-exact",
-        148148064302444,
+        462917571492741,
         "randomize",
         30,
         7,
@@ -806,270 +726,8 @@
         512
       ],
       "color": "#232",
-      "bgcolor": "#353"
-    },
-    {
-      "id": 139,
-      "type": "LoadImage",
-      "pos": [
-        1110,
-        1310
-      ],
-      "size": [
-        400,
-        314
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            197
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "title": "HANDS",
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "portrait-master-openpose-0006-depth.png",
-        "image"
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 135,
-      "type": "LoadImage",
-      "pos": [
-        1110,
-        1030
-      ],
-      "size": [
-        400,
-        314
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            183
-          ],
-          "shape": 3
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "title": "POSE",
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "portrait-master-openpose-0006.png",
-        "image"
-      ],
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 141,
-      "type": "ControlNetLoader",
-      "pos": [
-        1520,
-        1310
-      ],
-      "size": {
-        "0": 450,
-        "1": 100
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "CONTROL_NET",
-          "type": "CONTROL_NET",
-          "links": [
-            199
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ControlNetLoader"
-      },
-      "widgets_values": [
-        null
-      ],
-      "color": "#233",
-      "bgcolor": "#355"
-    },
-    {
-      "id": 107,
-      "type": "SaveImage",
-      "pos": [
-        1110,
-        30
-      ],
-      "size": {
-        "0": 860,
-        "1": 960
-      },
-      "flags": {},
-      "order": 21,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 164
-        }
-      ],
-      "properties": {},
-      "widgets_values": [
-        "ComfyUI"
-      ],
-      "color": "#332922",
-      "bgcolor": "#593930"
-    },
-    {
-      "id": 131,
-      "type": "Fast Bypasser (rgthree)",
-      "pos": {
-        "0": 0,
-        "1": 1210,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "7": 0,
-        "8": 0,
-        "9": 0
-      },
-      "size": {
-        "0": 400,
-        "1": 58
-      },
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Apply ControlNet",
-          "type": "*",
-          "link": 181,
-          "dir": 3,
-          "has_old_label": true,
-          "label": " ",
-          "slot_index": 0
-        },
-        {
-          "name": "",
-          "type": "*",
-          "link": null,
-          "dir": 3,
-          "has_old_label": true,
-          "label": " "
-        }
-      ],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": [],
-          "dir": 4,
-          "has_old_label": true,
-          "label": " ",
-          "slot_index": 0
-        }
-      ],
-      "title": "CONTROLNET - POSE",
-      "properties": {
-        "collapse_connections": true
-      },
-      "color": "#223",
-      "bgcolor": "#335"
-    },
-    {
-      "id": 142,
-      "type": "Fast Bypasser (rgthree)",
-      "pos": {
-        "0": 0,
-        "1": 1310,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0,
-        "6": 0,
-        "7": 0,
-        "8": 0,
-        "9": 0
-      },
-      "size": {
-        "0": 400,
-        "1": 58
-      },
-      "flags": {},
-      "order": 16,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Apply ControlNet",
-          "type": "*",
-          "link": 202,
-          "dir": 3,
-          "has_old_label": true,
-          "label": " ",
-          "slot_index": 0
-        },
-        {
-          "name": "",
-          "type": "*",
-          "link": null,
-          "dir": 3,
-          "has_old_label": true,
-          "label": " "
-        }
-      ],
-      "outputs": [
-        {
-          "name": "OPT_CONNECTION",
-          "type": "*",
-          "links": [],
-          "dir": 4,
-          "has_old_label": true,
-          "label": " ",
-          "slot_index": 0
-        }
-      ],
-      "title": "CONTROLNET - HANDS",
-      "properties": {
-        "collapse_connections": true
-      },
-      "color": "#233",
-      "bgcolor": "#355"
+      "bgcolor": "#353",
+      "locked": true
     },
     {
       "id": 1,
@@ -1078,12 +736,14 @@
         0,
         30
       ],
-      "size": {
-        "0": 400,
-        "1": 100
+      "size": [
+        400,
+        100
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
-      "order": 7,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -1118,10 +778,400 @@
         "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "Formula-XL-2.0.safetensors"
+        "FormulaPediaXL.safetensors"
       ],
       "color": "#432",
-      "bgcolor": "#653"
+      "bgcolor": "#653",
+      "locked": true
+    },
+    {
+      "id": 109,
+      "type": "ControlNetLoader",
+      "pos": [
+        2310,
+        440
+      ],
+      "size": [
+        450,
+        100
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            169
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "control-lora-openposeXL2-rank256.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "locked": true
+    },
+    {
+      "id": 108,
+      "type": "ControlNetApply",
+      "pos": [
+        2310,
+        580
+      ],
+      "size": [
+        450,
+        100
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 190
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 169,
+          "slot_index": 1
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 183,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            181,
+            201
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApply"
+      },
+      "widgets_values": [
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "locked": true
+    },
+    {
+      "id": 139,
+      "type": "LoadImage",
+      "pos": [
+        2310,
+        720
+      ],
+      "size": [
+        450,
+        370
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            197
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "DEPTH",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "portrait-master-openpose-0006-depth.png",
+        "image"
+      ],
+      "color": "#233",
+      "bgcolor": "#355",
+      "locked": true
+    },
+    {
+      "id": 141,
+      "type": "ControlNetLoader",
+      "pos": [
+        2310,
+        1130
+      ],
+      "size": [
+        450,
+        100
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            199
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "control-lora-depth-rank256.safetensors"
+      ],
+      "color": "#233",
+      "bgcolor": "#355",
+      "locked": true
+    },
+    {
+      "id": 140,
+      "type": "ControlNetApply",
+      "pos": [
+        2310,
+        1270
+      ],
+      "size": [
+        450,
+        100
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 201
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 199,
+          "slot_index": 1
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 197,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            202,
+            203
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApply"
+      },
+      "widgets_values": [
+        1
+      ],
+      "color": "#233",
+      "bgcolor": "#355",
+      "locked": true
+    },
+    {
+      "id": 107,
+      "type": "SaveImage",
+      "pos": [
+        1110,
+        30
+      ],
+      "size": [
+        860,
+        1470
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 164
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930",
+      "locked": true
+    },
+    {
+      "id": 10,
+      "type": "VAEDecodeTiled",
+      "pos": [
+        1980,
+        1420
+      ],
+      "size": [
+        320,
+        80
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 149
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 150
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            164,
+            204
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecodeTiled"
+      },
+      "widgets_values": [
+        512
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930",
+      "locked": true
+    },
+    {
+      "id": 144,
+      "type": "PlaySound|pysssss",
+      "pos": [
+        2310,
+        1420
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 204
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlaySound|pysssss"
+      },
+      "widgets_values": [
+        "on empty queue",
+        1
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930",
+      "locked": true
+    },
+    {
+      "id": 105,
+      "type": "Seed (rgthree)",
+      "pos": [
+        0,
+        490
+      ],
+      "size": [
+        400,
+        130
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "SEED",
+          "type": "INT",
+          "links": [
+            152,
+            153
+          ],
+          "shape": 3,
+          "dir": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Seed (rgthree)"
+      },
+      "widgets_values": [
+        659782835638616,
+        null,
+        null,
+        null
+      ],
+      "color": "#432",
+      "bgcolor": "#653",
+      "locked": true
     },
     {
       "id": 94,
@@ -1130,12 +1180,14 @@
         410,
         30
       ],
-      "size": {
-        "0": 690,
-        "1": 1520
+      "size": [
+        690,
+        1470
+      ],
+      "flags": {
+        "pinned": true
       },
-      "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "outputs": [
         {
@@ -1161,48 +1213,95 @@
         "Node name for S&R": "PortraitMaster"
       },
       "widgets_values": [
-        "Head and shoulders portrait",
+        "Full body",
         1,
         "Woman",
-        30,
+        35,
         "-",
         "-",
-        0.5,
+        0.52,
         "Normal weight",
-        1,
+        1.21,
+        "-",
+        "-",
+        "-",
+        0.93,
+        "-",
+        0.93,
+        0,
         "-",
         "-",
         0,
         "-",
+        0.99,
+        0.99,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.9500000000000001,
+        0.96,
+        0.9400000000000001,
+        0.9400000000000001,
         "-",
         "-",
-        0,
-        "-",
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1,
-        "-",
-        "-",
-        1,
+        0.99,
         "disable",
+        "raw photo, (realistic:1.5)",
+        "(dressing a black long dress:1.6), (black background:1.5)",
         "",
-        "",
-        "",
-        ""
+        "(cartoon rendering 3d doll, deformed, bad proportions, bad anatomy, wrong anatomy, ugly:1.25)"
       ],
       "color": "#323",
-      "bgcolor": "#535"
+      "bgcolor": "#535",
+      "locked": true
+    },
+    {
+      "id": 135,
+      "type": "LoadImage",
+      "pos": [
+        2310,
+        30
+      ],
+      "size": [
+        450,
+        370
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            183
+          ],
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "POSE",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "portrait-master-openpose-0006.png",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "locked": true
     }
   ],
   "links": [
@@ -1469,6 +1568,14 @@
       30,
       1,
       "CONDITIONING"
+    ],
+    [
+      204,
+      10,
+      0,
+      144,
+      0,
+      "*"
     ]
   ],
   "groups": [],

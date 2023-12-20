@@ -73,11 +73,9 @@ The _lists_ subfolder contains the .txt files that generate the lists for some n
 
 ## Workflow
 
-**NOTICE: The workflows provided are designed for the use of XL type checkpoints. To use other types of checkpoints you need to make adaptations.**
+The [_portrait-master-controlnet2x-workflow.json_](/workflow/portrait-master-controlnet2x-workflow.json) file contains the workflow designed to work properly with Portrait Master.
 
-The [_portrait-master-controlnet-workflow.json_](/workflow/portrait-master-controlnet-workflow.json) file contains the workflow designed to work properly with Portrait Master.
-
-An upscaler and ControlNet have been integrated to manage the pose of the characters. I inserted 2 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.
+An upscaler and 2 ControlNet have been integrated to manage the pose of the characters. I inserted 3 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.
 
 For the correct functioning of ControlNet with SDXL checkpoints, download this files:
 
@@ -88,10 +86,6 @@ and copy it into the _./models/controlnet/_ folder of ComfyUI. Other similar fil
 
 There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
 
-![Workflow](/screenshot/portrait-master-workflow.png)
-
-The [_portrait-master-controlnet2x-workflow.json_](/workflow/portrait-master-controlnet2x-workflowjson) file contains a dual ControlNet workflow to simultaneously manage the character's pose and hands. There are two switches to individually enable and disable the two blocks of nodes.
-
 ![Workflow](/screenshot/portrait-master-workflow-controlnet-2x.png)
 
 There are some sample files in the _openpose_ folder for use with ControlNet nodes.
@@ -101,6 +95,12 @@ There are some sample files in the _openpose_ folder for use with ControlNet nod
 The workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
 
 Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
+
+## Model Pose Library
+
+The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the _shot_ option.
+
+![Model Pose Library](/screenshot/portrait-master-pose-library.jpg)
 
 ## Practical advice
 

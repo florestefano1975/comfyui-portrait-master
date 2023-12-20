@@ -1,3 +1,11 @@
+## 20.12.2023
+
+Version 2.2
+
+- Added model pose library option
+- Added acne option
+- Bug fixes and optimizations
+
 ## 19.12.2023
 
 Version 2.1

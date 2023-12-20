@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 2.1
+# Version: 2.2
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -66,6 +66,10 @@ beard_list = pmReadTxt(os.path.join(script_dir, "lists/beard_list.txt"))
 beard_list.sort()
 beard_list = ['-'] + beard_list
 
+model_pose_list = pmReadTxt(os.path.join(script_dir, "lists/model_pose_list.txt"))
+model_pose_list.sort()
+model_pose_list = ['-'] + model_pose_list
+
 class PortraitMaster:
 
     def __init__(self):
@@ -118,6 +122,9 @@ class PortraitMaster:
                     "min": 0,
                     "max": max_float_value,
                     "display": "slider",
+                }),
+                "model_pose": (model_pose_list, {
+                    "default": model_pose_list[0],
                 }),
                 "eyes_color": (eyes_color_list, {
                     "default": eyes_color_list[0],
@@ -214,6 +221,13 @@ class PortraitMaster:
                     "step": 0.05,
                     "display": "slider",
                 }),
+                "skin_acne": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
                 "tanned_skin": ("FLOAT", {
                     "default": 0,
                     "min": 0,
@@ -289,7 +303,7 @@ class PortraitMaster:
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot="-", shot_weight=1, gender="-", body_type="-", body_type_weight=0, eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, wrinkles=0, tanned_skin=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable", beard="-"):
+    def pm(self, shot="-", shot_weight=1, gender="-", body_type="-", body_type_weight=0, eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, wrinkles=0, tanned_skin=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable", beard="-", model_pose="-", skin_acne=0):
 
         prompt = []
 
@@ -317,6 +331,9 @@ class PortraitMaster:
 
         if body_type != "-" and body_type_weight > 0:
             prompt.append(f"({body_type}, {body_type} body:{round(body_type_weight, 2)})")
+
+        if model_pose != "-":
+            prompt.append(f"({model_pose}:1.5)")
 
         if eyes_color != "-":
             prompt.append(f"({eyes_color} eyes:1.25)")
@@ -350,6 +367,9 @@ class PortraitMaster:
 
         if skin_imperfections > 0:
             prompt.append(f"(skin imperfections:{round(skin_imperfections, 2)})")
+
+        if skin_acne > 0:
+            prompt.append(f"(acne, skin with acne:{round(skin_acne, 2)})")
 
         if wrinkles > 0:
             prompt.append(f"(skin imperfections:{round(wrinkles, 2)})")
@@ -394,10 +414,10 @@ class PortraitMaster:
         prompt = prompt.lower()
 
         if photorealism_improvement == "enable":
-            prompt = prompt + ", (detailed, professional photo, perfect exposition:1.25), (film grain:1.5)"
+            prompt = prompt + ", (professional photo, balanced photo, balanced exposure:1.2), (film grain:1.15)"
 
         if photorealism_improvement == "enable":
-            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.5)"
+            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.25)"
 
         print("Portrait Master as generate the prompt:")
         print(prompt)

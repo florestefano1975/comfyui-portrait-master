@@ -100,7 +100,7 @@ Tested on **Google Colab**, the workflow generates a high-resolution image in **
 
 The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the _shot_ option.
 
-![Model Pose Library](/screenshot/portrait-master-pose-library-2.2.jpg)
+![Model Pose Library](/screenshot/portrait-master-pose-library-2.2b.jpg)
 
 ## Practical advice
 

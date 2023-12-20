@@ -2,7 +2,7 @@
 
 This node was designed to help AI image creators to generate prompts for human portraits.
 
-![ComfyUI Portrait Master Node](/screenshot/portrait-master-node.png)
+![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.2.png)
 
 ## Install
 
@@ -86,7 +86,7 @@ and copy it into the _./models/controlnet/_ folder of ComfyUI. Other similar fil
 
 There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
 
-![Workflow](/screenshot/portrait-master-workflow-controlnet-2x.png)
+![Workflow](/screenshot/portrait-master-workflow-2.2.png)
 
 There are some sample files in the _openpose_ folder for use with ControlNet nodes.
 
@@ -100,7 +100,7 @@ Tested on **Google Colab**, the workflow generates a high-resolution image in **
 
 The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the _shot_ option.
 
-![Model Pose Library](/screenshot/portrait-master-pose-library.jpg)
+![Model Pose Library](/screenshot/portrait-master-pose-library-2.2.jpg)
 
 ## Practical advice
 

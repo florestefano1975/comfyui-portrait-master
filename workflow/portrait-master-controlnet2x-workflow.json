@@ -1,6 +1,6 @@
 {
-  "last_node_id": 145,
-  "last_link_id": 204,
+  "last_node_id": 148,
+  "last_link_id": 207,
   "nodes": [
     {
       "id": 83,
@@ -24,7 +24,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 19,
+      "order": 21,
       "mode": 0,
       "inputs": [
         {
@@ -76,7 +76,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 18,
+      "order": 20,
       "mode": 0,
       "inputs": [
         {
@@ -339,7 +339,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -457,7 +457,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 14,
+      "order": 16,
       "mode": 0,
       "inputs": [
         {
@@ -518,7 +518,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 16,
+      "order": 18,
       "mode": 0,
       "inputs": [
         {
@@ -571,7 +571,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 17,
+      "order": 19,
       "mode": 0,
       "inputs": [
         {
@@ -622,7 +622,7 @@
         "Node name for S&R": "KSampler //Inspire"
       },
       "widgets_values": [
-        718560964250686,
+        1020139128726053,
         "randomize",
         30,
         7,
@@ -652,7 +652,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 13,
+      "order": 15,
       "mode": 0,
       "inputs": [
         {
@@ -715,7 +715,7 @@
       },
       "widgets_values": [
         "nearest-exact",
-        462917571492741,
+        466724968077232,
         "randomize",
         30,
         7,
@@ -835,8 +835,8 @@
       "flags": {
         "pinned": true
       },
-      "order": 12,
-      "mode": 0,
+      "order": 14,
+      "mode": 4,
       "inputs": [
         {
           "name": "conditioning",
@@ -974,8 +974,8 @@
       "flags": {
         "pinned": true
       },
-      "order": 15,
-      "mode": 0,
+      "order": 17,
+      "mode": 4,
       "inputs": [
         {
           "name": "conditioning",
@@ -1026,12 +1026,12 @@
       ],
       "size": [
         860,
-        1470
+        960
       ],
       "flags": {
         "pinned": true
       },
-      "order": 21,
+      "order": 23,
       "mode": 0,
       "inputs": [
         {
@@ -1062,7 +1062,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 20,
+      "order": 22,
       "mode": 0,
       "inputs": [
         {
@@ -1112,7 +1112,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 22,
+      "order": 24,
       "mode": 0,
       "inputs": [
         {
@@ -1164,99 +1164,13 @@
         "Node name for S&R": "Seed (rgthree)"
       },
       "widgets_values": [
-        659782835638616,
+        996633675435757,
         null,
         null,
         null
       ],
       "color": "#432",
       "bgcolor": "#653",
-      "locked": true
-    },
-    {
-      "id": 94,
-      "type": "PortraitMaster",
-      "pos": [
-        410,
-        30
-      ],
-      "size": [
-        690,
-        1470
-      ],
-      "flags": {
-        "pinned": true
-      },
-      "order": 7,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            156
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            157
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PortraitMaster"
-      },
-      "widgets_values": [
-        "Full body",
-        1,
-        "Woman",
-        35,
-        "-",
-        "-",
-        0.52,
-        "Normal weight",
-        1.21,
-        "-",
-        "-",
-        "-",
-        0.93,
-        "-",
-        0.93,
-        0,
-        "-",
-        "-",
-        0,
-        "-",
-        0.99,
-        0.99,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0.9500000000000001,
-        0.96,
-        0.9400000000000001,
-        0.9400000000000001,
-        "-",
-        "-",
-        0.99,
-        "disable",
-        "raw photo, (realistic:1.5)",
-        "(dressing a black long dress:1.6), (black background:1.5)",
-        "",
-        "(cartoon rendering 3d doll, deformed, bad proportions, bad anatomy, wrong anatomy, ugly:1.25)"
-      ],
-      "color": "#323",
-      "bgcolor": "#535",
       "locked": true
     },
     {
@@ -1273,7 +1187,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "outputs": [
         {
@@ -1301,6 +1215,190 @@
       ],
       "color": "#223",
       "bgcolor": "#335",
+      "locked": true
+    },
+    {
+      "id": 146,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1110,
+        1030
+      ],
+      "size": [
+        860,
+        260
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 207,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(realistic:1.5), (half-length portrait:1.0), ( woman 30-years-old:1.5), (overweight, overweight body:1.37), (the over-the-shoulder look:1.5), (brown eyes:1.25), (amused, amused expression:1.15), (wavy bob hairstyle:1.25), (brown hair:1.25), (symmetric face:1.5), (natural skin:1.33), (skin details, skin texture:1.1), (skin pores:1.05), (skin imperfections:0.25), (freckles:1.02), (skin pores:0.93), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (polaroid film effect:1.73)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000",
+      "locked": true
+    },
+    {
+      "id": 147,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1110,
+        1330
+      ],
+      "size": [
+        860,
+        170
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 206,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(cartoon rendering 3d doll:1.25), (open mouth, teeths, frame, frames:1.85)"
+      ],
+      "color": "#222",
+      "bgcolor": "#000",
+      "locked": true
+    },
+    {
+      "id": 94,
+      "type": "PortraitMaster",
+      "pos": [
+        410,
+        30
+      ],
+      "size": [
+        690,
+        1470
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            156,
+            207
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            157,
+            206
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PortraitMaster"
+      },
+      "widgets_values": [
+        "Half-length portrait",
+        1,
+        "Woman",
+        0,
+        30,
+        "-",
+        "-",
+        0.5,
+        "Overweight",
+        1.37,
+        "The Over-the-Shoulder Look",
+        "Brown",
+        "Amused",
+        1.1500000000000001,
+        "-",
+        0,
+        0,
+        "Wavy bob",
+        "Brown",
+        0,
+        "-",
+        1.33,
+        1.1,
+        1.05,
+        0,
+        0,
+        1.02,
+        0.93,
+        0.25,
+        0,
+        0,
+        1,
+        1.25,
+        1.1500000000000001,
+        1.1500000000000001,
+        "-",
+        "-",
+        1,
+        "disable",
+        "(realistic:1.5)",
+        "(symmetric face:1.5)",
+        "",
+        "(cartoon rendering 3d doll:1.25), (open mouth, teeths, frame, frames:1.85)",
+        "-",
+        1.84,
+        "Polaroid",
+        1.73
+      ],
+      "color": "#323",
+      "bgcolor": "#535",
       "locked": true
     }
   ],
@@ -1576,6 +1674,22 @@
       144,
       0,
       "*"
+    ],
+    [
+      206,
+      94,
+      1,
+      147,
+      0,
+      "STRING"
+    ],
+    [
+      207,
+      94,
+      0,
+      146,
+      0,
+      "STRING"
     ]
   ],
   "groups": [],

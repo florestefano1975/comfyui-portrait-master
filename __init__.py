@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 2.2
+# Version: 2.3
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -70,6 +70,14 @@ model_pose_list = pmReadTxt(os.path.join(script_dir, "lists/model_pose_list.txt"
 model_pose_list.sort()
 model_pose_list = ['-'] + model_pose_list
 
+style_1_list = pmReadTxt(os.path.join(script_dir, "lists/style_list.txt"))
+style_1_list.sort()
+style_1_list = ['-'] + style_1_list
+
+style_2_list = pmReadTxt(os.path.join(script_dir, "lists/style_list.txt"))
+style_2_list.sort()
+style_2_list = ['-'] + style_2_list
+
 class PortraitMaster:
 
     def __init__(self):
@@ -92,6 +100,13 @@ class PortraitMaster:
                 }),
                 "gender": (gender_list, {
                     "default": gender_list[0],
+                }),
+                "androgynous": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
                 }),
                 "age": ("INT", {
                     "default": 30,
@@ -171,6 +186,13 @@ class PortraitMaster:
                 }),
                 "beard": (beard_list, {
                     "default": beard_list[0],
+                }),
+                "natural_skin": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
                 }),
                 "skin_details": ("FLOAT", {
                     "default": 0,
@@ -293,6 +315,26 @@ class PortraitMaster:
                     "multiline": True,
                     "default": ""
                 }),
+                "style_1": (style_1_list, {
+                    "default": style_1_list[0],
+                }),
+                "style_1_weight": ("FLOAT", {
+                    "default": 1.5,
+                    "min": 1,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
+                "style_2": (style_2_list, {
+                    "default": style_2_list[0],
+                }),
+                "style_2_weight": ("FLOAT", {
+                    "default": 1.5,
+                    "min": 1,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
             }
         }
 
@@ -303,7 +345,7 @@ class PortraitMaster:
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot="-", shot_weight=1, gender="-", body_type="-", body_type_weight=0, eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, wrinkles=0, tanned_skin=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable", beard="-", model_pose="-", skin_acne=0):
+    def pm(self, shot="-", shot_weight=1, gender="-", body_type="-", body_type_weight=0, eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, wrinkles=0, tanned_skin=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable", beard="-", model_pose="-", skin_acne=0, style_1="-", style_1_weight=0, style_2="-", style_2_weight=0, androgynous=0, natural_skin=0):
 
         prompt = []
 
@@ -328,6 +370,9 @@ class PortraitMaster:
             prompt.append(f"({shot}:{round(shot_weight, 2)})")
 
         prompt.append(f"({nationality}{gender}{round(age)}-years-old:1.5)")
+
+        if androgynous > 0:
+            prompt.append(f"(androgynous:{round(androgynous, 2)})")
 
         if body_type != "-" and body_type_weight > 0:
             prompt.append(f"({body_type}, {body_type} body:{round(body_type_weight, 2)})")
@@ -358,6 +403,9 @@ class PortraitMaster:
 
         if prompt_additional != "":
             prompt.append(f"{prompt_additional}")
+
+        if natural_skin > 0:
+            prompt.append(f"(natural skin:{round(natural_skin, 2)})")
 
         if skin_details > 0:
             prompt.append(f"(skin details, skin texture:{round(skin_details, 2)})")
@@ -407,6 +455,12 @@ class PortraitMaster:
             else:
                 prompt.append(f"({light_type}:{round(light_weight, 2)})")
 
+        if style_1 != '-' and style_1_weight > 0:
+            prompt.append(f"({style_1}:{round(style_1_weight, 2)})")
+
+        if style_2 != '-' and style_2_weight > 0:
+            prompt.append(f"({style_2} film effect:{round(style_2_weight, 2)})")
+
         if prompt_end != "":
             prompt.append(f"{prompt_end}")
 
@@ -414,10 +468,10 @@ class PortraitMaster:
         prompt = prompt.lower()
 
         if photorealism_improvement == "enable":
-            prompt = prompt + ", (professional photo, balanced photo, balanced exposure:1.2), (film grain:1.15)"
+            prompt = prompt + ", (professional photo, balanced photo, balanced exposure:1.2)"
 
         if photorealism_improvement == "enable":
-            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.25)"
+            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.35)"
 
         print("Portrait Master as generate this prompt:")
         print(prompt)
@@ -429,5 +483,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore) v.2.2"
+    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore) v.2.3"
 }

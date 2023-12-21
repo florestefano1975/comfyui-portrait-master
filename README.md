@@ -2,7 +2,7 @@
 
 This node was designed to help AI image creators to generate prompts for human portraits.
 
-![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.2.png)
+![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.3.png)
 
 ## Install
 
@@ -32,19 +32,19 @@ To update comfyui-portrait-master:
 - **shot**: sets the shot type
 - **shot_weight**: coefficient (weight) of the shot type
 - **gender**: sets the character's gender
+- **androgynous**: coefficient (weight) to change the genetic appearance of the character
 - **nationality_1**: sets first ethnicity
 - **nationality_2**: sets second ethnicity
 - **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control). _This feature is still being tested_
 - **eyes_color**: set the eyes color
 - **hair_color**: set the hair color
-- **facial_expression**: sets the character's expression
-- **facial_expression_weight**: coefficient (weight) of the expression
-- **face_shape**: sets the character's face shape
-- **face_shape_weight**: coefficient (weight) of the face shape
+- **facial_expression** / **facial_expression_weight**: apply and adjust character's expression
+- **face_shape** / **face_shape_weight**: apply and adjust the face shape
 - **facial_asymmetry**: coefficient (weight) to set the asymmetry of the face
 - **hairs_style**: hairstyle selector
 - **disheveled**: coefficient (weight) of the disheveled effect
 - **age**: the age of the subject portrayed
+- **natural_skin**: coefficient (weight) for control the natural aspect of the skin
 - **skin_details**: coefficient (weight) of the skin detail
 - **skin_pores**: coefficient (weight) of the skin pores
 - **dimples**: coefficient (weight) for controlling facial dimples
@@ -62,8 +62,10 @@ To update comfyui-portrait-master:
 - **prompt_additional**: portion of the prompt that is inserted at an intermediate point
 - **prompt_end**: portion of the prompt that is inserted at the end
 - **negative_prompt**: the negative prompt has been integrated into the node to be adequately controlled depending on the settings
+- **style_1** / **style_1_weight**: apply and adjust the first style
+- **style_1** / **style_1_weight**: apply and adjust the second style
 
-Parameters with null value (-) or set to 0.00 are not included in the prompt generated.
+Parameters with null value (-) or set to 0.00 would be not included in the prompt generated.
 
 The node generates two output string, postive and negative prompt.
 
@@ -86,7 +88,7 @@ and copy it into the _./models/controlnet/_ folder of ComfyUI. Other similar fil
 
 There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
 
-![Workflow](/screenshot/portrait-master-workflow-2.2.png)
+![Workflow](/screenshot/portrait-master-workflow-2.3.png)
 
 There are some sample files in the _openpose_ folder for use with ControlNet nodes.
 

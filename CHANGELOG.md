@@ -1,29 +1,38 @@
+## 21.12.2003
+
+Version 2.3
+
+- New option: natural skin slider
+- New option: androgynous slider
+- New option: styling effects
+- Added preview prompt directly on workflow
+
 ## 20.12.2023
 
 Version 2.2
 
-- Added model pose library option
-- Added acne option
+- New option: model pose library
+- New option: acne
 - Bug fixes and optimizations
 
 ## 19.12.2023
 
 Version 2.1
 
-- Added body type option
-- Added wrinkles option
-- Added beard option
-- Added tanned skin option
-- Added a new workflow with 2 groups of ControlNet nodes for pose and hand control
+- New option: body type
+- New option: wrinkles
+- New option: beard
+- New option: tanned skin
+- Added new workflow with 2 groups of ControlNet nodes for pose and hand control
 - Added examples
 
 ## 17.12.2023
 
 Version 2.0
 
-- Added some new options
+- Added new options
 - Added upscaler in the workflow
-- Added ControlNet in the workflow for the pose control
+- Added ControlNet in the workflow for pose control
 - Added examples files PNG
 - Bug fixes and optimizations
 

@@ -6,6 +6,7 @@ Version 2.3
 - New option: androgynous slider
 - New option: styling effects
 - Added preview prompt directly on workflow
+- Update folder examples
 
 ## 20.12.2023
 

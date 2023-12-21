@@ -4,7 +4,12 @@ This node was designed to help AI image creators to generate prompts for human p
 
 ![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.3.png)
 
-## Install
+## Install from ComfyUI Manager
+
+- Type _Portrait Master_ on the search bar of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
+- Click the install button.
+
+## Manual install
 
 To install comfyui-portrait-master:
 
@@ -12,6 +17,8 @@ To install comfyui-portrait-master:
 2. digit: `cd custom_nodes`
 3. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
 4. restart ComfyUI
+
+## Additional nodes
 
 We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install the additional custom nodes needed for the workflow.
 

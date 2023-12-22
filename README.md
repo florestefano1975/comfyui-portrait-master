@@ -80,9 +80,9 @@ The node generates two output string, postive and negative prompt.
 
 The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.
 
-## Workflow
+## Workflow SDXL
 
-The [_portrait-master-controlnet2x-workflow.json_](/workflow/portrait-master-controlnet2x-workflow.json) file contains the workflow designed to work properly with Portrait Master.
+The [_portrait-master-workflow-SDXL.json_](/workflow/portrait-master-workflow-SDXL.json) file contains a **complete workflow** designed to work with **SDXL checkpoints**.
 
 An upscaler and 2 ControlNet have been integrated to manage the pose of the characters. I inserted 3 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.
 
@@ -99,17 +99,23 @@ There are some files that can be used with ControlNet in the Portrait Master _op
 
 There are some sample files in the _openpose_ folder for use with ControlNet nodes.
 
-## Workflow performances
+## Workflow SD1.5
 
-The workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
+The [_portrait-master-basic-workflow-SD1.5.json_](/workflow/portrait-master-basic-workflow-SD1.5.json) file contains a **basic workflow** designed to work with **SD1.5 checkpoints**.
 
-Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
+![Workflow](/screenshot/portrait-master-workflow-2.3-SD1.5.png)
 
 ## Model Pose Library
 
 The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the _shot_ option.
 
 ![Model Pose Library](/screenshot/portrait-master-pose-library-2.2b.jpg)
+
+## Workflow SDXL performances
+
+The SDXL workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
+
+Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
 
 ## Practical advice
 
@@ -126,9 +132,9 @@ For total control of the pose, use the ControlNet nodes integrated into the work
 
 ## Examples
 
-In the future, several example images in PNG format will be uploaded to the examples folder, which can be uploaded to ComfyUI to use their settings.
+The examples folder contains PNG files with generation metadata. You can upload them directly to ComfyUI.
 
-![Example image](/examples/comfyui-portrait-master-example-001.png)
+![Example image](/examples/comfyui-portrait-master-example-008.png)
 
 ## SDXL Turbo
 

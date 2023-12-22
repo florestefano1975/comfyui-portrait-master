@@ -1,0 +1,643 @@
+{
+  "last_node_id": 24,
+  "last_link_id": 35,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "PromptControlSimple",
+      "pos": [
+        450,
+        30
+      ],
+      "size": [
+        480.6092834472656,
+        298
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 11,
+          "slot_index": 0
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 12
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 32,
+          "widget": {
+            "name": "positive"
+          }
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 33,
+          "widget": {
+            "name": "negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            13
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            14
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            15
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "model_filtered",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "pos_filtered",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "neg_filtered",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PromptControlSimple"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        0,
+        1
+      ],
+      "locked": true
+    },
+    {
+      "id": 21,
+      "type": "VAEDecode",
+      "pos": [
+        940,
+        540
+      ],
+      "size": [
+        480,
+        80
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 29
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 28,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            27,
+            31
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "locked": true
+    },
+    {
+      "id": 10,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        450,
+        370
+      ],
+      "size": [
+        480,
+        100
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            11
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            28
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "realisticVisionV51_v51VAE.safetensors"
+      ],
+      "locked": true
+    },
+    {
+      "id": 11,
+      "type": "KSampler",
+      "pos": [
+        940,
+        30
+      ],
+      "size": [
+        480,
+        470
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 14
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 16,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        40193029973235,
+        "fixed",
+        30,
+        8,
+        "euler_ancestral",
+        "normal",
+        1
+      ],
+      "locked": true
+    },
+    {
+      "id": 12,
+      "type": "EmptyLatentImage",
+      "pos": [
+        450,
+        510
+      ],
+      "size": [
+        480,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            16
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ],
+      "locked": true
+    },
+    {
+      "id": 24,
+      "type": "PortraitMaster",
+      "pos": [
+        0,
+        30
+      ],
+      "size": [
+        440,
+        1320
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            32,
+            34
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            33,
+            35
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PortraitMaster"
+      },
+      "widgets_values": [
+        "Half-length portrait",
+        1.2,
+        "Woman",
+        0,
+        30,
+        "Brazilian",
+        "-",
+        0.5,
+        "-",
+        0,
+        "High Fashion Pose",
+        "Brown",
+        "-",
+        0,
+        "-",
+        0,
+        0,
+        "Wavy bob",
+        "Black",
+        0,
+        "-",
+        1,
+        1,
+        0.5,
+        0,
+        0,
+        1,
+        1,
+        0.25,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        "Soft ambient light",
+        "from top-left",
+        1.1500000000000001,
+        "enable",
+        "raw photo, (realistic:1.5)",
+        "(white background:1.25)",
+        "",
+        "",
+        "-",
+        1.5,
+        "-",
+        1.5
+      ],
+      "locked": true
+    },
+    {
+      "id": 17,
+      "type": "ShowText|pysssss",
+      "pos": [
+        450,
+        1120
+      ],
+      "size": [
+        970,
+        230
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        ", (shinny skin, reflections on the skin, skin reflections:1.35)"
+      ],
+      "locked": true
+    },
+    {
+      "id": 15,
+      "type": "ShowText|pysssss",
+      "pos": [
+        450,
+        660
+      ],
+      "size": [
+        970,
+        420
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 34,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "raw photo, (realistic:1.5), (half-length portrait:1.2), (brazilian  woman 30-years-old:1.5), (high fashion pose:1.5), (brown eyes:1.25), (wavy bob hairstyle:1.25), (black hair:1.25), (white background:1.25), (natural skin:1.0), (skin details, skin texture:1.0), (skin pores:0.5), (skin imperfections:0.25), (tanned skin:1.0), (freckles:1.0), (skin pores:1.0), (eyes details:1.0), (iris details:1.0), (circular iris:1.0), (circular pupil:1.0), (soft ambient light from top-left:1.15), (professional photo, balanced photo, balanced exposure:1.2)"
+      ],
+      "locked": true
+    },
+    {
+      "id": 14,
+      "type": "PlaySound|pysssss",
+      "pos": [
+        1430,
+        1270
+      ],
+      "size": [
+        310,
+        80
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 31,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlaySound|pysssss"
+      },
+      "widgets_values": [
+        "on empty queue",
+        1
+      ],
+      "locked": true
+    },
+    {
+      "id": 22,
+      "type": "PreviewImage",
+      "pos": [
+        1430,
+        30
+      ],
+      "size": [
+        870,
+        1200
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 27
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "locked": true
+    }
+  ],
+  "links": [
+    [
+      11,
+      10,
+      0,
+      8,
+      0,
+      "MODEL"
+    ],
+    [
+      12,
+      10,
+      1,
+      8,
+      1,
+      "CLIP"
+    ],
+    [
+      13,
+      8,
+      0,
+      11,
+      0,
+      "MODEL"
+    ],
+    [
+      14,
+      8,
+      1,
+      11,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      15,
+      8,
+      2,
+      11,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      16,
+      12,
+      0,
+      11,
+      3,
+      "LATENT"
+    ],
+    [
+      27,
+      21,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      10,
+      2,
+      21,
+      1,
+      "VAE"
+    ],
+    [
+      29,
+      11,
+      0,
+      21,
+      0,
+      "LATENT"
+    ],
+    [
+      31,
+      21,
+      0,
+      14,
+      0,
+      "*"
+    ],
+    [
+      32,
+      24,
+      0,
+      8,
+      2,
+      "STRING"
+    ],
+    [
+      33,
+      24,
+      1,
+      8,
+      3,
+      "STRING"
+    ],
+    [
+      34,
+      24,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      35,
+      24,
+      1,
+      17,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

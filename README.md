@@ -4,7 +4,7 @@ This node was designed to help AI image creators to generate prompts for human p
 
 If this project is useful and you like it, consider a small donation to the author.
 
-➡️ (https://ko-fi.com/stefanoflore75)
+➡️ https://ko-fi.com/stefanoflore75
 
 ![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.3.png)
 

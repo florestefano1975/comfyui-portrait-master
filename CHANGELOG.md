@@ -1,3 +1,7 @@
+## 23.12.2023
+
+- Added _Workflow SDXL LCM_
+
 ## 21.12.2003
 
 Version 2.3

@@ -18,11 +18,7 @@ To install comfyui-portrait-master:
 3. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
 4. restart ComfyUI
 
-## Additional nodes
-
-We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install the additional custom nodes needed for the workflow.
-
-## Update
+### Manual update
 
 To update comfyui-portrait-master:
 
@@ -33,6 +29,10 @@ To update comfyui-portrait-master:
 5. restart ComfyUI
 
 **Warning: update command overwrites files modified and customized by users.**
+
+## Additional nodes
+
+We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install the additional custom nodes needed for the workflow.
 
 ## Available Options
 

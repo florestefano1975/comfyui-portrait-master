@@ -6,6 +6,8 @@ This node was designed to help AI image creators to generate prompts for human p
 
 ➡️ https://ko-fi.com/stefanoflore75
 
+## Overview of the custom node
+
 ![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.3.png)
 
 ## Install from ComfyUI Manager

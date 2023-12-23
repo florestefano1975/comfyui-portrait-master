@@ -2,7 +2,7 @@
 
 This node was designed to help AI image creators to generate prompts for human portraits.
 
-**_If this project is useful and you like it, consider a small donation to the author._**
+**_If this project is useful to you and you like it, please consider a small donation to the author._**
 
 ➡️ https://ko-fi.com/stefanoflore75
 

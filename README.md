@@ -99,6 +99,21 @@ There are some files that can be used with ControlNet in the Portrait Master _op
 
 There are some sample files in the _openpose_ folder for use with ControlNet nodes.
 
+### Workflow SDXL performances
+
+The SDXL workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
+
+Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
+
+## Workflow SDXL LCM
+
+Thanks to the study of the user NeuraLunk I have inserted some example images created with his livaoro flow, which uses LCM for ultra-fast image generation, in the _examples-lcm_ folder.
+With Google Colba and GPU V100 you can generate 9 1024×1024 images in less than 30 seconds, with good quality.
+This flow can be interesting to study the operation of my node with fast timing.
+Images can be loaded directly into ComfyUI to retrieve the flow and settings used.
+
+![Workflow](/examples-lcm/comfyui-portrait-master-lcm-example-008.png)
+
 ## Workflow SD1.5
 
 The [_portrait-master-basic-workflow-SD1.5.json_](/workflow/portrait-master-basic-workflow-SD1.5.json) file contains a **basic workflow** designed to work with **SD1.5 checkpoints**.
@@ -110,12 +125,6 @@ The [_portrait-master-basic-workflow-SD1.5.json_](/workflow/portrait-master-basi
 The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the _shot_ option.
 
 ![Model Pose Library](/screenshot/portrait-master-pose-library-2.2b.jpg)
-
-## Workflow SDXL performances
-
-The SDXL workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
-
-Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
 
 ## Practical advice
 
@@ -132,7 +141,7 @@ For total control of the pose, use the ControlNet nodes integrated into the work
 
 ## Examples
 
-The examples folder contains PNG files with generation metadata. You can upload them directly to ComfyUI.
+The _examples_ folder contains PNG files with generation metadata. You can upload them directly to ComfyUI.
 
 ![Example image](/examples/comfyui-portrait-master-example-008.png)
 

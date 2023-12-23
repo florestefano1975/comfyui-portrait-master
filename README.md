@@ -107,7 +107,7 @@ Tested on **Google Colab**, the workflow generates a high-resolution image in **
 
 ## Workflow SDXL LCM
 
-Thanks to the study of the user NeuraLunk I have inserted some example images created with his livaoro flow, which uses LCM for ultra-fast image generation, in the _examples-lcm_ folder.
+Thanks to the study of the user [NeuraLunk](https://openart.ai/workflows/neuralunk/quick-lcm-portraits-in-good-quality/ahoo51x5Y0z5QhEmF6HG) I have inserted some example images created with his livaoro flow, which uses LCM for ultra-fast image generation, in the _examples-lcm_ folder.
 With Google Colba and GPU V100 you can generate 9 1024×1024 images in less than 30 seconds, with good quality.
 This flow can be interesting to study the operation of my node with fast timing.
 Images can be loaded directly into ComfyUI to retrieve the flow and settings used.

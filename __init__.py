@@ -154,10 +154,14 @@ def build_config_details(config_dict, language):
     return config_details, config_meta
 
 
-class PortraitMaster:
+sys_init()
+
+
+class PortraitMasterI18N:
 
     def __init__(self):
         sys_init()
+        pass
 
     @classmethod
     def INPUT_TYPES(s):
@@ -256,9 +260,9 @@ class PortraitMaster:
 
 
 NODE_CLASS_MAPPINGS = {
-    "PortraitMaster": PortraitMaster
+    "PortraitMaster": PortraitMasterI18N
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PortraitMaster": "Portrait Master by AI Wiz Art (Stefano Flore) v.2.0"
+    "PortraitMaster": "Steven version of Portrait Master"
 }

@@ -1,362 +1,260 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
+# Modified by Steven Chen
 # Version: 2.0
 # https://stefanoflore.it
 # https://ai-wiz.art
 
+import json
 import os
 
 script_dir = os.path.dirname(__file__)
 
 # read txt file
+CONFIG_MAPPINGS = {}
+DISPLAY_CONFIG_DICT = {}
+PARSE_CONFIG_DICT = {}
+CONFIG_ITEMS = []
 
-def pmReadTxt(file_path):
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-        values = [line.strip() for line in lines]
-        return values
 
-# setup vars
+def sys_init():
+    for filename in os.listdir(os.path.join(script_dir, "lists")):
+        if filename.endswith(".json"):
+            try:
+                with open(os.path.join(script_dir, "lists", filename), 'r') as file:
+                    json_obj = json.load(file)
+                    meta_info = json_obj["meta_info"]
+                    config_type = meta_info["config_type"]
+                    CONFIG_MAPPINGS[config_type] = json_obj
+            except Exception as e:
+                print(f"Portrait Master: error loading {filename}: {e}")
+    print("Portrait Master: loaded all json files in the lists folder")
+    print(f"Got configs: {CONFIG_MAPPINGS.keys()}")
+    build_config_dict()
 
-shot_list = pmReadTxt(os.path.join(script_dir, "lists/shot_list.txt"))
-shot_list.sort()
-shot_list = ['-'] + shot_list
 
-gender_list = pmReadTxt(os.path.join(script_dir, "lists/gender_list.txt"))
-gender_list.sort()
-gender_list = ['-'] + gender_list
+def build_config_dict():
+    entries = [entry for entry in CONFIG_MAPPINGS.values()
+               if (entry["meta_info"].get("position", -1) > 0) and (entry["meta_info"].get("replica", -1) > 0)]
+    entries.sort(key=lambda x: x["meta_info"]["position"])
 
-face_shape_list = pmReadTxt(os.path.join(script_dir, "lists/face_shape_list.txt"))
-face_shape_list.sort()
-face_shape_list = ['-'] + face_shape_list
+    language = "cn"
+    for config_dict in entries:
+        meta_info = config_dict["meta_info"]
+        values = config_dict["values"]
 
-facial_expressions_list = pmReadTxt(os.path.join(script_dir, "lists/face_expression_list.txt"))
-facial_expressions_list.sort()
-facial_expressions_list = ['-'] + facial_expressions_list
+        config_type = meta_info.get("config_type", "").strip()
+        if 'language' == config_type:
+            language = values["default_value"]
 
-nationality_list = pmReadTxt(os.path.join(script_dir, "lists/nationality_list.txt"))
-nationality_list.sort()
-nationality_list = ['-'] + nationality_list
+        replica = meta_info.get("replica", 0)
+        if not (config_type or replica):
+            continue
 
-hair_style_list = pmReadTxt(os.path.join(script_dir, "lists/hair_style_list.txt"))
-hair_style_list.sort()
-hair_style_list = ['-'] + hair_style_list
+        CONFIG_ITEMS.append(config_type)
+        config_details, config_meta = build_config_details(config_dict, language)
+        DISPLAY_CONFIG_DICT.update(config_details)
+        PARSE_CONFIG_DICT.update(config_meta)
+    print("Portrait Master: built config dict")
 
-light_type_list = pmReadTxt(os.path.join(script_dir, "lists/light_type_list.txt"))
-light_type_list.sort()
-light_type_list = ['-'] + light_type_list
 
-light_direction_list = pmReadTxt(os.path.join(script_dir, "lists/light_direction_list.txt"))
-light_direction_list.sort()
-light_direction_list = ['-'] + light_direction_list
+def build_config_details(config_dict, language):
+    meta_info = config_dict["meta_info"]
+    values = config_dict["values"]
+    weight = config_dict["weight"]
+    mix = config_dict["mix"]
 
-eyes_color_list = pmReadTxt(os.path.join(script_dir, "lists/eyes_color_list.txt"))
-eyes_color_list.sort()
-eyes_color_list = ['-'] + eyes_color_list
+    config_type = meta_info['config_type'].strip()
+    replica = meta_info['replica']
+    base_config_display = meta_info['display'][language]
+    value_type = meta_info.get("value_type", "").strip().lower()
 
-hair_color_list = pmReadTxt(os.path.join(script_dir, "lists/hair_color_list.txt"))
-hair_color_list.sort()
-hair_color_list = ['-'] + hair_color_list
+    config_details = {}
+    config_meta = {}
+    is_mix = len(mix) > 0
+    single_config = (1 == replica)
+    for i in range(replica):
+        if single_config:
+            config_name = config_type
+            config_display = base_config_display
+        else:
+            config_name = f"{config_type}_{str(i)}"
+            config_display = f"{base_config_display}_{str(i)}"
+
+        default_value = ''
+        option_mapping = {}
+        if "list" == value_type:
+            default_value = values.get('default', '-')
+            option_list = values.get(language, [])
+            option_display_list = [default_value]
+            for option in option_list:
+                if isinstance(option, str):
+                    option_mapping[option] = option
+                    option_display_list.append(option)
+                else:
+                    display_option = option["display"]
+                    option_mapping[display_option] = option["key"]
+                    option_display_list.append(display_option)
+
+            config_details[config_display] = (option_display_list, {
+                "default": option_display_list[0],
+            })
+
+        elif "float" == value_type:
+            default_value = values.get('default', 0.1)
+            config_details[config_display] = ("FLOAT", {
+                "default": default_value,
+                "min": values.get('min', 0),
+                "max": values.get('max', 1),
+                "step": values.get('step', 0.05),
+                "display": "slider",
+            })
+
+        elif "int" == value_type:
+            default_value = values.get('default', 1)
+            config_details[config_display] = ("INT", {
+                "default": int(default_value),
+                "min": int(values.get('min', 0)),
+                "max": int(values.get('max', 10)),
+                "step": int(values.get('step', 1)),
+                "display": "slider",
+            })
+
+        elif "string" == value_type:
+            config_details[config_display] = ("STRING", {
+                "multiline": values.get('multiline', True),
+                "default": values['default']
+            })
+
+        config_meta[config_display] = {
+            'option_mapping': option_mapping,
+            'config_type': config_type,
+            'value_type': value_type,
+            'default': default_value,
+            'prefix': values['prefix'],
+            'suffix': values['suffix'],
+            'name': config_name,
+            'weight': weight,
+            'mix': is_mix,
+        }
+
+        weight_changeable = weight.get("changeable", False)
+        if weight_changeable and single_config:
+            config_details[f"{config_display}_weight"] = ("FLOAT", {
+                "default": weight['default'],
+                "min": weight['min'],
+                "max": weight['max'],
+                "step": weight['step'],
+                "display": "slider",
+            })
+
+    if is_mix:
+        config_details[f"{base_config_display}_mix"] = ("FLOAT", mix)
+
+    return config_details, config_meta
+
 
 class PortraitMaster:
 
     def __init__(self):
-        pass
+        sys_init()
 
     @classmethod
     def INPUT_TYPES(s):
-        max_float_value = 1.95
+
         return {
-            "required": {
-                "shot": (shot_list, {
-                    "default": shot_list[0],
-                }),
-                "shot_weight": ("FLOAT", {
-                    "default": 0,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": max_float_value,
-                    "display": "slider",
-                }),
-                "gender": (gender_list, {
-                    "default": gender_list[0],
-                }),
-                "nationality_1": (nationality_list, {
-                    "default": nationality_list[0],
-                }),
-                "nationality_2": (nationality_list, {
-                    "default": nationality_list[0],
-                }),
-                "nationality_mix": ("FLOAT", {
-                    "default": 0.5,
-                    "min": 0,
-                    "max": 1,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "eyes_color": (eyes_color_list, {
-                    "default": eyes_color_list[0],
-                }),
-                "facial_expression": (facial_expressions_list, {
-                    "default": facial_expressions_list[0],
-                }),
-                "facial_expression_weight": ("FLOAT", {
-                    "default": 0,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": max_float_value,
-                    "display": "slider",
-                }),
-                "face_shape": (face_shape_list, {
-                    "default": face_shape_list[0],
-                }),
-                "face_shape_weight": ("FLOAT", {
-                    "default": 0,
-                    "step": 0.05,
-                    "min": 0,
-                    "max": max_float_value,
-                    "display": "slider",
-                }),
-                "facial_asymmetry": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "hair_style": (hair_style_list, {
-                    "default": hair_style_list[0],
-                }),
-                "hair_color": (hair_color_list, {
-                    "default": hair_color_list[0],
-                }),
-                "disheveled": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "age": ("INT", {
-                    "default": 30,
-                    "min": 18,
-                    "max": 90,
-                    "step": 1,
-                    "display": "slider",
-                }),
-                "skin_details": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "skin_pores": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "dimples": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "freckles": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "moles": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "skin_imperfections": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "eyes_details": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "iris_details": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "circular_iris": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "circular_pupil": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "light_type": (light_type_list, {
-                    "default": light_type_list[0],
-                }),
-                "light_direction": (light_direction_list, {
-                    "default": light_direction_list[0],
-                }),
-                "light_weight": ("FLOAT", {
-                    "default": 0,
-                    "min": 0,
-                    "max": max_float_value,
-                    "step": 0.05,
-                    "display": "slider",
-                }),
-                "photorealism_improvement": (["enable", "disable"],),
-                "prompt_start": ("STRING", {
-                    "multiline": True,
-                    "default": "raw photo, (realistic:1.5)"
-                }),
-                "prompt_additional": ("STRING", {
-                    "multiline": True,
-                    "default": ""
-                }),
-                "prompt_end": ("STRING", {
-                    "multiline": True,
-                    "default": ""
-                }),
-                "negative_prompt": ("STRING", {
-                    "multiline": True,
-                    "default": ""
-                }),
-            }
+            "required": DISPLAY_CONFIG_DICT
         }
 
-    RETURN_TYPES = ("STRING","STRING",)
+    RETURN_TYPES = ("STRING", "STRING",)
     RETURN_NAMES = ("positive", "negative",)
 
-    FUNCTION = "pm"
+    FUNCTION = "handler"
 
     CATEGORY = "AI WizArt"
 
-    def pm(self, shot="-", shot_weight=1, gender="-", eyes_color="-", facial_expression="-", facial_expression_weight=0, face_shape="-", face_shape_weight=0, nationality_1="-", nationality_2="-", nationality_mix=0.5, age=30, hair_style="-", hair_color="-", disheveled=0, dimples=0, freckles=0, skin_pores=0, skin_details=0, moles=0, skin_imperfections=0, eyes_details=1, iris_details=1, circular_iris=1, circular_pupil=1, facial_asymmetry=0, prompt_additional="", prompt_start="", prompt_end="", light_type="-", light_direction="-", light_weight=0, negative_prompt="", photorealism_improvement="disable"):
-
-        prompt = []
-
-        if gender == "-":
-            gender = ""
+    def process_key(self, item):
+        parts = item.split('_')
+        if parts[-1].isdigit() or parts[-1] == 'weight':
+            return '_'.join(parts[:-1])
         else:
-            gender = " " + gender + " "
+            return item
 
-        if nationality_1 != '-' and nationality_2 != '-':
-            nationality = f"[{nationality_1}:{nationality_2}:{round(nationality_mix, 2)}]"
-        elif nationality_1 != '-':
-            nationality = nationality_1 + " "
-        elif nationality_2 != '-':
-            nationality = nationality_2 + " "
-        else:
-            nationality = ""
+    def handler(self, **kwargs):
 
-        if prompt_start != "":
-            prompt.append(f"{prompt_start}")
+        # group the keys for each attributes
+        keys_mapping = {}
+        for key in kwargs.keys():
+            if '_' not in key:
+                continue
 
-        if shot != "-" and shot_weight > 0:
-            prompt.append(f"({shot}:{round(shot_weight, 2)})")
-
-        prompt.append(f"({nationality}{gender}{round(age)}-years-old:1.5)")
-
-        if eyes_color != "-":
-            prompt.append(f"({eyes_color} eyes:1.25)")
-
-        if facial_expression != "-" and facial_expression_weight > 0:
-            prompt.append(f"({facial_expression}, {facial_expression} expression:{round(facial_expression_weight, 2)})")
-
-        if face_shape != "-" and face_shape_weight > 0:
-            prompt.append(f"({face_shape} shape face:{round(face_shape_weight, 2)})")
-
-        if hair_style != "-":
-            prompt.append(f"({hair_style} hairstyle:1.25)")
-
-        if hair_color != "-":
-            prompt.append(f"({hair_color} hair:1.25)")
-
-        if disheveled != "-" and disheveled > 0:
-            prompt.append(f"(disheveled:{round(disheveled, 2)})")
-
-        if prompt_additional != "":
-            prompt.append(f"{prompt_additional}")
-
-        if skin_details > 0:
-            prompt.append(f"(skin details, skin texture:{round(skin_details, 2)})")
-
-        if skin_pores > 0:
-            prompt.append(f"(skin pores:{round(skin_pores, 2)})")
-
-        if skin_imperfections > 0:
-            prompt.append(f"(skin imperfections:{round(skin_imperfections, 2)})")
-
-        if dimples > 0:
-            prompt.append(f"(dimples:{round(dimples, 2)})")
-
-        if freckles > 0:
-            prompt.append(f"(freckles:{round(freckles, 2)})")
-
-        if moles > 0:
-            prompt.append(f"(skin pores:{round(moles, 2)})")
-
-        if eyes_details > 0:
-            prompt.append(f"(eyes details:{round(eyes_details, 2)})")
-
-        if iris_details > 0:
-            prompt.append(f"(iris details:{round(iris_details, 2)})")
-
-        if circular_iris > 0:
-            prompt.append(f"(circular iris:{round(circular_iris, 2)})")
-
-        if circular_pupil > 0:
-            prompt.append(f"(circular pupil:{round(circular_pupil, 2)})")
-
-        if facial_asymmetry > 0:
-            prompt.append(f"(facial asymmetry, face asymmetry:{round(facial_asymmetry, 2)})")
-
-        if light_type != '-' and light_weight > 0:
-            if light_direction != '-':
-                prompt.append(f"({light_type} {light_direction}:{round(light_weight, 2)})")
+            core_key = self.process_key(key)
+            if core_key == key:
+                keys_mapping[key] = [key]
             else:
-                prompt.append(f"({light_type}:{round(light_weight, 2)})")
+                keys_mapping.setdefault(core_key, []).append(key)
 
-        if prompt_end != "":
-            prompt.append(f"{prompt_end}")
+        handled_keys = []
+        prompt_items = []
+        for param_key in CONFIG_ITEMS:
+            # need special logic to handle the 'prompt_prefix' and 'prompt_suffix'
+            if 'prompt' in param_key:
+                continue
 
-        prompt = ", ".join(prompt)
-        prompt = prompt.lower()
+            key_list = keys_mapping.get(param_key, [])
+            if not key_list:
+                continue
 
-        if photorealism_improvement == "enable":
-            prompt = prompt + ", (detailed, professional photo, perfect exposition:1.25), (film grain:1.5)"
+            for key in key_list:
+                config_meta = PARSE_CONFIG_DICT.get(param_key, None)
+                if (not config_meta) or (key in handled_keys):
+                    continue
 
-        if photorealism_improvement == "enable":
-            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.5)"
+                # record the handled key
+                handled_keys.append(key)
 
-        print("Portrait Master as generate the prompt:")
-        print(prompt)
+                value_type = config_meta['value_type']
+                option_mapping = config_meta['option_mapping']
+                prefix = config_meta['prefix']
+                suffix = config_meta['suffix']
+                default = config_meta['default']
+                weight = config_meta['weight']
+                mix = config_meta['mix']
 
-        return (prompt,negative_prompt,)
-    
+                value = kwargs.get(key, default)
+                if value == default:
+                    continue
+
+                if "list" == value_type:
+                    display = option_mapping.get(value, '')
+                    if not display:
+                        continue
+
+                    ori_option = option_mapping[display]
+                    if not mix:
+                        prompt_item = f"{prefix}{ori_option}{suffix}"
+                        config_weight = kwargs.get(f"{param_key}_weight", weight['default'])
+                        if config_weight != weight['default']:
+                            prompt_item = f"({prompt_item}:{config_weight})"
+                        prompt_items.append(prompt_item)
+
+                elif isinstance(value, (int, float)):
+                    prompt_item = f"{prefix}{param_key}{suffix}"
+                    config_weight = kwargs.get(f"{param_key}_weight", weight['default'])
+                    if config_weight != weight['default']:
+                        prompt_item = f"({prompt_item}:{config_weight})"
+                    prompt_items.append(prompt_item)
+
+        # handle the prompt_prefix and prompt_suffix
+        prompt_prefix = kwargs.get('prompt_prefix', '')
+        prompt_suffix = kwargs.get('prompt_suffix', '')
+        prompt_items = [prompt_prefix] + prompt_items + [prompt_suffix]
+        prompt = ', '.join(prompt_items)
+
+        negative_prompt = kwargs.get('negative_prompt', '')
+        return (prompt, negative_prompt,)
+
+
 NODE_CLASS_MAPPINGS = {
     "PortraitMaster": PortraitMaster
 }

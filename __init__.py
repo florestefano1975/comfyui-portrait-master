@@ -153,9 +153,6 @@ def build_config_details(config_dict, language):
     return config_details, config_meta
 
 
-# sys_init()
-
-
 class PortraitMasterI18N:
 
     def __init__(self):
@@ -280,6 +277,8 @@ class PortraitMasterI18N:
         print(f"Portrait Master: prompt: [{prompt}], negative_prompt: [{negative_prompt}]")
         return (prompt, negative_prompt,)
 
+
+sys_init(PortraitMasterI18N().SYS_LANGUAGE)
 
 NODE_CLASS_MAPPINGS = {
     "PortraitMaster": PortraitMasterI18N

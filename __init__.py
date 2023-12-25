@@ -131,8 +131,8 @@ def build_config_details(config_dict, language):
             'config_type': config_type,
             'value_type': value_type,
             'default': default_value,
-            'prefix': values['prefix'],
-            'suffix': values['suffix'],
+            'prefix': values.get('prefix', ''),
+            'suffix': values.get('suffix', ''),
             'name': config_name,
             'weight': weight,
             'mix': is_mix,
@@ -219,8 +219,8 @@ class PortraitMasterI18N:
 
                 value_type = config_meta['value_type']
                 option_mapping = config_meta['option_mapping']
-                prefix = config_meta['prefix']
-                suffix = config_meta['suffix']
+                prefix = config_meta.get('prefix', '')
+                suffix = config_meta.get('suffix', '')
                 default = config_meta['default']
                 weight = config_meta['weight']
                 mix = config_meta['mix']

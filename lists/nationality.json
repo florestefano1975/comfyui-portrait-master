@@ -6,7 +6,7 @@
       "cn": "国籍"
     },
     "position": 2,
-    "replica": 1,
+    "replica": 2,
     "value_type": "list"
   },
   "values": {

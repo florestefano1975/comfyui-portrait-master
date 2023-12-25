@@ -1,0 +1,33 @@
+{
+  "meta_info": {
+    "config_type": "language",
+    "display": {
+      "en": "Language",
+      "cn": "语言"
+    },
+    "position": 0,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "cn",
+    "en": [
+      {"key":"en","display":"English"},
+      {"key":"cn","display":"Chinese"}
+    ],
+    "cn": [
+      {"key":"en","display":"英文"},
+      {"key":"cn","display":"中文"}
+    ]
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

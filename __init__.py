@@ -17,7 +17,7 @@ PARSE_CONFIG_DICT = {}
 CONFIG_ITEMS = []
 
 
-def sys_init():
+def sys_init(language="cn"):
     for filename in os.listdir(os.path.join(script_dir, "lists")):
         if filename.endswith(".json"):
             try:
@@ -30,15 +30,14 @@ def sys_init():
                 print(f"Portrait Master: error loading {filename}: {e}")
     print("Portrait Master: loaded all json files in the lists folder")
     print(f"Got configs: {CONFIG_MAPPINGS.keys()}")
-    build_config_dict()
+    build_config_dict(language)
 
 
-def build_config_dict():
+def build_config_dict(language="cn"):
     entries = [entry for entry in CONFIG_MAPPINGS.values()
                if (entry["meta_info"].get("position", -1) > 0) and (entry["meta_info"].get("replica", -1) > 0)]
     entries.sort(key=lambda x: x["meta_info"]["position"])
 
-    language = "cn"
     for config_dict in entries:
         meta_info = config_dict["meta_info"]
         values = config_dict["values"]
@@ -154,13 +153,13 @@ def build_config_details(config_dict, language):
     return config_details, config_meta
 
 
-sys_init()
+# sys_init()
 
 
 class PortraitMasterI18N:
 
     def __init__(self):
-        sys_init()
+        sys_init(language=self.SYS_LANGUAGE)
         pass
 
     @classmethod
@@ -172,10 +171,9 @@ class PortraitMasterI18N:
 
     RETURN_TYPES = ("STRING", "STRING",)
     RETURN_NAMES = ("positive", "negative",)
-
     FUNCTION = "handler"
-
     CATEGORY = "AI WizArt"
+    SYS_LANGUAGE = "cn"
 
     def process_key(self, item):
         parts = item.split('_')
@@ -202,7 +200,7 @@ class PortraitMasterI18N:
         prompt_items = []
         for param_key in CONFIG_ITEMS:
             # need special logic to handle the 'prompt_prefix' and 'prompt_suffix'
-            if 'prompt' in param_key:
+            if ('prompt' in param_key) or ('language' in param_key):
                 continue
 
             key_list = keys_mapping.get(param_key, [])
@@ -211,7 +209,7 @@ class PortraitMasterI18N:
 
             for key in key_list:
                 config_meta = PARSE_CONFIG_DICT.get(param_key, None)
-                if (not config_meta) or (key in handled_keys):
+                if (not config_meta) or (key in handled_keys) or ('mix' in key):
                     continue
 
                 # record the handled key
@@ -241,6 +239,24 @@ class PortraitMasterI18N:
                         if config_weight != weight['default']:
                             prompt_item = f"({prompt_item}:{config_weight})"
                         prompt_items.append(prompt_item)
+                    else:
+                        prompt_item = ''
+                        parts = key.split('_')
+                        if parts[-1].isdigit():
+                            num = int(parts[-1])
+                            mix_items = []
+                            for i in range(num + 2):
+                                tmp_key = f"{'_'.join(parts[:-1])}_{i}"
+                                tmp_value = kwargs.get(tmp_key, default)
+                                if tmp_value == default:
+                                    continue
+
+                                handled_keys.append(tmp_key)
+                                mix_items.append(tmp_value)
+                            mix_rate = mix.get('rate', 0.5)
+                            tmp_item = ":".join(mix_items + [str(mix_rate)])
+                            prompt_item = f"{prefix}[{tmp_item}]{suffix}"
+                        prompt_items.append(prompt_item)
 
                 elif isinstance(value, (int, float)):
                     prompt_item = f"{prefix}{param_key}{suffix}"
@@ -253,9 +269,15 @@ class PortraitMasterI18N:
         prompt_prefix = kwargs.get('prompt_prefix', '')
         prompt_suffix = kwargs.get('prompt_suffix', '')
         prompt_items = [prompt_prefix] + prompt_items + [prompt_suffix]
-        prompt = ', '.join(prompt_items)
+        prompt = ', '.join([item for item in prompt_items if item])
+
+        # handle language
+        language = kwargs.get('language', self.SYS_LANGUAGE)
+        if language != self.SYS_LANGUAGE:
+            SYS_LANGUAGE = language
 
         negative_prompt = kwargs.get('negative_prompt', '')
+        print(f"Portrait Master: prompt: [{prompt}], negative_prompt: [{negative_prompt}]")
         return (prompt, negative_prompt,)
 
 

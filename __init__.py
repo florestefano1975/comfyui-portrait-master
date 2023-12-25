@@ -50,8 +50,8 @@ def build_config_dict(language="cn"):
         if not (config_type or replica):
             continue
 
-        CONFIG_ITEMS.append(config_type)
-        config_details, config_meta = build_config_details(config_dict, language)
+        base_config_display, config_details, config_meta = build_config_details(config_dict, language)
+        CONFIG_ITEMS.append(base_config_display)
         DISPLAY_CONFIG_DICT.update(config_details)
         PARSE_CONFIG_DICT.update(config_meta)
     print(f"Portrait Master: built config details: {DISPLAY_CONFIG_DICT.keys()}, {PARSE_CONFIG_DICT.keys()}")
@@ -150,7 +150,7 @@ def build_config_details(config_dict, language):
     if is_mix:
         config_details[f"{base_config_display}_mix"] = ("FLOAT", mix)
 
-    return config_details, config_meta
+    return base_config_display, config_details, config_meta
 
 
 class PortraitMasterI18N:

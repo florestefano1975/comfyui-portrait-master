@@ -1,0 +1,47 @@
+{
+  "meta_info": {
+    "config_type": "hair_color",
+    "display": {
+      "en": "Hair Color",
+      "cn": "发色"
+    },
+    "position": 9,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Black","display":"Black"},
+      {"key":"Brown","display":"Brown"},
+      {"key":"Blonde","display":"Blonde"},
+      {"key":"Red","display":"Red"},
+      {"key":"Auburn","display":"Auburn"},
+      {"key":"Chestnut","display":"Chestnut"},
+      {"key":"Gray","display":"Gray"},
+      {"key":"White","display":"White"},
+      {"key":"Salt and pepper","display":"Salt and pepper"}
+    ],
+    "cn": [
+      {"key": "Black", "display": "黑色"},
+      {"key": "Brown", "display": "棕色"},
+      {"key": "Blonde", "display": "金色"},
+      {"key": "Red", "display": "红色"},
+      {"key": "Auburn", "display": "栗色"},
+      {"key": "Chestnut", "display": "栗色"},
+      {"key": "Gray", "display": "灰色"},
+      {"key": "White", "display": "白色"},
+      {"key": "Salt and pepper", "display": "盐椒色"}
+    ]
+  },
+  "weight": {
+    "default": 1.25,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

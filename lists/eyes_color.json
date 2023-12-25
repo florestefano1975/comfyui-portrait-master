@@ -1,0 +1,45 @@
+{
+  "meta_info": {
+    "config_type": "eyes_color",
+    "display": {
+      "en": "Eyes color",
+      "cn": "眼睛颜色"
+    },
+    "position": 5,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+        {"key":"Brown","display":"Brown"},
+        {"key":"Blue","display":"Blue"},
+        {"key":"Green","display":"Green"},
+        {"key":"Hazel","display":"Hazel"},
+        {"key":"Gray","display":"Gray"},
+        {"key":"Amber","display":"Amber"},
+        {"key":"Red","display":"Red"},
+        {"key":"Violet","display":"Violet"}
+    ],
+    "cn": [
+      {"key":"Brown","display":"棕色"},
+      {"key":"Blue","display":"蓝色"},
+      {"key":"Green","display":"绿色"},
+      {"key":"Hazel","display":"淡褐色"},
+      {"key":"Gray","display":"灰色"},
+      {"key":"Amber","display":"琥珀色"},
+      {"key":"Red","display":"红色"},
+      {"key":"Violet","display":"紫色"}
+    ]
+  },
+  "weight": {
+    "default": 1.25,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

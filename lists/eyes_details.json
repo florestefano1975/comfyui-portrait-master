@@ -1,0 +1,29 @@
+{
+  "meta_info": {
+    "config_type": "eyes_details",
+    "display": {
+      "en": "Eye Details",
+      "cn": "眼部细节"
+    },
+    "position": 17,
+    "replica": 1,
+    "value_type": "float"
+  },
+  "values": {
+    "default": 0,
+    "min": 0,
+    "max": 1.95,
+    "step": 0.05,
+    "prefix": "eyes details"
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

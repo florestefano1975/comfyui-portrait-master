@@ -1,0 +1,29 @@
+{
+  "meta_info": {
+    "config_type": "iris_details",
+    "display": {
+      "en": "Iris Details",
+      "cn": "虹膜细节"
+    },
+    "position": 18,
+    "replica": 1,
+    "value_type": "float"
+  },
+  "values": {
+    "default": 0,
+    "min": 0,
+    "max": 1.95,
+    "step": 0.05,
+    "prefix": "iris details"
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

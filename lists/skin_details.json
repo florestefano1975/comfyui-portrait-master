@@ -1,0 +1,29 @@
+{
+  "meta_info": {
+    "config_type": "skin_details",
+    "display": {
+      "en": "Skin Details",
+      "cn": "肤色细节"
+    },
+    "position": 11,
+    "replica": 1,
+    "value_type": "float"
+  },
+  "values": {
+    "default": 0,
+    "min": 0,
+    "max": 1.95,
+    "step": 0.05,
+    "prefix": "skin details, skin texture"
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

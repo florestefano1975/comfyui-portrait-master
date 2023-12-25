@@ -1,0 +1,53 @@
+{
+  "meta_info": {
+    "config_type": "face_shape",
+    "display": {
+      "en": "Face Shape",
+      "cn": "脸型"
+    },
+    "position": 7,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Oval","display":"Oval"},
+      {"key":"Round","display":"Round"},
+      {"key":"Square","display":"Square"},
+      {"key":"Heart-shaped","display":"Heart-shaped"},
+      {"key":"Long","display":"Long"},
+      {"key":"Rectangle","display":"Rectangle"},
+      {"key":"Triangle","display":"Triangle"},
+      {"display":"Inverted Triangle","value":"Inverted Triangle"},
+      {"key":"Pear-shaped","display":"Pear-shaped"},
+      {"key":"Oblong","display":"Oblong"},
+      {"display":"Square Round","value":"Square Round"},
+      {"display":"Square Oval","value":"Square Oval"}
+    ],
+    "cn": [
+      {"key":"Oval","display":"椭圆形"},
+      {"key":"Round","display":"圆形"},
+      {"key":"Square","display":"方形"},
+      {"key":"Heart-shaped","display":"心形"},
+      {"key":"Long","display":"长形"},
+      {"key":"Rectangle","display":"矩形"},
+      {"key":"Triangle","display":"三角形"},
+      {"display": "倒三角形", "key": "Inverted Triangle"},
+      {"key":"Pear-shaped","display":"梨形"},
+      {"key":"Oblong","display":"椭圆长形"},
+      {"display": "方圆形", "key": "Square Round"},
+      {"display": "方椭圆形", "key": "Square Oval"}
+    ]
+  },
+  "weight": {
+    "default": 1,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

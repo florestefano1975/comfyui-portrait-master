@@ -1,0 +1,26 @@
+{
+  "meta_info": {
+    "config_type": "prompt_suffix",
+    "display": {
+      "en": "Prompt Suffix",
+      "cn": "提示后缀"
+    },
+    "position": 24,
+    "replica": 1,
+    "value_type": "string"
+  },
+  "values": {
+    "default": ", (detailed, professional photo, perfect exposition:1.25), (film grain:1.5)",
+    "multiline": true
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

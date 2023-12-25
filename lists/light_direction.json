@@ -1,0 +1,49 @@
+{
+  "meta_info": {
+    "config_type": "light_direction",
+    "display": {
+      "en": "Light Direction",
+      "cn": "光线方向"
+    },
+    "position": 23,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"from top","display":"from top"},
+      {"key":"from bottom","display":"from bottom"},
+      {"key":"from right","display":"from right"},
+      {"key":"from left","display":"from left"},
+      {"key":"from front","display":"from front"},
+      {"key":"from rear","display":"from rear"},
+      {"key":"from top-right","display":"from top-right"},
+      {"key":"from top-left","display":"from top-left"},
+      {"key":"from bottom-right","display":"from bottom-right"},
+      {"key":"from bottom-left","display":"from bottom-left"}
+    ],
+    "cn": [
+      {"key": "from top", "display": "从上方"},
+      {"key": "from bottom", "display": "从下方"},
+      {"key": "from right", "display": "从右侧"},
+      {"key": "from left", "display": "从左侧"},
+      {"key": "from front", "display": "从前方"},
+      {"key": "from rear", "display": "从后方"},
+      {"key": "from top-right", "display": "从右上方"},
+      {"key": "from top-left", "display": "从左上方"},
+      {"key": "from bottom-right", "display": "从右下方"},
+      {"key": "from bottom-left", "display": "从左下方"}
+    ]
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

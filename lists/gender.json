@@ -1,0 +1,33 @@
+{
+  "meta_info": {
+    "config_type": "gender",
+    "display": {
+      "en": "Gender",
+      "cn": "性别"
+    },
+    "position": 3,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Man","display":"Man"},
+      {"key":"Woman","display":"Woman"}
+    ],
+    "cn": [
+      {"key":"Man","display":"男"},
+      {"key":"Woman","display":"女"}
+    ]
+  },
+  "weight": {
+    "default": 1,
+    "changeable": false,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

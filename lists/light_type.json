@@ -1,0 +1,93 @@
+{
+  "meta_info": {
+    "config_type": "light_type",
+    "display": {
+      "en": "Light Type",
+      "cn": "光源类型"
+    },
+    "position": 22,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Natural sunlight","display":"Natural sunlight"},
+      {"key":"Soft ambient light","display":"Soft ambient light"},
+      {"key":"Harsh sunlight","display":"Harsh sunlight"},
+      {"key":"Overcast sky","display":"Overcast sky"},
+      {"key":"Sunset glow","display":"Sunset glow"},
+      {"key":"Sunrise warmth","display":"Sunrise warmth"},
+      {"key":"Twilight hues","display":"Twilight hues"},
+      {"key":"Candlelight","display":"Candlelight"},
+      {"key":"Incandescent lighting","display":"Incandescent lighting"},
+      {"key":"Fluorescent lighting","display":"Fluorescent lighting"},
+      {"key":"Moonlight","display":"Moonlight"},
+      {"key":"Dappled sunlight","display":"Dappled sunlight"},
+      {"key":"Backlit silhouette","display":"Backlit silhouette"},
+      {"key":"Spotlight","display":"Spotlight"},
+      {"key":"Rim lighting","display":"Rim lighting"},
+      {"key":"Firelight","display":"Firelight"},
+      {"key":"City streetlights","display":"City streetlights"},
+      {"key":"Studio lighting","display":"Studio lighting"},
+      {"key":"Lantern light","display":"Lantern light"},
+      {"key":"Tungsten lighting","display":"Tungsten lighting"},
+      {"key":"Cloudy day diffused light","display":"Cloudy day diffused light"},
+      {"key":"Skylight","display":"Skylight"},
+      {"key":"Golden hour light","display":"Golden hour light"},
+      {"key":"Blue hour light","display":"Blue hour light"},
+      {"key":"Flash photography","display":"Flash photography"},
+      {"key":"Stage lighting","display":"Stage lighting"},
+      {"key":"Neon lights","display":"Neon lights"},
+      {"key":"Torchlight","display":"Torchlight"},
+      {"key":"Softbox lighting","display":"Softbox lighting"},
+      {"key":"Rim light","display":"Rim light"},
+      {"key":"Lightning","display":"Lightning"},
+      {"key":"Abstract light patterns","display":"Abstract light patterns"}
+    ],
+    "cn": [
+      {"key": "Natural sunlight", "display": "自然阳光"},
+      {"key": "Soft ambient light", "display": "柔和环境光"},
+      {"key": "Harsh sunlight", "display": "强烈阳光"},
+      {"key": "Overcast sky", "display": "阴天"},
+      {"key": "Sunset glow", "display": "日落余晖"},
+      {"key": "Sunrise warmth", "display": "日出温暖"},
+      {"key": "Twilight hues", "display": "暮色"},
+      {"key": "Candlelight", "display": "烛光"},
+      {"key": "Incandescent lighting", "display": "白炽灯光"},
+      {"key": "Fluorescent lighting", "display": "荧光灯光"},
+      {"key": "Moonlight", "display": "月光"},
+      {"key": "Dappled sunlight", "display": "斑驳阳光"},
+      {"key": "Backlit silhouette", "display": "逆光剪影"},
+      {"key": "Spotlight", "display": "聚光灯"},
+      {"key": "Rim lighting", "display": "边缘照明"},
+      {"key": "Firelight", "display": "火光"},
+      {"key": "City streetlights", "display": "城市街灯"},
+      {"key": "Studio lighting", "display": "工作室灯光"},
+      {"key": "Lantern light", "display": "灯笼光"},
+      {"key": "Tungsten lighting", "display": "钨灯光"},
+      {"key": "Cloudy day diffused light", "display": "多云日漫射光"},
+      {"key": "Skylight", "display": "天窗光"},
+      {"key": "Golden hour light", "display": "黄金时间光线"},
+      {"key": "Blue hour light", "display": "蓝色时光"},
+      {"key": "Flash photography", "display": "闪光灯摄影"},
+      {"key": "Stage lighting", "display": "舞台灯光"},
+      {"key": "Neon lights", "display": "霓虹灯"},
+      {"key": "Torchlight", "display": "手电筒光"},
+      {"key": "Softbox lighting", "display": "软箱灯光"},
+      {"key": "Rim light", "display": "边缘光"},
+      {"key": "Lightning", "display": "闪电"},
+      {"key": "Abstract light patterns", "display": "抽象光图案"}
+    ]
+  },
+  "weight": {
+    "default": 1,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

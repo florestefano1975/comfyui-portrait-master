@@ -1,0 +1,77 @@
+{
+  "meta_info": {
+    "config_type": "face_expression",
+    "display": {
+      "en": "Face Expression",
+      "cn": "面部表情"
+    },
+    "position": 6,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Happy","display":"Happy"},
+      {"key":"Sad","display":"Sad"},
+      {"key":"Angry","display":"Angry"},
+      {"key":"Surprised","display":"Surprised"},
+      {"key":"Fearful","display":"Fearful"},
+      {"key":"Disgusted","display":"Disgusted"},
+      {"key":"Contemptuous","display":"Contemptuous"},
+      {"key":"Excited","display":"Excited"},
+      {"key":"Nervous","display":"Nervous"},
+      {"key":"Confused","display":"Confused"},
+      {"key":"Amused","display":"Amused"},
+      {"key":"Content","display":"Content"},
+      {"key":"Disappointed","display":"Disappointed"},
+      {"key":"Bored","display":"Bored"},
+      {"key":"Relieved","display":"Relieved"},
+      {"key":"In love","display":"In love"},
+      {"key":"Shy","display":"Shy"},
+      {"key":"Envious","display":"Envious"},
+      {"key":"Proud","display":"Proud"},
+      {"key":"Cautious","display":"Cautious"},
+      {"key":"Serious","display":"Serious"},
+      {"key":"Serene","display":"Serene"},
+      {"key":"Peaceful","display":"Peaceful"},
+      {"key":"Calm","display":"Calm"}
+    ],
+    "cn": [
+      {"key":"Happy","display":"开心"},
+      {"key":"Sad","display":"悲伤"},
+      {"key":"Angry","display":"愤怒"},
+      {"key":"Surprised","display":"惊讶"},
+      {"key":"Fearful","display":"害怕"},
+      {"key":"Disgusted","display":"厌恶"},
+      {"key":"Contemptuous","display":"轻蔑的"},
+      {"key":"Excited","display":"激动的"},
+      {"key":"Nervous","display":"紧张的"},
+      {"key":"Confused","display":"困惑的"},
+      {"key":"Amused","display":"愉快的"},
+      {"key":"Content","display":"满足的"},
+      {"key":"Disappointed","display":"失望的"},
+      {"key":"Bored","display":"无聊的"},
+      {"key":"Relieved","display":"宽慰的"},
+      {"display": "恋爱中的", "key": "In love"},
+      {"key":"Shy","display":"害羞的"},
+      {"key":"Envious","display":"羡慕的"},
+      {"key":"Proud","display":"骄傲的"},
+      {"key":"Cautious","display":"谨慎的"},
+      {"key":"Serious","display":"严肃的"},
+      {"key":"Serene","display":"宁静的"},
+      {"key":"Peaceful","display":"平静的"},
+      {"key":"Calm","display":"冷静的"}
+    ]
+  },
+  "weight": {
+    "default": 1,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

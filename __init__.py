@@ -54,7 +54,7 @@ def build_config_dict(language="cn"):
         config_details, config_meta = build_config_details(config_dict, language)
         DISPLAY_CONFIG_DICT.update(config_details)
         PARSE_CONFIG_DICT.update(config_meta)
-    print("Portrait Master: built config dict")
+    print(f"Portrait Master: built config details: {DISPLAY_CONFIG_DICT.keys()}, {PARSE_CONFIG_DICT.keys()}")
 
 
 def build_config_details(config_dict, language):

@@ -192,6 +192,7 @@ class PortraitMasterI18N:
                 keys_mapping[key] = [key]
             else:
                 keys_mapping.setdefault(core_key, []).append(key)
+        print(f"Portrait Master: keys_mapping: {keys_mapping}")
 
         handled_keys = []
         prompt_items = []
@@ -271,7 +272,7 @@ class PortraitMasterI18N:
         # handle language
         language = kwargs.get('language', self.SYS_LANGUAGE)
         if language != self.SYS_LANGUAGE:
-            SYS_LANGUAGE = language
+            self.SYS_LANGUAGE = language
 
         negative_prompt = kwargs.get('negative_prompt', '')
         print(f"Portrait Master: prompt: [{prompt}], negative_prompt: [{negative_prompt}]")

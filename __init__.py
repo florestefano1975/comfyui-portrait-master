@@ -54,7 +54,10 @@ def build_config_dict(language="cn"):
         CONFIG_ITEMS.append(base_config_display)
         DISPLAY_CONFIG_DICT.update(config_details)
         PARSE_CONFIG_DICT.update(config_meta)
-    print(f"Portrait Master: built config details: {DISPLAY_CONFIG_DICT.keys()}, {PARSE_CONFIG_DICT.keys()}")
+    print(f"Portrait Master: built config details: "
+          f"「{CONFIG_ITEMS}」,"
+          f"「{DISPLAY_CONFIG_DICT.keys()}」, "
+          f"「{PARSE_CONFIG_DICT.keys()}」")
 
 
 def build_config_details(config_dict, language):
@@ -192,7 +195,7 @@ class PortraitMasterI18N:
                 keys_mapping[key] = [key]
             else:
                 keys_mapping.setdefault(core_key, []).append(key)
-        print(f"Portrait Master: keys_mapping: {keys_mapping}")
+        print(f"Portrait Master: keys_mapping: 「{keys_mapping}」，kwargs: 「{kwargs}」")
 
         handled_keys = []
         prompt_items = []

@@ -1,0 +1,51 @@
+{
+  "meta_info": {
+    "config_type": "lip_shape",
+    "display": {
+      "en": "Lip Shape",
+      "cn": "嘴唇形状"
+    },
+    "position": 10,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Full lips","display":"Full lips"},
+      {"key":"Thin lips","display":"Thin lips"},
+      {"key":"Heart-shaped lips","display":"Heart-shaped lips"},
+      {"key":"Round lips","display":"Round lips"},
+      {"key":"Bow-shaped lips","display":"Bow-shaped lips"},
+      {"key":"Wide lips","display":"Wide lips"},
+      {"key":"Tapered lips","display":"Tapered lips"},
+      {"key":"Uneven lips","display":"Uneven lips"},
+      {"key":"Plump lips","display":"Plump lips"},
+      {"key":"Thin upper lip","display":"Thin upper lip"},
+      {"key":"Full lower lip","display":"Full lower lip"}
+    ],
+    "cn": [
+      {"key": "Full lips", "display": "丰满的嘴唇"},
+      {"key": "Thin lips", "display": "薄嘴唇"},
+      {"key": "Heart-shaped lips", "display": "心形嘴唇"},
+      {"key": "Round lips", "display": "圆形嘴唇"},
+      {"key": "Bow-shaped lips", "display": "弓形嘴唇"},
+      {"key": "Wide lips", "display": "宽嘴唇"},
+      {"key": "Tapered lips", "display": "尖嘴唇"},
+      {"key": "Uneven lips", "display": "不对称嘴唇"},
+      {"key": "Plump lips", "display": "丰厚的嘴唇"},
+      {"key": "Thin upper lip", "display": "薄上唇"},
+      {"key": "Full lower lip", "display": "丰满下唇"}
+    ]
+  },
+  "weight": {
+    "default": 0.5,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

@@ -54,10 +54,11 @@ def build_config_dict(language="cn"):
         CONFIG_ITEMS.append(base_config_display)
         DISPLAY_CONFIG_DICT.update(config_details)
         PARSE_CONFIG_DICT.update(config_meta)
-    print(f"Portrait Master: built config details: "
-          f"「{CONFIG_ITEMS}」,"
-          f"「{DISPLAY_CONFIG_DICT.keys()}」, "
-          f"「{PARSE_CONFIG_DICT.keys()}」")
+    print(
+        f"Portrait Master: built config details: "
+        f"CONFIG_ITEMS:「{CONFIG_ITEMS}」,\n"
+        f"DISPLAY_CONFIG_DICT: 「{DISPLAY_CONFIG_DICT.keys()}」,\n"
+    )
 
 
 def build_config_details(config_dict, language):
@@ -137,7 +138,7 @@ def build_config_details(config_dict, language):
             'suffix': values.get('suffix', ''),
             'name': config_name,
             'weight': weight,
-            'mix': is_mix,
+            'mix': mix,
         }
 
         weight_changeable = weight.get("changeable", False)
@@ -187,9 +188,6 @@ class PortraitMasterI18N:
         # group the keys for each attributes
         keys_mapping = {}
         for key in kwargs.keys():
-            if '_' not in key:
-                continue
-
             core_key = self.process_key(key)
             if core_key == key:
                 keys_mapping[key] = [key]
@@ -205,11 +203,13 @@ class PortraitMasterI18N:
                 continue
 
             key_list = keys_mapping.get(param_key, [])
+            print(f"Portrait Master: param_key: {param_key}, key_list: {key_list}")
             if not key_list:
                 continue
 
             for key in key_list:
-                config_meta = PARSE_CONFIG_DICT.get(param_key, None)
+                config_meta = PARSE_CONFIG_DICT.get(key, None)
+                print(f"Portrait Master: key: {key}, config_meta: {config_meta}")
                 if (not config_meta) or (key in handled_keys) or ('mix' in key):
                     continue
 
@@ -228,17 +228,16 @@ class PortraitMasterI18N:
                 if value == default:
                     continue
 
+                print(f"Portrait Master: key: {key}, value: {value}")
                 if "list" == value_type:
                     display = option_mapping.get(value, '')
                     if not display:
                         continue
 
-                    ori_option = option_mapping[display]
                     if not mix:
-                        prompt_item = f"{prefix}{ori_option}{suffix}"
+                        prompt_item = f"{prefix}{display}{suffix}"
                         config_weight = kwargs.get(f"{param_key}_weight", weight['default'])
-                        if config_weight != weight['default']:
-                            prompt_item = f"({prompt_item}:{config_weight})"
+                        prompt_item = f"({prompt_item}:{config_weight})"
                         prompt_items.append(prompt_item)
                     else:
                         prompt_item = ''

@@ -1,0 +1,71 @@
+{
+  "meta_info": {
+    "config_type": "lip_color",
+    "display": {
+      "en": "Lip Color",
+      "cn": "唇色"
+    },
+    "position": 11,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key":"Red lips","display":"Red lips"},
+      {"key":"Pink lips","display":"Pink lips"},
+      {"key":"Nude lips","display":"Nude lips"},
+      {"key":"Peach lips","display":"Peach lips"},
+      {"key":"Plum lips","display":"Plum lips"},
+      {"key":"Berry lips","display":"Berry lips"},
+      {"key":"Coral lips","display":"Coral lips"},
+      {"key":"Bronze lips","display":"Bronze lips"},
+      {"key":"Brown lips","display":"Brown lips"},
+      {"key":"Burgundy lips","display":"Burgundy lips"},
+      {"key":"Lavender lips","display":"Lavender lips"},
+      {"key":"Mauve lips","display":"Mauve lips"},
+      {"key":"Orange lips","display":"Orange lips"},
+      {"key":"Petal pink lips","display":"Petal pink lips"},
+      {"key":"Rose lips","display":"Rose lips"},
+      {"key":"Ruby lips","display":"Ruby lips"},
+      {"key":"Rust lips","display":"Rust lips"},
+      {"key":"Salmon lips","display":"Salmon lips"},
+      {"key":"Scarlet lips","display":"Scarlet lips"},
+      {"key":"Tangerine lips","display":"Tangerine lips"},
+      {"key":"Taupe lips","display":"Taupe lips"}
+    ],
+    "cn": [
+      {"key": "Red lips", "display": "红色嘴唇"},
+      {"key": "Pink lips", "display": "粉色嘴唇"},
+      {"key": "Nude lips", "display": "裸色嘴唇"},
+      {"key": "Peach lips", "display": "桃色嘴唇"},
+      {"key": "Plum lips", "display": "紫红色嘴唇"},
+      {"key": "Berry lips", "display": "莓红色嘴唇"},
+      {"key": "Coral lips", "display": "珊瑚色嘴唇"},
+      {"key": "Bronze lips", "display": "青铜色嘴唇"},
+      {"key": "Brown lips", "display": "棕色嘴唇"},
+      {"key": "Burgundy lips", "display": "酒红色嘴唇"},
+      {"key": "Lavender lips", "display": "淡紫色嘴唇"},
+      {"key": "Mauve lips", "display": "玫瑰紫色嘴唇"},
+      {"key": "Orange lips", "display": "橙色嘴唇"},
+      {"key": "Petal pink lips", "display": "花瓣粉色嘴唇"},
+      {"key": "Rose lips", "display": "玫瑰色嘴唇"},
+      {"key": "Ruby lips", "display": "红宝石色嘴唇"},
+      {"key": "Rust lips", "display": "锈色嘴唇"},
+      {"key": "Salmon lips", "display": "鲑鱼色嘴唇"},
+      {"key": "Scarlet lips", "display": "猩红色嘴唇"},
+      {"key": "Tangerine lips", "display": "橘色嘴唇"},
+      {"key": "Taupe lips", "display": "灰褐色嘴唇"}
+    ]
+  },
+  "weight": {
+    "default": 0.5,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

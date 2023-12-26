@@ -1,0 +1,73 @@
+{
+  "meta_info": {
+    "config_type": "eyes",
+    "display": {
+      "en": "Eyes",
+      "cn": "目光"
+    },
+    "position": 12,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key": "Intense gaze","display": "Intense gaze"},
+      {"key": "Piercing gaze","display": "Piercing gaze"},
+      {"key": "Warm gaze","display": "Warm gaze"},
+      {"key": "Soft gaze","display": "Soft gaze"},
+      {"key": "Expressive gaze","display": "Expressive gaze"},
+      {"key": "Soulful gaze","display": "Soulful gaze"},
+      {"key": "Captivating gaze","display": "Captivating gaze"},
+      {"key": "Enigmatic gaze","display": "Enigmatic gaze"},
+      {"key": "Penetrating gaze","display": "Penetrating gaze"},
+      {"key": "Inviting gaze","display": "Inviting gaze"},
+      {"key": "Evasive gaze","display": "Evasive gaze"},
+      {"key": "Focused gaze","display": "Focused gaze"},
+      {"key": "Distant gaze","display": "Distant gaze"},
+      {"key": "Lively gaze","display": "Lively gaze"},
+      {"key": "Stern gaze","display": "Stern gaze"},
+      {"key": "Playful gaze","display": "Playful gaze"},
+      {"key": "Melancholic gaze","display": "Melancholic gaze"},
+      {"key": "Joyful gaze","display": "Joyful gaze"},
+      {"key": "Inquisitive gaze","display": "Inquisitive gaze"},
+      {"key": "Wistful gaze","display": "Wistful gaze"},
+      {"key": "Confident gaze","display": "Confident gaze"},
+      {"key": "Innocent gaze","display": "Innocent gaze"}
+    ],
+    "cn": [
+      {"key": "Intense gaze", "display": "深邃的目光"},
+      {"key": "Piercing gaze", "display": "锐利的目光"},
+      {"key": "Warm gaze", "display": "温暖的目光"},
+      {"key": "Soft gaze", "display": "柔和的目光"},
+      {"key": "Expressive gaze", "display": "富有表情的目光"},
+      {"key": "Soulful gaze", "display": "充满灵魂的目光"},
+      {"key": "Captivating gaze", "display": "迷人的目光"},
+      {"key": "Enigmatic gaze", "display": "神秘的目光"},
+      {"key": "Penetrating gaze", "display": "透视的目光"},
+      {"key": "Inviting gaze", "display": "诱人的目光"},
+      {"key": "Evasive gaze", "display": "回避的目光"},
+      {"key": "Focused gaze", "display": "专注的目光"},
+      {"key": "Distant gaze", "display": "遥远的目光"},
+      {"key": "Lively gaze", "display": "生动的目光"},
+      {"key": "Stern gaze", "display": "严肃的目光"},
+      {"key": "Playful gaze", "display": "调皮的目光"},
+      {"key": "Melancholic gaze", "display": "忧郁的目光"},
+      {"key": "Joyful gaze", "display": "快乐的目光"},
+      {"key": "Inquisitive gaze", "display": "好奇的目光"},
+      {"key": "Wistful gaze", "display": "渴望的目光"},
+      {"key": "Confident gaze", "display": "自信的目光"},
+      {"key": "Innocent gaze", "display": "无邪的目光"}
+    ]
+  },
+  "weight": {
+    "default": 0.5,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

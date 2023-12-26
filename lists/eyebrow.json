@@ -1,0 +1,71 @@
+{
+  "meta_info": {
+    "config_type": "eyebrow",
+    "display": {
+      "en": "Eyebrow",
+      "cn": "眉毛"
+    },
+    "position": 13,
+    "replica": 1,
+    "value_type": "list"
+  },
+  "values": {
+    "default": "-",
+    "en": [
+      {"key": "Thick eyebrows","display": "Thick eyebrows"},
+      {"key": "Thin eyebrows","display": "Thin eyebrows"},
+      {"key": "Arched eyebrows","display": "Arched eyebrows"},
+      {"key": "Straight eyebrows","display": "Straight eyebrows"},
+      {"key": "Curved eyebrows","display": "Curved eyebrows"},
+      {"key": "Angled eyebrows","display": "Angled eyebrows"},
+      {"key": "Bushy eyebrows","display": "Bushy eyebrows"},
+      {"key": "Sparse eyebrows","display": "Sparse eyebrows"},
+      {"key": "Defined eyebrows","display": "Defined eyebrows"},
+      {"key": "Natural eyebrows","display": "Natural eyebrows"},
+      {"key": "Well-groomed eyebrows","display": "Well-groomed eyebrows"},
+      {"key": "Unkempt eyebrows","display": "Unkempt eyebrows"},
+      {"key": "High eyebrows","display": "High eyebrows"},
+      {"key": "Low eyebrows","display": "Low eyebrows"},
+      {"key": "Even eyebrows","display": "Even eyebrows"},
+      {"key": "Uneven eyebrows","display": "Uneven eyebrows"},
+      {"key": "Long eyebrows","display": "Long eyebrows"},
+      {"key": "Short eyebrows","display": "Short eyebrows"},
+      {"key": "Tapered eyebrows","display": "Tapered eyebrows"},
+      {"key": "Rounded eyebrows","display": "Rounded eyebrows"},
+      {"key": "Square eyebrows","display": "Square eyebrows"}
+    ],
+    "cn": [
+      {"key": "Thick eyebrows", "display": "浓密的眉毛"},
+      {"key": "Thin eyebrows", "display": "细眉"},
+      {"key": "Arched eyebrows", "display": "弧形眉"},
+      {"key": "Straight eyebrows", "display": "直眉"},
+      {"key": "Curved eyebrows", "display": "弯曲眉"},
+      {"key": "Angled eyebrows", "display": "角度眉"},
+      {"key": "Bushy eyebrows", "display": "浓密的眉毛"},
+      {"key": "Sparse eyebrows", "display": "稀疏的眉毛"},
+      {"key": "Defined eyebrows", "display": "清晰的眉毛"},
+      {"key": "Natural eyebrows", "display": "自然的眉毛"},
+      {"key": "Well-groomed eyebrows", "display": "修剪整齐的眉毛"},
+      {"key": "Unkempt eyebrows", "display": "不整洁的眉毛"},
+      {"key": "High eyebrows", "display": "高挑的眉毛"},
+      {"key": "Low eyebrows", "display": "低垂的眉毛"},
+      {"key": "Even eyebrows", "display": "对称的眉毛"},
+      {"key": "Uneven eyebrows", "display": "不对称的眉毛"},
+      {"key": "Long eyebrows", "display": "长眉毛"},
+      {"key": "Short eyebrows", "display": "短眉毛"},
+      {"key": "Tapered eyebrows", "display": "尖眉"},
+      {"key": "Rounded eyebrows", "display": "圆眉"},
+      {"key": "Square eyebrows", "display": "方眉"}
+    ]
+  },
+  "weight": {
+    "default": 0.5,
+    "changeable": true,
+    "step": 0.1,
+    "min": 0.1,
+    "max": 1.95
+  },
+  "mix": {
+
+  }
+}

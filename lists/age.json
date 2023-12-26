@@ -11,6 +11,7 @@
   },
   "values": {
     "default": 18,
+    "suffix": " years old",
     "min": 10,
     "max": 95,
     "step": 1

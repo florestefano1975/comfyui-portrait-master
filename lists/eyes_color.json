@@ -11,6 +11,7 @@
   },
   "values": {
     "default": "-",
+    "suffix": " eyes",
     "en": [
         {"key":"Brown","display":"Brown"},
         {"key":"Blue","display":"Blue"},

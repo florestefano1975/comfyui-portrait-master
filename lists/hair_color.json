@@ -11,6 +11,7 @@
   },
   "values": {
     "default": "-",
+    "suffix": " hair",
     "en": [
       {"key":"Black","display":"Black"},
       {"key":"Brown","display":"Brown"},

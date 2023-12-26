@@ -11,6 +11,7 @@
   },
   "values": {
     "default": "-",
+    "suffix": " eyes",
     "en": [
       {"key": "Intense gaze","display": "Intense gaze"},
       {"key": "Piercing gaze","display": "Piercing gaze"},

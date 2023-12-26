@@ -14,7 +14,7 @@
     "min": 0,
     "max": 1.95,
     "step": 0.05,
-    "prefix": "dimples"
+    "prefix": "dimples "
   },
   "weight": {
     "default": 1,

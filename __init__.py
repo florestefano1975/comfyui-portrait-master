@@ -74,7 +74,7 @@ def build_config_details(config_dict, language):
 
     config_details = {}
     config_meta = {}
-    is_mix = len(mix) > 0
+    is_mix = mix.get('default', -1) > 0
     single_config = (1 == replica)
     for i in range(replica):
         if single_config:
@@ -152,7 +152,9 @@ def build_config_details(config_dict, language):
             })
 
     if is_mix:
-        config_details[f"{base_config_display}_mix"] = ("FLOAT", mix)
+        max_config = dict(mix)
+        max_config['display'] = "slider"
+        config_details[f"{base_config_display}_mix"] = ("FLOAT", max_config)
 
     return base_config_display, config_details, config_meta
 
@@ -203,13 +205,11 @@ class PortraitMasterI18N:
                 continue
 
             key_list = keys_mapping.get(param_key, [])
-            print(f"Portrait Master: param_key: {param_key}, key_list: {key_list}")
             if not key_list:
                 continue
 
             for key in key_list:
                 config_meta = PARSE_CONFIG_DICT.get(key, None)
-                print(f"Portrait Master: key: {key}, config_meta: {config_meta}")
                 if (not config_meta) or (key in handled_keys) or ('mix' in key):
                     continue
 
@@ -225,12 +225,13 @@ class PortraitMasterI18N:
                 mix = config_meta['mix']
 
                 value = kwargs.get(key, default)
+                print(f"Portrait Master: key: {key}, value: {value}")
                 if value == default:
                     continue
 
-                print(f"Portrait Master: key: {key}, value: {value}")
                 if "list" == value_type:
                     display = option_mapping.get(value, '')
+                    print(f"Portrait Master: key: {key}, value: {value}, display: {display}, mix: {mix}")
                     if not display:
                         continue
 
@@ -250,19 +251,22 @@ class PortraitMasterI18N:
                                 tmp_value = kwargs.get(tmp_key, default)
                                 if tmp_value == default:
                                     continue
+                                tmp_display = option_mapping.get(tmp_value, '')
 
                                 handled_keys.append(tmp_key)
-                                mix_items.append(tmp_value)
+                                mix_items.append(tmp_display)
                             mix_rate = mix.get('rate', 0.5)
                             tmp_item = ":".join(mix_items + [str(mix_rate)])
                             prompt_item = f"{prefix}[{tmp_item}]{suffix}"
                         prompt_items.append(prompt_item)
 
                 elif isinstance(value, (int, float)):
-                    prompt_item = f"{prefix}{param_key}{suffix}"
+                    print(f"Portrait Master: param_key: {param_key}, key: {key}, value: {value}, config_meta:{config_meta}")
+                    config_type = config_meta.get('config_type', '').replace('_', ' ')
+                    prompt_item = f"{prefix}{config_type}{suffix}"
                     config_weight = kwargs.get(f"{param_key}_weight", weight['default'])
                     if config_weight != weight['default']:
-                        prompt_item = f"({prompt_item}:{config_weight})"
+                        prompt_item = f"({prompt_item}:{round(config_weight, 2)})"
                     prompt_items.append(prompt_item)
 
         # handle the prompt_prefix and prompt_suffix
@@ -288,5 +292,5 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "PortraitMaster": "Steven version of Portrait Master"
+    "PortraitMaster": "Portrait Master"
 }

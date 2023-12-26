@@ -10,7 +10,7 @@
     "value_type": "string"
   },
   "values": {
-    "default": "",
+    "default": "(Masterpiece, best quality: 1.95)",
     "multiline": true
   },
   "weight": {

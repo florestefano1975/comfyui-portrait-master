@@ -11,6 +11,7 @@
   },
   "values": {
     "default": "-",
+    "suffix": " expression",
     "en": [
       {"key":"Happy","display":"Happy"},
       {"key":"Sad","display":"Sad"},

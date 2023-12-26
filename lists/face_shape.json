@@ -11,6 +11,7 @@
   },
   "values": {
     "default": "-",
+    "suffix": " shape face",
     "en": [
       {"key":"Oval","display":"Oval"},
       {"key":"Round","display":"Round"},

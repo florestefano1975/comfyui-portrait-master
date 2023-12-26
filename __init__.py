@@ -36,7 +36,7 @@ def sys_init(language="cn"):
 def build_config_dict(language="cn"):
     entries = [entry for entry in CONFIG_MAPPINGS.values()
                if (entry["meta_info"].get("position", -1) > 0) and (entry["meta_info"].get("replica", -1) > 0)]
-    entries.sort(key=lambda x: x["meta_info"]["position"])
+    entries.sort(key=lambda x: (x["meta_info"]["position"], x["meta_info"]["config_type"][0]))
 
     for config_dict in entries:
         meta_info = config_dict["meta_info"]

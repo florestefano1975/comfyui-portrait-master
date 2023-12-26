@@ -44,7 +44,7 @@ def build_config_dict(language="cn"):
 
         config_type = meta_info.get("config_type", "").strip()
         if 'language' == config_type:
-            language = values["default_value"]
+            language = values.get('default', 'en')
 
         replica = meta_info.get("replica", 0)
         if not (config_type or replica):

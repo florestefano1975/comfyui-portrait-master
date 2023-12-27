@@ -1,6 +1,6 @@
 {
   "last_node_id": 148,
-  "last_link_id": 207,
+  "last_link_id": 208,
   "nodes": [
     {
       "id": 83,
@@ -208,8 +208,11 @@
         {
           "name": "CLIP",
           "type": "CLIP",
-          "links": [],
-          "shape": 3
+          "links": [
+            208
+          ],
+          "shape": 3,
+          "slot_index": 0
         }
       ],
       "properties": {
@@ -339,7 +342,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -351,7 +354,7 @@
         {
           "name": "clip",
           "type": "CLIP",
-          "link": 155,
+          "link": 208,
           "slot_index": 1
         },
         {
@@ -622,7 +625,7 @@
         "Node name for S&R": "KSampler //Inspire"
       },
       "widgets_values": [
-        1020139128726053,
+        880448456925939,
         "randomize",
         30,
         7,
@@ -715,7 +718,7 @@
       },
       "widgets_values": [
         "nearest-exact",
-        466724968077232,
+        316149643237942,
         "randomize",
         30,
         7,
@@ -758,8 +761,7 @@
           "name": "CLIP",
           "type": "CLIP",
           "links": [
-            1,
-            155
+            1
           ],
           "shape": 3
         },
@@ -778,7 +780,7 @@
         "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "FormulaXL2.safetensors"
+        "FormulaXL 2.0.safetensors"
       ],
       "color": "#432",
       "bgcolor": "#653",
@@ -1164,7 +1166,7 @@
         "Node name for S&R": "Seed (rgthree)"
       },
       "widgets_values": [
-        996633675435757,
+        1102337739956234,
         null,
         null,
         null
@@ -1256,7 +1258,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(realistic:1.5), (half-length portrait:1.0), ( woman 30-years-old:1.5), (overweight, overweight body:1.37), (the over-the-shoulder look:1.5), (brown eyes:1.25), (amused, amused expression:1.15), (wavy bob hairstyle:1.25), (brown hair:1.25), (symmetric face:1.5), (natural skin:1.33), (skin details, skin texture:1.1), (skin pores:1.05), (skin imperfections:0.25), (freckles:1.02), (skin pores:0.93), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (polaroid film effect:1.73)"
+        "(realistic:1.5), (portrait:1.27), ([canadian:japanese:0.63] man 58-years-old:1.5), (androgynous:0.39), (overweight, overweight body:0.61), (gazing into the distance pose:1.5), (brown eyes:1.25), (amused, amused expression:1.13), (shullet hairstyle:1.25), (red hair:1.25), (garibaldi beard:1.15), (disheveled:0.91), winter clothes, (natural skin:1.24), (skin details, skin texture:1.1), (skin pores:1.05), (freckles:0.69), (skin pores:0.5), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (golden hour glow:1.17), (high key film effect:1.38)"
       ],
       "color": "#222",
       "bgcolor": "#000",
@@ -1276,7 +1278,7 @@
       "flags": {
         "pinned": true
       },
-      "order": 13,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -1301,7 +1303,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(cartoon rendering 3d doll:1.25), (open mouth, teeths, frame, frames:1.85)"
+        "(cartoon rendering 3d doll:1.25)"
       ],
       "color": "#222",
       "bgcolor": "#000",
@@ -1349,35 +1351,35 @@
         "Node name for S&R": "PortraitMaster"
       },
       "widgets_values": [
-        "Half-length portrait",
-        1,
-        "Woman",
-        0,
-        30,
-        "-",
-        "-",
-        0.5,
+        "Portrait",
+        1.27,
+        "Man",
+        0.39,
+        58,
+        "Canadian",
+        "Japanese",
+        0.63,
         "Overweight",
-        1.37,
-        "The Over-the-Shoulder Look",
+        0.61,
+        "Gazing into the Distance Pose",
         "Brown",
         "Amused",
-        1.1500000000000001,
+        1.1300000000000001,
         "-",
         0,
         0,
-        "Wavy bob",
-        "Brown",
-        0,
-        "-",
-        1.33,
+        "Shullet",
+        "Red",
+        0.91,
+        "Garibaldi Beard",
+        1.24,
         1.1,
         1.05,
         0,
         0,
-        1.02,
-        0.93,
-        0.25,
+        0.6900000000000001,
+        0.5,
+        0,
         0,
         0,
         1,
@@ -1389,13 +1391,13 @@
         1,
         "disable",
         "(realistic:1.5)",
-        "(symmetric face:1.5)",
+        "winter clothes",
         "",
-        "(cartoon rendering 3d doll:1.25), (open mouth, teeths, frame, frames:1.85)",
-        "-",
-        1.84,
-        "Polaroid",
-        1.73
+        "(cartoon rendering 3d doll:1.25)",
+        "Golden Hour Glow",
+        1.17,
+        "High Key",
+        1.3800000000000001
       ],
       "color": "#323",
       "bgcolor": "#535",
@@ -1490,14 +1492,6 @@
       106,
       0,
       "MODEL"
-    ],
-    [
-      155,
-      1,
-      1,
-      106,
-      1,
-      "CLIP"
     ],
     [
       156,
@@ -1690,6 +1684,14 @@
       146,
       0,
       "STRING"
+    ],
+    [
+      208,
+      2,
+      0,
+      106,
+      1,
+      "CLIP"
     ]
   ],
   "groups": [],

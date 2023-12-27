@@ -459,7 +459,7 @@ class PortraitMaster:
             prompt.append(f"({style_1}:{round(style_1_weight, 2)})")
 
         if style_2 != '-' and style_2_weight > 0:
-            prompt.append(f"({style_2} film effect:{round(style_2_weight, 2)})")
+            prompt.append(f"({style_2}:{round(style_2_weight, 2)})")
 
         if prompt_end != "":
             prompt.append(f"{prompt_end}")
@@ -471,7 +471,7 @@ class PortraitMaster:
             prompt = prompt + ", (professional photo, balanced photo, balanced exposure:1.2)"
 
         if photorealism_improvement == "enable":
-            negative_prompt = negative_prompt + ", (shinny skin, reflections on the skin, skin reflections:1.35)"
+            negative_prompt = negative_prompt + ", (shinny skin, shiny skin, reflections on the skin, skin reflections:1.35)"
 
         print("Portrait Master as generate this prompt:")
         print(prompt)

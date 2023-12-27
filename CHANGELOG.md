@@ -1,3 +1,7 @@
+## 27.12.2023
+
+- Bug fix
+
 ## 23.12.2023
 
 - Added _Workflow SDXL LCM_

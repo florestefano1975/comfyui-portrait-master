@@ -625,7 +625,7 @@
         "Node name for S&R": "KSampler //Inspire"
       },
       "widgets_values": [
-        880448456925939,
+        892551421288217,
         "randomize",
         30,
         7,
@@ -718,7 +718,7 @@
       },
       "widgets_values": [
         "nearest-exact",
-        316149643237942,
+        17286629112440,
         "randomize",
         30,
         7,
@@ -1166,7 +1166,7 @@
         "Node name for S&R": "Seed (rgthree)"
       },
       "widgets_values": [
-        1102337739956234,
+        679323033960266,
         null,
         null,
         null
@@ -1258,7 +1258,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(realistic:1.5), (portrait:1.27), ([canadian:japanese:0.63] man 58-years-old:1.5), (androgynous:0.39), (overweight, overweight body:0.61), (gazing into the distance pose:1.5), (brown eyes:1.25), (amused, amused expression:1.13), (shullet hairstyle:1.25), (red hair:1.25), (garibaldi beard:1.15), (disheveled:0.91), winter clothes, (natural skin:1.24), (skin details, skin texture:1.1), (skin pores:1.05), (freckles:0.69), (skin pores:0.5), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (golden hour glow:1.17), (high key film effect:1.38)"
+        "(realistic:1.5), (portrait:1.27), ([canadian:japanese:0.63] man 58-years-old:1.5), (androgynous:0.39), (overweight, overweight body:0.61), (gazing into the distance pose:1.5), (brown eyes:1.25), (amused, amused expression:1.13), (shullet hairstyle:1.25), (gray hair:1.25), (garibaldi beard:1.15), (disheveled:0.91), winter clothes, (natural skin:1.24), (skin details, skin texture:1.1), (skin pores:1.05), (freckles:0.69), (skin pores:0.5), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (fashion photography:1.17), (kodachrome film effect:1.25)"
       ],
       "color": "#222",
       "bgcolor": "#000",
@@ -1369,7 +1369,7 @@
         0,
         0,
         "Shullet",
-        "Red",
+        "Gray",
         0.91,
         "Garibaldi Beard",
         1.24,
@@ -1394,10 +1394,10 @@
         "winter clothes",
         "",
         "(cartoon rendering 3d doll:1.25)",
-        "Golden Hour Glow",
+        "Fashion Photography",
         1.17,
-        "High Key",
-        1.3800000000000001
+        "Kodachrome",
+        1.25
       ],
       "color": "#323",
       "bgcolor": "#535",

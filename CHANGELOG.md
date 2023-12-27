@@ -1,6 +1,7 @@
 ## 27.12.2023
 
 - Bug fix
+- Added examples
 
 ## 23.12.2023
 

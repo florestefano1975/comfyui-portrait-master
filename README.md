@@ -169,3 +169,7 @@ When the generation of an image is started in the console you can read the compl
 The effectiveness of the parameters depends on the quality of the checkpoint used.
 
 For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525).
+
+## Other projects
+
+- [ComfyUI Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)

@@ -176,4 +176,4 @@ For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/model
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=florestefano1975/comfyui-portrait-master&type=Timeline)]
+[![Star History Chart](https://api.star-history.com/svg?repos=florestefano1975/comfyui-portrait-master&type=Timeline)](https://star-history.com/#florestefano1975/comfyui-portrait-master&Timeline)

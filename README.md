@@ -42,6 +42,8 @@ To update comfyui-portrait-master:
 
 We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install the additional custom nodes needed for the workflow.
 
+Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/).
+
 ## Available Options
 
 - **shot**: sets the shot type

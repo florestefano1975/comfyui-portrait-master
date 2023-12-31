@@ -42,8 +42,6 @@ To update comfyui-portrait-master:
 
 We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install the additional custom nodes needed for the workflow.
 
-Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/).
-
 ## Available Options
 
 - **shot**: sets the shot type
@@ -171,6 +169,8 @@ When the generation of an image is started in the console you can read the compl
 The effectiveness of the parameters depends on the quality of the checkpoint used.
 
 For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525).
+
+Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/).
 
 ## Other projects
 

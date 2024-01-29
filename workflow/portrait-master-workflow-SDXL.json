@@ -19,7 +19,7 @@
       },
       "size": {
         "0": 400,
-        "1": 58
+        "1": 60
       },
       "flags": {
         "pinned": true
@@ -110,6 +110,12 @@
           ],
           "shape": 3,
           "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
         }
       ],
       "properties": {
@@ -121,8 +127,7 @@
         ""
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "locked": true
+      "bgcolor": "#353"
     },
     {
       "id": 137,
@@ -178,8 +183,7 @@
         1
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "locked": true
+      "bgcolor": "#653"
     },
     {
       "id": 2,
@@ -222,8 +226,7 @@
         -2
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "locked": true
+      "bgcolor": "#653"
     },
     {
       "id": 136,
@@ -290,8 +293,7 @@
         1728
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "locked": true
+      "bgcolor": "#653"
     },
     {
       "id": 96,
@@ -435,8 +437,7 @@
         1
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "locked": true
+      "bgcolor": "#653"
     },
     {
       "id": 131,
@@ -455,7 +456,7 @@
       },
       "size": {
         "0": 400,
-        "1": 58
+        "1": 60
       },
       "flags": {
         "pinned": true
@@ -516,7 +517,7 @@
       },
       "size": {
         "0": 400,
-        "1": 58
+        "1": 60
       },
       "flags": {
         "pinned": true
@@ -638,8 +639,7 @@
         0
       ],
       "color": "#2a363b",
-      "bgcolor": "#3f5159",
-      "locked": true
+      "bgcolor": "#3f5159"
     },
     {
       "id": 50,
@@ -729,8 +729,7 @@
         512
       ],
       "color": "#232",
-      "bgcolor": "#353",
-      "locked": true
+      "bgcolor": "#353"
     },
     {
       "id": 1,
@@ -783,8 +782,7 @@
         "FormulaXL 2.0.safetensors"
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "locked": true
+      "bgcolor": "#653"
     },
     {
       "id": 109,
@@ -820,8 +818,7 @@
         "control-lora-openposeXL2-rank256.safetensors"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "locked": true
+      "bgcolor": "#335"
     },
     {
       "id": 108,
@@ -877,8 +874,7 @@
         1
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "locked": true
+      "bgcolor": "#335"
     },
     {
       "id": 139,
@@ -922,8 +918,7 @@
         "image"
       ],
       "color": "#233",
-      "bgcolor": "#355",
-      "locked": true
+      "bgcolor": "#355"
     },
     {
       "id": 141,
@@ -959,8 +954,7 @@
         "control-lora-depth-rank256.safetensors"
       ],
       "color": "#233",
-      "bgcolor": "#355",
-      "locked": true
+      "bgcolor": "#355"
     },
     {
       "id": 140,
@@ -1016,8 +1010,7 @@
         1
       ],
       "color": "#233",
-      "bgcolor": "#355",
-      "locked": true
+      "bgcolor": "#355"
     },
     {
       "id": 107,
@@ -1047,8 +1040,7 @@
         "ComfyUI"
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "locked": true
+      "bgcolor": "#593930"
     },
     {
       "id": 10,
@@ -1097,8 +1089,7 @@
         512
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "locked": true
+      "bgcolor": "#593930"
     },
     {
       "id": 144,
@@ -1131,8 +1122,7 @@
         1
       ],
       "color": "#332922",
-      "bgcolor": "#593930",
-      "locked": true
+      "bgcolor": "#593930"
     },
     {
       "id": 105,
@@ -1172,8 +1162,7 @@
         null
       ],
       "color": "#432",
-      "bgcolor": "#653",
-      "locked": true
+      "bgcolor": "#653"
     },
     {
       "id": 135,
@@ -1216,8 +1205,7 @@
         "image"
       ],
       "color": "#223",
-      "bgcolor": "#335",
-      "locked": true
+      "bgcolor": "#335"
     },
     {
       "id": 146,
@@ -1261,8 +1249,7 @@
         "(realistic:1.5), (portrait:1.27), ([canadian:japanese:0.63] man 58-years-old:1.5), (androgynous:0.39), (overweight, overweight body:0.61), (gazing into the distance pose:1.5), (brown eyes:1.25), (amused, amused expression:1.13), (shullet hairstyle:1.25), (gray hair:1.25), (garibaldi beard:1.15), (disheveled:0.91), winter clothes, (natural skin:1.24), (skin details, skin texture:1.1), (skin pores:1.05), (freckles:0.69), (skin pores:0.5), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (fashion photography:1.17), (kodachrome film effect:1.25)"
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "locked": true
+      "bgcolor": "#000"
     },
     {
       "id": 147,
@@ -1306,8 +1293,7 @@
         "(cartoon rendering 3d doll:1.25)"
       ],
       "color": "#222",
-      "bgcolor": "#000",
-      "locked": true
+      "bgcolor": "#000"
     },
     {
       "id": 94,
@@ -1400,8 +1386,7 @@
         1.25
       ],
       "color": "#323",
-      "bgcolor": "#535",
-      "locked": true
+      "bgcolor": "#535"
     }
   ],
   "links": [

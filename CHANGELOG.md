@@ -1,3 +1,10 @@
+## 13.02.2023
+
+Version 2.4
+
+- Prompt improvement
+- Bug fix
+
 ## 27.12.2023
 
 - Bug fix

@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 2.3
+# Version: 2.4
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -15,6 +15,14 @@ def pmReadTxt(file_path):
         lines = file.readlines()
         values = [line.strip() for line in lines]
         return values
+
+# Apply weight
+    
+def applyWeight(text, weight):
+    if weight == 1:
+        return text
+    else:
+        return f"({text}:{round(weight,2)})"
 
 # setup vars
 
@@ -352,7 +360,7 @@ class PortraitMaster:
         if gender == "-":
             gender = ""
         else:
-            gender = " " + gender + " "
+            gender = gender + " "
 
         if nationality_1 != '-' and nationality_2 != '-':
             nationality = f"[{nationality_1}:{nationality_2}:{round(nationality_mix, 2)}]"
@@ -367,15 +375,15 @@ class PortraitMaster:
             prompt.append(f"{prompt_start}")
 
         if shot != "-" and shot_weight > 0:
-            prompt.append(f"({shot}:{round(shot_weight, 2)})")
+            prompt.append(applyWeight(shot,shot_weight))
 
         prompt.append(f"({nationality}{gender}{round(age)}-years-old:1.5)")
 
         if androgynous > 0:
-            prompt.append(f"(androgynous:{round(androgynous, 2)})")
+            prompt.append(applyWeight('androgynous',androgynous))
 
         if body_type != "-" and body_type_weight > 0:
-            prompt.append(f"({body_type}, {body_type} body:{round(body_type_weight, 2)})")
+            prompt.append(applyWeight(f"{body_type}, {body_type} body",body_type_weight))
 
         if model_pose != "-":
             prompt.append(f"({model_pose}:1.5)")
@@ -384,10 +392,10 @@ class PortraitMaster:
             prompt.append(f"({eyes_color} eyes:1.25)")
 
         if facial_expression != "-" and facial_expression_weight > 0:
-            prompt.append(f"({facial_expression}, {facial_expression} expression:{round(facial_expression_weight, 2)})")
+            prompt.append(applyWeight(f"{facial_expression}, {facial_expression} expression",facial_expression_weight))
 
         if face_shape != "-" and face_shape_weight > 0:
-            prompt.append(f"({face_shape} shape face:{round(face_shape_weight, 2)})")
+            prompt.append(applyWeight(f"{face_shape} shape face",face_shape_weight))
 
         if hair_style != "-":
             prompt.append(f"({hair_style} hairstyle:1.25)")
@@ -399,67 +407,67 @@ class PortraitMaster:
             prompt.append(f"({beard}:1.15)")
 
         if disheveled != "-" and disheveled > 0:
-            prompt.append(f"(disheveled:{round(disheveled, 2)})")
+            prompt.append(applyWeight('disheveled',disheveled))
 
         if prompt_additional != "":
             prompt.append(f"{prompt_additional}")
 
         if natural_skin > 0:
-            prompt.append(f"(natural skin:{round(natural_skin, 2)})")
+            prompt.append(applyWeight('natural skin',natural_skin))
 
         if skin_details > 0:
-            prompt.append(f"(skin details, skin texture:{round(skin_details, 2)})")
+            prompt.append(applyWeight('skin details, skin texture',skin_details))
 
         if skin_pores > 0:
-            prompt.append(f"(skin pores:{round(skin_pores, 2)})")
+            prompt.append(applyWeight('skin pores',skin_pores))
 
         if skin_imperfections > 0:
-            prompt.append(f"(skin imperfections:{round(skin_imperfections, 2)})")
+            prompt.append(applyWeight('skin imperfections',skin_imperfections))
 
         if skin_acne > 0:
-            prompt.append(f"(acne, skin with acne:{round(skin_acne, 2)})")
+            prompt.append(applyWeight('acne, skin with acne',skin_acne))
 
         if wrinkles > 0:
-            prompt.append(f"(skin imperfections:{round(wrinkles, 2)})")
+            prompt.append(applyWeight('wrinkles',wrinkles))
 
         if tanned_skin > 0:
-            prompt.append(f"(tanned skin:{round(tanned_skin, 2)})")
+            prompt.append(applyWeight('tanned skin',tanned_skin))
 
         if dimples > 0:
-            prompt.append(f"(dimples:{round(dimples, 2)})")
+            prompt.append(applyWeight('dimples',dimples))
 
         if freckles > 0:
-            prompt.append(f"(freckles:{round(freckles, 2)})")
+            prompt.append(applyWeight('freckles',freckles))
 
         if moles > 0:
-            prompt.append(f"(skin pores:{round(moles, 2)})")
+            prompt.append(applyWeight('moles',moles))
 
         if eyes_details > 0:
-            prompt.append(f"(eyes details:{round(eyes_details, 2)})")
+            prompt.append(applyWeight('eyes details',eyes_details))
 
         if iris_details > 0:
-            prompt.append(f"(iris details:{round(iris_details, 2)})")
+            prompt.append(applyWeight('iris details',iris_details))
 
         if circular_iris > 0:
-            prompt.append(f"(circular iris:{round(circular_iris, 2)})")
+            prompt.append(applyWeight('circular details',circular_iris))
 
         if circular_pupil > 0:
-            prompt.append(f"(circular pupil:{round(circular_pupil, 2)})")
+            prompt.append(applyWeight('circular pupil',circular_pupil))
 
         if facial_asymmetry > 0:
-            prompt.append(f"(facial asymmetry, face asymmetry:{round(facial_asymmetry, 2)})")
+            prompt.append(applyWeight('facial asymmetry, face asymmetry',facial_asymmetry))
 
         if light_type != '-' and light_weight > 0:
             if light_direction != '-':
-                prompt.append(f"({light_type} {light_direction}:{round(light_weight, 2)})")
+                prompt.append(applyWeight(f"{light_type} {light_direction}",light_weight))
             else:
-                prompt.append(f"({light_type}:{round(light_weight, 2)})")
+                prompt.append(applyWeight(f"{light_type}",light_weight))
 
         if style_1 != '-' and style_1_weight > 0:
-            prompt.append(f"({style_1}:{round(style_1_weight, 2)})")
+            prompt.append(applyWeight(style_1,style_1_weight))
 
         if style_2 != '-' and style_2_weight > 0:
-            prompt.append(f"({style_2}:{round(style_2_weight, 2)})")
+            prompt.append(applyWeight(style_2,style_2_weight))
 
         if prompt_end != "":
             prompt.append(f"{prompt_end}")

@@ -481,8 +481,11 @@ class PortraitMaster:
         if photorealism_improvement == "enable":
             negative_prompt = negative_prompt + ", (shinny skin, shiny skin, reflections on the skin, skin reflections:1.35)"
 
-        print("Portrait Master as generate this prompt:")
+        print("Portrait Master as generate the positive prompt:")
         print(prompt)
+
+        print("Portrait Master as generate the negative prompt:")
+        print(negative_prompt)
 
         return (prompt,negative_prompt,)
     

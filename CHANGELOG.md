@@ -5,6 +5,7 @@ Version 2.5
 - New option: bare face
 - New option: washed-face
 - New option: dried-face
+- Added examples
 
 ## 13.02.2024
 

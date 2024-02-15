@@ -1,4 +1,12 @@
-## 13.02.2023
+## 15.02.2024
+
+Version 2.5
+
+- New option: bare face
+- New option: washed-face
+- New option: dried-face
+
+## 13.02.2024
 
 Version 2.4
 

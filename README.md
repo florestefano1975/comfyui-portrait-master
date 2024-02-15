@@ -60,6 +60,9 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 - **disheveled**: coefficient (weight) of the disheveled effect
 - **age**: the age of the subject portrayed
 - **natural_skin**: coefficient (weight) for control the natural aspect of the skin
+- **bare_face**: coefficient (weight) for control bare face level
+- **washed_face**: coefficient (weight) for control washed face level
+- **dried_face**: coefficient (weight) for control dried face level
 - **skin_details**: coefficient (weight) of the skin detail
 - **skin_pores**: coefficient (weight) of the skin pores
 - **dimples**: coefficient (weight) for controlling facial dimples

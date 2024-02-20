@@ -1,6 +1,6 @@
 ## 20.02.2024
 
-- Workflow update form compatibility with latest version
+- Updated workflows for compatibility with the latest release
 - Bug fix
 
 ## 15.02.2024

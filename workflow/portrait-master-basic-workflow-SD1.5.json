@@ -101,8 +101,7 @@
         "",
         0,
         1
-      ],
-      "locked": true
+      ]
     },
     {
       "id": 21,
@@ -145,8 +144,7 @@
       ],
       "properties": {
         "Node name for S&R": "VAEDecode"
-      },
-      "locked": true
+      }
     },
     {
       "id": 10,
@@ -194,8 +192,266 @@
       },
       "widgets_values": [
         "realisticVisionV51_v51VAE.safetensors"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "EmptyLatentImage",
+      "pos": [
+        450,
+        510
       ],
-      "locked": true
+      "size": [
+        480,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            16
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PlaySound|pysssss",
+      "pos": [
+        1430,
+        1270
+      ],
+      "size": [
+        310,
+        80
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 31,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlaySound|pysssss"
+      },
+      "widgets_values": [
+        "on empty queue",
+        1
+      ]
+    },
+    {
+      "id": 17,
+      "type": "ShowText|pysssss",
+      "pos": [
+        450,
+        1180
+      ],
+      "size": [
+        970,
+        230
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 35,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(cartoon rendering 3d doll:1.25), (shinny skin, shiny skin, reflections on the skin, skin reflections:1.35)"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "PreviewImage",
+      "pos": [
+        1430,
+        30
+      ],
+      "size": [
+        870,
+        1200
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 27
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 15,
+      "type": "ShowText|pysssss",
+      "pos": [
+        450,
+        660
+      ],
+      "size": [
+        970,
+        480
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 34,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "raw photo, (realistic:1.5), (half-length portrait:1.2), (brazilian woman 30-years-old:1.5), (high fashion pose:1.5), (brown eyes:1.25), (wavy bob hairstyle:1.25), (black hair:1.25), (natural skin:0.74), (bare face:0.73), (washed-face:0.24), (dried-face:0.21), (skin details, skin texture:0.23), (skin pores:0.73), (skin imperfections:0.12), (wrinkles:0.29), (dimples:0.27), (freckles:0.57), (moles:0.68), (eyes details:0.74), (iris details:0.74), (circular details:0.74), (circular pupil:0.74), soft ambient light from front, (professional photo, balanced photo, balanced exposure:1.2)"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "PortraitMaster",
+      "pos": [
+        0,
+        30
+      ],
+      "size": [
+        440,
+        1380
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            32,
+            34
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            33,
+            35
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PortraitMaster"
+      },
+      "widgets_values": [
+        "Half-length portrait",
+        1.2,
+        "Woman",
+        0,
+        30,
+        "Brazilian",
+        "-",
+        0.5,
+        "-",
+        0,
+        "High Fashion Pose",
+        "Brown",
+        "-",
+        0,
+        "-",
+        0,
+        0,
+        "Wavy bob",
+        "Black",
+        0,
+        "-",
+        0.74,
+        0.73,
+        0.24,
+        0.21,
+        0.23,
+        0.73,
+        0.27,
+        0.29,
+        0.5700000000000001,
+        0.68,
+        0.12,
+        0,
+        0,
+        0.74,
+        0.74,
+        0.74,
+        0.74,
+        "Soft ambient light",
+        "from front",
+        1,
+        "enable",
+        "raw photo, (realistic:1.5)",
+        "",
+        "",
+        "(cartoon rendering 3d doll:1.25)",
+        "-",
+        1,
+        "-",
+        1
+      ]
     },
     {
       "id": 11,
@@ -249,277 +505,14 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        40193029973235,
-        "fixed",
+        101362560948377,
+        "randomize",
         30,
         8,
         "euler_ancestral",
         "normal",
         1
-      ],
-      "locked": true
-    },
-    {
-      "id": 12,
-      "type": "EmptyLatentImage",
-      "pos": [
-        450,
-        510
-      ],
-      "size": [
-        480,
-        110
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            16
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        512,
-        512,
-        1
-      ],
-      "locked": true
-    },
-    {
-      "id": 24,
-      "type": "PortraitMaster",
-      "pos": [
-        0,
-        30
-      ],
-      "size": [
-        440,
-        1320
-      ],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "STRING",
-          "links": [
-            32,
-            34
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": [
-            33,
-            35
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PortraitMaster"
-      },
-      "widgets_values": [
-        "Half-length portrait",
-        1.2,
-        "Woman",
-        0,
-        30,
-        "Brazilian",
-        "-",
-        0.5,
-        "-",
-        0,
-        "High Fashion Pose",
-        "Brown",
-        "-",
-        0,
-        "-",
-        0,
-        0,
-        "Wavy bob",
-        "Black",
-        0,
-        "-",
-        1,
-        1,
-        0.5,
-        0,
-        0,
-        1,
-        1,
-        0.25,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        "Soft ambient light",
-        "from top-left",
-        1.1500000000000001,
-        "enable",
-        "raw photo, (realistic:1.5)",
-        "(white background:1.25)",
-        "",
-        "",
-        "-",
-        1.5,
-        "-",
-        1.5
-      ],
-      "locked": true
-    },
-    {
-      "id": 17,
-      "type": "ShowText|pysssss",
-      "pos": [
-        450,
-        1120
-      ],
-      "size": [
-        970,
-        230
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 35,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        ", (shinny skin, reflections on the skin, skin reflections:1.35)"
-      ],
-      "locked": true
-    },
-    {
-      "id": 15,
-      "type": "ShowText|pysssss",
-      "pos": [
-        450,
-        660
-      ],
-      "size": [
-        970,
-        420
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 34,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "raw photo, (realistic:1.5), (half-length portrait:1.2), (brazilian  woman 30-years-old:1.5), (high fashion pose:1.5), (brown eyes:1.25), (wavy bob hairstyle:1.25), (black hair:1.25), (white background:1.25), (natural skin:1.0), (skin details, skin texture:1.0), (skin pores:0.5), (skin imperfections:0.25), (tanned skin:1.0), (freckles:1.0), (skin pores:1.0), (eyes details:1.0), (iris details:1.0), (circular iris:1.0), (circular pupil:1.0), (soft ambient light from top-left:1.15), (professional photo, balanced photo, balanced exposure:1.2)"
-      ],
-      "locked": true
-    },
-    {
-      "id": 14,
-      "type": "PlaySound|pysssss",
-      "pos": [
-        1430,
-        1270
-      ],
-      "size": [
-        310,
-        80
-      ],
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any",
-          "type": "*",
-          "link": 31,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PlaySound|pysssss"
-      },
-      "widgets_values": [
-        "on empty queue",
-        1
-      ],
-      "locked": true
-    },
-    {
-      "id": 22,
-      "type": "PreviewImage",
-      "pos": [
-        1430,
-        30
-      ],
-      "size": [
-        870,
-        1200
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 27
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "locked": true
+      ]
     }
   ],
   "links": [

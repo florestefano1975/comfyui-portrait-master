@@ -1,3 +1,8 @@
+## 20.02.2024
+
+- Workflow updated form compatibility with last version
+- Bug fix
+
 ## 15.02.2024
 
 Version 2.5

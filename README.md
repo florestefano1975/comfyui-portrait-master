@@ -95,6 +95,8 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 
 Parameters with null value (-) or set to 0.00 would be not included in the prompt generated.
 
+The randomizer switch disables the related value entered manually.
+
 The node generates two output string, postive and negative prompt.
 
 ## Customizations

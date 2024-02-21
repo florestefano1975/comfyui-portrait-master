@@ -69,10 +69,10 @@
         1980,
         640
       ],
-      "size": [
-        340,
-        350
-      ],
+      "size": {
+        "0": 344.3999938964844,
+        "1": 350
+      },
       "flags": {
         "pinned": true
       },
@@ -568,10 +568,10 @@
         1980,
         30
       ],
-      "size": [
-        340,
-        570
-      ],
+      "size": {
+        "0": 340,
+        "1": 570
+      },
       "flags": {
         "pinned": true
       },
@@ -626,7 +626,7 @@
         "Node name for S&R": "KSampler //Inspire"
       },
       "widgets_values": [
-        892551421288217,
+        284016974121470,
         "randomize",
         30,
         7,
@@ -648,10 +648,10 @@
         1980,
         1030
       ],
-      "size": [
-        340,
-        350
-      ],
+      "size": {
+        "0": 340,
+        "1": 350
+      },
       "flags": {
         "pinned": true
       },
@@ -718,7 +718,7 @@
       },
       "widgets_values": [
         "nearest-exact",
-        17286629112440,
+        282803500096850,
         "randomize",
         30,
         7,
@@ -893,7 +893,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(realistic:1.5), (portrait:1.27), ([canadian:japanese:0.63] man 58-years-old:1.5), (androgynous:0.39), (overweight, overweight body:0.61), (gazing into the distance pose:1.5), (brown eyes:1.25), (amused, amused expression:1.13), (shullet hairstyle:1.25), (gray hair:1.25), (garibaldi beard:1.15), (disheveled:0.91), winter clothes, (natural skin:1.24), (skin details, skin texture:1.1), (skin pores:1.05), (freckles:0.69), (skin pores:0.5), (eyes details:1.0), (iris details:1.25), (circular iris:1.15), (circular pupil:1.15), (fashion photography:1.17), (kodachrome film effect:1.25)"
+        "raw photo, (realistic:1.5), (portrait:1.27), ([canadian:japanese:0.63] man 58-years-old:1.5), (androgynous:0.39), (overweight, overweight body:0.61), (gazing into the distance pose:1.5), (brown eyes:1.25), (amused, amused expression:1.13), (shullet hairstyle:1.25), (gray hair:1.25), (garibaldi beard:1.35), (disheveled:0.91), natural skin, (skin details, skin texture:1.07), (skin pores:0.94), (skin imperfections:0.09), (freckles:0.49), (moles:0.48), eyes details, iris details, circular details, circular pupil, soft ambient light from front, (professional photo, balanced photo, balanced exposure:1.2)"
       ],
       "color": "#222",
       "bgcolor": "#000"
@@ -937,7 +937,7 @@
         "Node name for S&R": "ShowText|pysssss"
       },
       "widgets_values": [
-        "(cartoon rendering 3d doll:1.25)"
+        "(cartoon rendering 3d doll:1.25), (shinny skin, shiny skin, reflections on the skin, skin reflections:1.35)"
       ],
       "color": "#222",
       "bgcolor": "#000"
@@ -951,7 +951,7 @@
       ],
       "size": {
         "0": 690,
-        "1": 1470
+        "1": 1690
       },
       "flags": {
         "pinned": true
@@ -1033,7 +1033,19 @@
         "-",
         1,
         "-",
-        1
+        1,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        743,
+        1593,
+        "randomize"
       ],
       "color": "#323",
       "bgcolor": "#535"
@@ -1132,7 +1144,7 @@
         "pinned": false
       },
       "order": 14,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "conditioning",
@@ -1260,10 +1272,10 @@
         1980,
         1420
       ],
-      "size": [
-        340,
-        80
-      ],
+      "size": {
+        "0": 340,
+        "1": 80
+      },
       "flags": {
         "pinned": false
       },
@@ -1309,15 +1321,15 @@
         2330,
         1270
       ],
-      "size": [
-        450,
-        110
-      ],
+      "size": {
+        "0": 450,
+        "1": 110
+      },
       "flags": {
         "pinned": false
       },
       "order": 17,
-      "mode": 4,
+      "mode": 0,
       "inputs": [
         {
           "name": "conditioning",
@@ -1365,10 +1377,10 @@
         2330,
         1420
       ],
-      "size": [
-        450,
-        80
-      ],
+      "size": {
+        "0": 450,
+        "1": 82
+      },
       "flags": {
         "pinned": false
       },

@@ -1,3 +1,11 @@
+## 21.02.2024
+
+Version 2.6
+
+- Add randomizer switches for some parameters
+- Updated workflows for compatibility with the latest release
+- Bug fix
+
 ## 20.02.2024
 
 - Updated workflows for compatibility with the latest release

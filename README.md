@@ -52,10 +52,10 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 - **nationality_2**: sets second ethnicity
 - **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control). _This feature is still being tested_
 - **eyes_color**: set the eyes color
-- **hair_color**: set the hair color
 - **facial_expression** / **facial_expression_weight**: apply and adjust character's expression
 - **face_shape** / **face_shape_weight**: apply and adjust the face shape
 - **facial_asymmetry**: coefficient (weight) to set the asymmetry of the face
+- **hair_color**: set the hair color
 - **hairs_style**: hairstyle selector
 - **disheveled**: coefficient (weight) of the disheveled effect
 - **age**: the age of the subject portrayed
@@ -82,6 +82,16 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 - **negative_prompt**: the negative prompt has been integrated into the node to be adequately controlled depending on the settings
 - **style_1** / **style_1_weight**: apply and adjust the first style
 - **style_1** / **style_1_weight**: apply and adjust the second style
+- **random_gender**: switch on/off for randomize gender
+- **random_age**: switch on/off for randomize age
+- **random_nationality**: switch on/off for randomize nationality
+- **random_eyes_color**: switch on/off for randomize eyes color
+- **random_hairstyle**: switch on/off for randomize hairstyle
+- **random_hair_color**: switch on/off for randomize hair color
+- **random_disheveled**: switch on/off for randomize disheveled coefficient
+- **random_freckles**: switch on/off for randomize freckles coefficient
+- **random_moles**: switch on/off for randomize moles coefficient
+- **random_beard**: switch on/off for randomize beard type
 
 Parameters with null value (-) or set to 0.00 would be not included in the prompt generated.
 

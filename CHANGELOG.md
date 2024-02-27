@@ -1,3 +1,9 @@
+## 27.02.2024
+
+Version 2.7
+
+- New randomizer switches for some parameters
+
 ## 21.02.2024
 
 Version 2.6

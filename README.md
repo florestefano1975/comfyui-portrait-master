@@ -51,6 +51,9 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 - **nationality_1**: sets first ethnicity
 - **nationality_2**: sets second ethnicity
 - **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control). _This feature is still being tested_
+- **body_type**: set the type of the body
+- **body_type_weight**: coefficient (weight) of the body type
+- **model_pose**: select the pose from the list
 - **eyes_color**: set the eyes color
 - **facial_expression** / **facial_expression_weight**: apply and adjust character's expression
 - **face_shape** / **face_shape_weight**: apply and adjust the face shape

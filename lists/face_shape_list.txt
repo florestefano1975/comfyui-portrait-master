@@ -1,12 +1,23 @@
-Oval
-Round
-Square
-Heart-shaped
-Long
-Rectangle
-Triangle
+Circle
+Diamond
+Heart
+Heart with Pointed Chin
+Heart with Rounded Chin
+Heart with V-Shape Chin
 Inverted Triangle
-Pear-shaped
+Long
 Oblong
-Square Round
+Oval
+Pear
+Rectangle
+Round
+Round with Defined Cheekbones
+Round with High Cheekbones
+Round with Soft Cheekbones
+Square
 Square Oval
+Square Round
+Square with Rounded Jaw
+Square with Sharp Jaw
+Square with Soft Jaw
+Triangle

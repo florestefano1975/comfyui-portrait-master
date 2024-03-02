@@ -1,4 +1,34 @@
-Underweight
-Normal weight
-Overweight
+Beefy
+Buxom
+Buff
+Chubby
+Curvy
+Fat
+Fit
+Flyweight
+Hefty
+Large
+Lanky
+Midweight
+Morbidly obese
+Muscular
 Obese
+Overweight
+Petite
+Plump
+Portly
+Rotund
+Short
+Skinny
+Slight
+Slim
+Small
+Stout
+Stocky
+Tall
+Thick
+Tiny
+Voluptuous
+Well-built
+Well-endowed
+Underweight

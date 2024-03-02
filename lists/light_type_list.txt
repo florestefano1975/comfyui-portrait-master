@@ -1,32 +1,70 @@
-Natural sunlight
-Soft ambient light
-Harsh sunlight
-Overcast sky
-Sunset glow
-Sunrise warmth
-Twilight hues
+Abstract Light Patterns
+Ambient Light
+Backlit Silhouette Light
+Backlight Light
+Blue Hour Light
+Bloom Light
+Broad Lighting Light
+Bulb Light
+Buterfly Lighting Light
 Candlelight
-Incandescent lighting
-Fluorescent lighting
-Moonlight
-Dappled sunlight
-Backlit silhouette
-Spotlight
-Rim lighting
+Caustics Light
+Cinematic Lighting Light
+City Streetlights Light
+Cloudy Day Diffused Light
+Corona Light
+Crepuscular Rays Light
+Dappled Sunlight Light
+Dimly Lit Light
+Fill Light
 Firelight
-City streetlights
-Studio lighting
-Lantern light
-Tungsten lighting
-Cloudy day diffused light
-Skylight
-Golden hour light
-Blue hour light
-Flash photography
-Stage lighting
-Neon lights
-Torchlight
-Softbox lighting
-Rim light
-Lightning
-Abstract light patterns
+Flash Photography Light
+Fluorescent Lighting
+Fog and Mist Light
+Glare Light
+Golden Hour Light
+Halos Light
+Harsh Sunlight Light
+Heat Haze Light
+High-Key Lighting Light
+Incandescent Lighting
+Lantern Light
+Lens Flare Light
+Lightning Light
+Low-Key Lighting Light
+Loop Lighting Light
+Mist Light
+Moonlight Light
+Natural Light
+Neon Lights Light
+Overcast Sky Light
+Rainbows Light
+Reflections Light
+Rembrandt Lighting Light
+Rim Light
+Rim Lighting Light
+Scattering Light
+Shadows Light
+Side Light
+Silhouette Light
+Skylight Light
+Soft Ambient Light
+Soft Light
+Softbox Lighting Light
+Speedlight Light
+Split Lighting Light
+Spot Light
+Spotlight Light
+Stage Lighting Light
+Strip Light
+Studio Lighting Light
+Sunlight Light
+Sunset Glow Light
+Sunrise Warmth Light
+Thuderstorms Light
+Torchlight Light
+Top Light
+Tungsten Lighting Light
+Twilight Hues Light
+Underlighting Light
+Volumetric Lighting Light

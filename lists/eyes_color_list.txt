@@ -1,8 +1,10 @@
-Brown
-Blue
-Green
-Hazel
-Gray
+Albino
 Amber
+Blue
+Brown
+Green
+Gray
+Hazel
+Heterochromia
 Red
 Violet

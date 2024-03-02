@@ -1,3 +1,16 @@
+## 03.02.2024
+
+Updated lists
+
+- Body type (34)
+- Eyes color (10)
+- Face expression (32)
+- Face shape (23)
+- Hair color (21)
+- Hair style (101)
+- Light type (70)
+- Model pose (62)
+
 ## 28.02.2024
 
 Version 2.8

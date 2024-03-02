@@ -1,5 +1,15 @@
 ## 03.02.2024
 
+Version 2.9
+
+- Hair length
+- Eyes shape
+- Lips shape and color
+- Makeup
+- Clothes
+- New randomizer switches
+- Workflow updated
+
 Updated lists
 
 - Body type (34)
@@ -9,7 +19,7 @@ Updated lists
 - Hair color (21)
 - Hair style (101)
 - Light type (70)
-- Model pose (62)
+- Model pose (87)
 
 ## 28.02.2024
 

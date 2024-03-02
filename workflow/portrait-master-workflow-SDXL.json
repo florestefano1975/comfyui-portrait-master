@@ -1,6 +1,6 @@
 {
-  "last_node_id": 148,
-  "last_link_id": 208,
+  "last_node_id": 149,
+  "last_link_id": 212,
   "nodes": [
     {
       "id": 83,
@@ -362,7 +362,7 @@
         {
           "name": "positive",
           "type": "STRING",
-          "link": 156,
+          "link": 211,
           "widget": {
             "name": "positive"
           }
@@ -370,7 +370,7 @@
         {
           "name": "negative",
           "type": "STRING",
-          "link": 157,
+          "link": 212,
           "widget": {
             "name": "negative"
           }
@@ -874,7 +874,7 @@
         {
           "name": "text",
           "type": "STRING",
-          "link": 207,
+          "link": 209,
           "widget": {
             "name": "text"
           }
@@ -918,7 +918,7 @@
         {
           "name": "text",
           "type": "STRING",
-          "link": 206,
+          "link": 210,
           "widget": {
             "name": "text"
           }
@@ -943,114 +943,6 @@
       "bgcolor": "#000"
     },
     {
-      "id": 94,
-      "type": "PortraitMaster",
-      "pos": [
-        410,
-        30
-      ],
-      "size": {
-        "0": 690,
-        "1": 1690
-      },
-      "flags": {
-        "pinned": true
-      },
-      "order": 4,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            156,
-            207
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [
-            157,
-            206
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PortraitMaster"
-      },
-      "widgets_values": [
-        "Portrait",
-        1.27,
-        "Man",
-        0.39,
-        58,
-        "Canadian",
-        "Japanese",
-        0.63,
-        "Overweight",
-        0.61,
-        "Gazing into the Distance Pose",
-        "Brown",
-        "Amused",
-        1.1300000000000001,
-        "-",
-        0,
-        0,
-        "Shullet",
-        "Gray",
-        0.91,
-        "Garibaldi Beard",
-        1,
-        0,
-        0,
-        0,
-        1.07,
-        0.9400000000000001,
-        0,
-        0,
-        0.49,
-        0.48,
-        0.09,
-        0,
-        0,
-        1,
-        1,
-        1,
-        1,
-        "Soft ambient light",
-        "from front",
-        1,
-        "enable",
-        "raw photo, (realistic:1.5)",
-        "",
-        "",
-        "(cartoon rendering 3d doll:1.25)",
-        "-",
-        1,
-        "-",
-        1,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        743,
-        1593,
-        "randomize"
-      ],
-      "color": "#323",
-      "bgcolor": "#535"
-    },
-    {
       "id": 135,
       "type": "LoadImage",
       "pos": [
@@ -1064,7 +956,7 @@
       "flags": {
         "pinned": false
       },
-      "order": 5,
+      "order": 4,
       "mode": 0,
       "outputs": [
         {
@@ -1107,7 +999,7 @@
       "flags": {
         "pinned": false
       },
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "outputs": [
         {
@@ -1199,7 +1091,7 @@
       "flags": {
         "pinned": false
       },
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "outputs": [
         {
@@ -1243,7 +1135,7 @@
       "flags": {
         "pinned": false
       },
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "outputs": [
         {
@@ -1402,6 +1294,132 @@
       ],
       "color": "#332922",
       "bgcolor": "#593930"
+    },
+    {
+      "id": 149,
+      "type": "PortraitMaster",
+      "pos": [
+        410,
+        20
+      ],
+      "size": [
+        690,
+        2120
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            209,
+            211
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            210,
+            212
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PortraitMaster"
+      },
+      "widgets_values": [
+        "-",
+        0,
+        "-",
+        0,
+        30,
+        "-",
+        "-",
+        0.5,
+        "-",
+        0,
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        0,
+        "-",
+        0,
+        0,
+        "-",
+        "-",
+        "-",
+        0,
+        "-",
+        "-",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "-",
+        "-",
+        0,
+        "enable",
+        "(realistic:1.35)",
+        "",
+        "",
+        "cartoon rendering 3d doll, bad anatomy, bad proportions, cloned face, cropped, deformed, disfigured, duplicate, extra arms, extra fingers, extra legs, extra limbs, fused fingers, long neck, malformed limbs, missing arms, missing legs, mutated hands, mutation, mutilated, out of frame, poorly drawn hands, signature, text, too many fingers, username, watermark, nude, naked",
+        "-",
+        1.5,
+        "-",
+        1.5,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        1675,
+        "randomize"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
     }
   ],
   "links": [
@@ -1492,22 +1510,6 @@
       106,
       0,
       "MODEL"
-    ],
-    [
-      156,
-      94,
-      0,
-      106,
-      2,
-      "STRING"
-    ],
-    [
-      157,
-      94,
-      1,
-      106,
-      3,
-      "STRING"
     ],
     [
       158,
@@ -1670,28 +1672,44 @@
       "*"
     ],
     [
-      206,
-      94,
-      1,
-      147,
-      0,
-      "STRING"
-    ],
-    [
-      207,
-      94,
-      0,
-      146,
-      0,
-      "STRING"
-    ],
-    [
       208,
       2,
       0,
       106,
       1,
       "CLIP"
+    ],
+    [
+      209,
+      149,
+      0,
+      146,
+      0,
+      "STRING"
+    ],
+    [
+      210,
+      149,
+      1,
+      147,
+      0,
+      "STRING"
+    ],
+    [
+      211,
+      149,
+      0,
+      106,
+      2,
+      "STRING"
+    ],
+    [
+      212,
+      149,
+      1,
+      106,
+      3,
+      "STRING"
     ]
   ],
   "groups": [],

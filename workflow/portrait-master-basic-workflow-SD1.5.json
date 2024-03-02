@@ -1,7 +1,418 @@
 {
-  "last_node_id": 24,
-  "last_link_id": 35,
+  "last_node_id": 25,
+  "last_link_id": 39,
   "nodes": [
+    {
+      "id": 12,
+      "type": "EmptyLatentImage",
+      "pos": [
+        450,
+        510
+      ],
+      "size": {
+        "0": 480,
+        "1": 110
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            16
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 25,
+      "type": "PortraitMaster",
+      "pos": [
+        -250,
+        30
+      ],
+      "size": {
+        "0": 690,
+        "1": 2120
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "STRING",
+          "links": [
+            36,
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "links": [
+            37,
+            39
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PortraitMaster"
+      },
+      "widgets_values": [
+        "-",
+        0,
+        "-",
+        0,
+        30,
+        "-",
+        "-",
+        0.5,
+        "-",
+        0,
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        "-",
+        0,
+        "-",
+        0,
+        0,
+        "-",
+        "-",
+        "-",
+        0,
+        "-",
+        "-",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "-",
+        "-",
+        0,
+        "enable",
+        "(realistic:1.35)",
+        "",
+        "",
+        "cartoon rendering 3d doll, bad anatomy, bad proportions, cloned face, cropped, deformed, disfigured, duplicate, extra arms, extra fingers, extra legs, extra limbs, fused fingers, long neck, malformed limbs, missing arms, missing legs, mutated hands, mutation, mutilated, out of frame, poorly drawn hands, signature, text, too many fingers, username, watermark, nude, naked",
+        "-",
+        1.5,
+        "-",
+        1.5,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        1452,
+        "randomize"
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 11,
+      "type": "KSampler",
+      "pos": [
+        450,
+        660
+      ],
+      "size": {
+        "0": 480,
+        "1": 470
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 13
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 14
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 15
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 16,
+          "slot_index": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            29
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        70577859375508,
+        "randomize",
+        30,
+        8,
+        "euler_ancestral",
+        "normal",
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "VAEDecode",
+      "pos": [
+        450,
+        1170
+      ],
+      "size": {
+        "0": 480,
+        "1": 80
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 29
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 28,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            27,
+            31
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 14,
+      "type": "PlaySound|pysssss",
+      "pos": [
+        450,
+        1290
+      ],
+      "size": [
+        480,
+        80
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "link": 31,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlaySound|pysssss"
+      },
+      "widgets_values": [
+        "on empty queue",
+        1
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 15,
+      "type": "ShowText|pysssss",
+      "pos": [
+        450,
+        1410
+      ],
+      "size": [
+        480,
+        410
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 38,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "(realistic:1.35), (portrait:0.71), (bahamian woman 41-years-old:1.5), (midweight, midweight body:1.15), (walking pose:1.25), (vintage dress:1.05), (monolid eyes shape:1.05), (bob cut hairstyle:1.05), (dirty hair:1.05), (disheveled:1.01), (freckles:0.23), (moles:0.8), (professional photo, balanced photo, balanced exposure:1.2)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 17,
+      "type": "ShowText|pysssss",
+      "pos": [
+        450,
+        1860
+      ],
+      "size": [
+        480,
+        290
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 39,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "cartoon rendering 3d doll, bad anatomy, bad proportions, cloned face, cropped, deformed, disfigured, duplicate, extra arms, extra fingers, extra legs, extra limbs, fused fingers, long neck, malformed limbs, missing arms, missing legs, mutated hands, mutation, mutilated, out of frame, poorly drawn hands, signature, text, too many fingers, username, watermark, nude, naked, (shinny skin, shiny skin, reflections on the skin, skin reflections:1.35)"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 22,
+      "type": "PreviewImage",
+      "pos": [
+        940,
+        30
+      ],
+      "size": [
+        1620,
+        2120
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 27
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
     {
       "id": 8,
       "type": "PromptControlSimple",
@@ -14,7 +425,7 @@
         "1": 298
       },
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -31,7 +442,7 @@
         {
           "name": "positive",
           "type": "STRING",
-          "link": 32,
+          "link": 36,
           "widget": {
             "name": "positive"
           }
@@ -39,7 +450,7 @@
         {
           "name": "negative",
           "type": "STRING",
-          "link": 33,
+          "link": 37,
           "widget": {
             "name": "negative"
           }
@@ -101,278 +512,9 @@
         "",
         0,
         1
-      ]
-    },
-    {
-      "id": 21,
-      "type": "VAEDecode",
-      "pos": [
-        940,
-        540
       ],
-      "size": {
-        "0": 480,
-        "1": 80
-      },
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 29
-        },
-        {
-          "name": "vae",
-          "type": "VAE",
-          "link": 28,
-          "slot_index": 1
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            27,
-            31
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "VAEDecode"
-      }
-    },
-    {
-      "id": 12,
-      "type": "EmptyLatentImage",
-      "pos": [
-        450,
-        510
-      ],
-      "size": {
-        "0": 480,
-        "1": 110
-      },
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            16
-          ],
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        512,
-        512,
-        1
-      ]
-    },
-    {
-      "id": 14,
-      "type": "PlaySound|pysssss",
-      "pos": [
-        1430,
-        1270
-      ],
-      "size": {
-        "0": 310,
-        "1": 82
-      },
-      "flags": {},
-      "order": 9,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "any",
-          "type": "*",
-          "link": 31,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PlaySound|pysssss"
-      },
-      "widgets_values": [
-        "on empty queue",
-        1
-      ]
-    },
-    {
-      "id": 17,
-      "type": "ShowText|pysssss",
-      "pos": [
-        450,
-        1180
-      ],
-      "size": {
-        "0": 970,
-        "1": 230
-      },
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 35,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": null,
-          "shape": 6
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "(cartoon rendering 3d doll:1.25), (shinny skin, shiny skin, reflections on the skin, skin reflections:1.35)"
-      ]
-    },
-    {
-      "id": 22,
-      "type": "PreviewImage",
-      "pos": [
-        1430,
-        30
-      ],
-      "size": {
-        "0": 870,
-        "1": 1200
-      },
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 27
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      }
-    },
-    {
-      "id": 15,
-      "type": "ShowText|pysssss",
-      "pos": [
-        450,
-        660
-      ],
-      "size": {
-        "0": 970,
-        "1": 480
-      },
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 34,
-          "widget": {
-            "name": "text"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "links": [],
-          "shape": 6,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ShowText|pysssss"
-      },
-      "widgets_values": [
-        "raw photo, (realistic:1.5), (half-length portrait:1.2), (brazilian woman 30-years-old:1.5), (high fashion pose:1.5), (brown eyes:1.25), (wavy bob hairstyle:1.25), (black hair:1.25), (natural skin:0.74), (bare face:0.73), (washed-face:0.24), (dried-face:0.21), (skin details, skin texture:0.23), (skin pores:0.73), (skin imperfections:0.12), (wrinkles:0.29), (dimples:0.27), (freckles:0.57), (moles:0.68), (eyes details:0.74), (iris details:0.74), (circular details:0.74), (circular pupil:0.74), soft ambient light from front, (professional photo, balanced photo, balanced exposure:1.2)"
-      ]
-    },
-    {
-      "id": 11,
-      "type": "KSampler",
-      "pos": [
-        940,
-        30
-      ],
-      "size": {
-        "0": 480,
-        "1": 470
-      },
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "model",
-          "type": "MODEL",
-          "link": 13
-        },
-        {
-          "name": "positive",
-          "type": "CONDITIONING",
-          "link": 14
-        },
-        {
-          "name": "negative",
-          "type": "CONDITIONING",
-          "link": 15
-        },
-        {
-          "name": "latent_image",
-          "type": "LATENT",
-          "link": 16,
-          "slot_index": 3
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            29
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "KSampler"
-      },
-      "widgets_values": [
-        707781191952017,
-        "randomize",
-        30,
-        8,
-        "euler_ancestral",
-        "normal",
-        1
-      ]
+      "color": "#432",
+      "bgcolor": "#653"
     },
     {
       "id": 10,
@@ -386,7 +528,7 @@
         "1": 100
       },
       "flags": {},
-      "order": 1,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -420,111 +562,9 @@
       },
       "widgets_values": [
         "realisticVisionV51_v51VAE.safetensors"
-      ]
-    },
-    {
-      "id": 24,
-      "type": "PortraitMaster",
-      "pos": [
-        0,
-        30
       ],
-      "size": {
-        "0": 440,
-        "1": 1638
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "positive",
-          "type": "STRING",
-          "links": [
-            32,
-            34
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "negative",
-          "type": "STRING",
-          "links": [
-            33,
-            35
-          ],
-          "shape": 3,
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "PortraitMaster"
-      },
-      "widgets_values": [
-        "Half-length portrait",
-        1.2,
-        "Woman",
-        0,
-        30,
-        "Brazilian",
-        "-",
-        0.5,
-        "-",
-        0,
-        "High Fashion Pose",
-        "Brown",
-        "-",
-        0,
-        "-",
-        0,
-        0,
-        "Wavy bob",
-        "Black",
-        0,
-        "-",
-        0.74,
-        0.73,
-        0.24,
-        0.21,
-        0.23,
-        0.73,
-        0.27,
-        0.29,
-        0.5700000000000001,
-        0.68,
-        0.12,
-        0,
-        0,
-        0.74,
-        0.74,
-        0.74,
-        0.74,
-        "Soft ambient light",
-        "from front",
-        1,
-        "enable",
-        "raw photo, (realistic:1.5)",
-        "",
-        "",
-        "(cartoon rendering 3d doll:1.25)",
-        "-",
-        1,
-        "-",
-        1,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        446,
-        "randomize"
-      ]
+      "color": "#432",
+      "bgcolor": "#653"
     }
   ],
   "links": [
@@ -609,32 +649,32 @@
       "*"
     ],
     [
-      32,
-      24,
+      36,
+      25,
       0,
       8,
       2,
       "STRING"
     ],
     [
-      33,
-      24,
+      37,
+      25,
       1,
       8,
       3,
       "STRING"
     ],
     [
-      34,
-      24,
+      38,
+      25,
       0,
       15,
       0,
       "STRING"
     ],
     [
-      35,
-      24,
+      39,
+      25,
       1,
       17,
       0,

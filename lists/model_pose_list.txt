@@ -1,3 +1,6 @@
+Adjusting Clothing Pose
+Against a Wall Pose
+Ajusting Hair Pose
 Arms Up Pose
 Artistic Dance Pose
 Back Arch Pose
@@ -6,42 +9,59 @@ Bending Pose
 Captivating Pose
 Cartwheel Pose
 Casual Stroll Pose
+Chassing Pose
 Classical Dance Pose
 Close-Up Beauty Shot Pose
-Contrapposto Pose
+Confident Stance Pose
 Contrapposto Pose
 Crouching Pose
 Dancing Pose
 Dynamic Action Pose
+Dynamic Jump Pose
 Dynamic Sitting Pose
+Eating Pose
 Expressive Female Pose
 Fashion Model Pose
 Feminine Pose
+Flipping Hair Pose
 Gazing into the Distance Pose
 Glamour Pose
 Hand-on-Hip Pose
 Handstand Pose
 Headshot Pose
 High Fashion Pose
+Holding Bag Pose
+Holding Glass Pose
+Holding Headset Pose
+Holding Ice Cream Pose
+Holding Microphone Pose
+Holding Phone Pose
+Holding Pen Pose
+Interacting with Props Pose
 Jojo Pose
 Jumping Pose
 Kneeling Pose
 Kung Fu Pose
-Leaning Pose
+Laughing Candidly Pose
 Leaning Pose
 Lifting Pose
+Looking Back Over Shoulder Pose
 Lying Down Pose
 Magic Pose
 Masculine Pose
 Meditation Pose
 Movement Pose
 Muscle Pose
+One Hand on Face Pose
 One Leg Up Pose
 Over-the-Shoulder Look Pose
 Power Pose
 Reaching Pose
+Reading Book Pose
 Relaxing Pose
 Relaxing Sitting Pose
+Reaching Pose
+Riding Pose
 Royal Pose
 Running Pose
 S-curve Pose
@@ -55,8 +75,13 @@ Standing Pose
 Stretching Pose
 The Over-the-Shoulder Look Pose
 Tilted Head Pose
+Touching Ear Pose
+Touching Face Pose
+Touching Hair Pose
 Twirling Pose
+Upturned Eyes Shape
 Vogue Pose
 Walking Pose
-Walking Pose
+Watercolor Makeup Pose
+Waving Hand Pose
 Yoga Pose

@@ -9,17 +9,15 @@ Version 2.9
 - Clothes
 - New randomizer switches
 - Workflow updated
-
-Updated lists
-
-- Body type (34)
-- Eyes color (10)
-- Face expression (32)
-- Face shape (23)
-- Hair color (21)
-- Hair style (101)
-- Light type (70)
-- Model pose (87)
+- Updated lists
+- - Body type (34)
+- - Eyes color (10)
+- - Face expression (32)
+- - Face shape (23)
+- - Hair color (21)
+- - Hair style (101)
+- - Light type (70)
+- - Model pose (87)
 
 ## 28.02.2024
 

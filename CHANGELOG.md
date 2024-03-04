@@ -1,6 +1,6 @@
 ## 04.02.2024
 
-- Updated hair style list (118)
+- Updated hair style list (117)
 
 ## 03.02.2024
 

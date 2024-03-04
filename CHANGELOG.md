@@ -1,3 +1,7 @@
+## 04.02.2024
+
+- Updated hair style list (118)
+
 ## 03.02.2024
 
 Version 2.9

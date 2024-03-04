@@ -587,7 +587,7 @@ class PortraitMaster:
             prompt.append(applyWeight(f"{face_shape} shape face",face_shape_weight))
 
         if hair_style != "-":
-            prompt.append(f"({hair_style} hairstyle:1.05)")
+            prompt.append(f"({hair_style} cut hairstyle:1.05)")
 
         if hair_color != "-":
             prompt.append(f"({hair_color} hair:1.05)")

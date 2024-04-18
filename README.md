@@ -172,3 +172,4 @@ Portrait Master is compatible with [Prompt Composer](https://github.com/floreste
 ## Other projects
 
 - [ComfyUI Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)
+- [ComfyUI StabilityAI Suite](https://github.com/florestefano1975/ComfyUI-StabilityAI-Suite/)

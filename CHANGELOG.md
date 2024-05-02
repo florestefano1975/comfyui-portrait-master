@@ -1,10 +1,12 @@
+## 02.05.2024
+
+- Added face shape randomizer
+
 ## 04.02.2024
 
 - Updated hair style list (117)
 
 ## 03.02.2024
-
-Version 2.9
 
 - Hair length
 - Eyes shape
@@ -25,19 +27,13 @@ Version 2.9
 
 ## 28.02.2024
 
-Version 2.8
-
 - New randomizer switches for some parameters
 
 ## 27.02.2024
 
-Version 2.7
-
 - New randomizer switches for some parameters
 
 ## 21.02.2024
-
-Version 2.6
 
 - Add randomizer switches for some parameters
 - Updated workflows for compatibility with the latest release
@@ -50,16 +46,12 @@ Version 2.6
 
 ## 15.02.2024
 
-Version 2.5
-
 - New option: bare face
 - New option: washed-face
 - New option: dried-face
 - Added examples
 
 ## 13.02.2024
-
-Version 2.4
 
 - Prompt improvement
 - Bug fix
@@ -75,8 +67,6 @@ Version 2.4
 
 ## 21.12.2003
 
-Version 2.3
-
 - New option: natural skin slider
 - New option: androgynous slider
 - New option: styling effects
@@ -85,15 +75,11 @@ Version 2.3
 
 ## 20.12.2023
 
-Version 2.2
-
 - New option: model pose library
 - New option: acne
 - Bug fixes and optimizations
 
 ## 19.12.2023
-
-Version 2.1
 
 - New option: body type
 - New option: wrinkles
@@ -103,8 +89,6 @@ Version 2.1
 - Added examples
 
 ## 17.12.2023
-
-Version 2.0
 
 - Added new options
 - Added upscaler in the workflow
@@ -118,7 +102,7 @@ Version 2.0
 
 ## 14.12.2023
 
-Version 1.5 - New features added
+New features added
 
 - Updated nationality list (193 options)
 - New option: Face shape

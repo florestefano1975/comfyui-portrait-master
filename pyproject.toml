@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-portrait-master"
-description = ""
+description = "ComfyUI Portrait Master. A node designed to help AI image creators to generate prompts for human portraits."
 version = "1.0.0"
 license = "LICENSE"
 

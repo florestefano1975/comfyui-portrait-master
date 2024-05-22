@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-portrait-master"
+description = ""
+version = "1.0.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/florestefano1975/comfyui-portrait-master"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "comfyui-portrait-master"
+Icon = ""

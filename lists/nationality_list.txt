@@ -87,8 +87,7 @@ Jordanian
 Kazakhstani
 Kenyan
 Kiribati
-North Korean
-South Korean
+Korean
 Kuwaiti
 Kyrgyz
 Laotian
@@ -126,7 +125,7 @@ New Zealander
 Ni-Vanuatu
 Nicaraguan
 Nigerian
-Nigerien
+North African
 North Korean
 Northern Irish
 Norwegian

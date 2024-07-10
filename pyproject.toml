@@ -9,6 +9,6 @@ Repository = "https://github.com/florestefano1975/comfyui-portrait-master"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "florestefano1975"
 DisplayName = "comfyui-portrait-master"
 Icon = ""

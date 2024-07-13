@@ -1,4 +1,4 @@
-# ComfyUI Portrait Master
+# ComfyUI Portrait Master 3.0
 
 This nodes was designed to help AI image creators to generate prompts for human portraits.
 

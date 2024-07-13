@@ -117,7 +117,7 @@ For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/model
 
 Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/).
 
-![Portrait Master 2.9.2 (legacy) documentation](/PORTRAIT_MASTER_2.9.2.md)
+[Portrait Master 2.9.2 (legacy) documentation](/PORTRAIT_MASTER_2.9.2.md)
 
 ## Other projects
 

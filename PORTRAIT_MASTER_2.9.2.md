@@ -4,7 +4,7 @@ This documentation is for the previous version of the node.
 
 ## Overview of the custom node
 
-![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.3.png)
+![ComfyUI Portrait Master Node](/screenshot/legacy/portrait-master-node-2.3.png)
 
 ## Available Options
 

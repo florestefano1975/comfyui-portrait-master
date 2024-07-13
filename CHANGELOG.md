@@ -1,3 +1,11 @@
+## 13.07.2024
+
+New major release: Portrait Master 3!
+
+- The node has been divided into three separate modules: Base Character, Skin Details, Style & Pose.
+- Eliminated randomization switches: selectors now have the built-in selectable option.
+- Improved code and performance.
+
 ## 02.05.2024
 
 - Added face shape randomizer

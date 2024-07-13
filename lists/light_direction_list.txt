@@ -1,10 +1,10 @@
-from top
-from bottom
-from right
-from left
-from front
-from rear
-from top-right
-from top-left
-from bottom-right
-from bottom-left
+Light from top
+Light from bottom
+Light from right
+Light from left
+Light from front
+Light from rear
+Light from top-right
+Light from top-left
+Light from bottom-right
+Light from bottom-left

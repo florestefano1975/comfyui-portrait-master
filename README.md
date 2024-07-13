@@ -1,6 +1,14 @@
 # ComfyUI Portrait Master
 
-This node was designed to help AI image creators to generate prompts for human portraits.
+This nodes was designed to help AI image creators to generate prompts for human portraits.
+
+## New major version!
+
+- The node has been divided into three separate modules: **Base Character**, **Skin Details**, **Style & Pose**.
+- Eliminated randomization switches: selectors now have the built-in selectable option.
+- Improved code and performance.
+
+## Donations and markeplace
 
 **_If this project is useful to you and you like it, please consider a small donation to the author._**
 
@@ -8,11 +16,11 @@ This node was designed to help AI image creators to generate prompts for human p
 
 Buy my workflows:
 
-➡️ https://stefanoflore.it/download/
+➡️ https://stefanoflore.it/en/download/stable-diffusion/
 
 ## Overview of the custom node
 
-![ComfyUI Portrait Master Node](/screenshot/portrait-master-node-2.3.png)
+![ComfyUI Portrait Master Node](/screenshot/overview.png)
 
 ## Install from ComfyUI Manager
 
@@ -25,26 +33,19 @@ Buy my workflows:
 
 To install comfyui-portrait-master:
 
-1. open the terminal on the ComfyUI installation folder
-2. digit: `cd custom_nodes`
-3. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
-4. restart ComfyUI
+1. open the terminal on the ComfyUI custom_nodes folder
+2. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
+3. restart ComfyUI
 
 ### Update
 
 To update comfyui-portrait-master:
 
-1. open the terminal on the ComfyUI installation folder
-2. digit: `cd custom_nodes`
-3. digit: `cd comfyui-portrait-master`
-4. digit: `git pull`
-5. restart ComfyUI
+1. open the terminal on the ComfyUI comfyui-portrait-master folder
+2. digit: `git pull`
+3. restart ComfyUI
 
 **Warning: update command overwrites files modified and customized by users.**
-
-## Additional nodes
-
-We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install the additional custom nodes needed for the workflow.
 
 ## Available Options
 
@@ -89,83 +90,26 @@ We recommend the use of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Ma
 - **light_type**: set global illumination
 - **light_direction**: set the direction of the light. _This feature is still being tested_
 - **photorealism_improvement**: experimental option to improve photorealism and the final result
-- **prompt_start**: portion of the prompt that is inserted at the beginning
-- **prompt_additional**: portion of the prompt that is inserted at an intermediate point
-- **prompt_end**: portion of the prompt that is inserted at the end
-- **negative_prompt**: the negative prompt has been integrated into the node to be adequately controlled depending on the settings
 - **style_1** / **style_1_weight**: apply and adjust the first style
 - **style_1** / **style_1_weight**: apply and adjust the second style
-- **random_**: switch on/off for randomize some options
 
-Parameters with null value (-) or set to 0.00 would be not included in the prompt generated.
+Parameters with null value (-) would be not included in the prompt generated.
 
-The randomizer switch disables the related value entered manually.
+To enable the casual generation options, connect a random seed generator to the nodes.
 
-The node generates two output string, postive and negative prompt.
-
-## Customizations
-
-The _lists_ subfolder contains the .txt files that generate the lists for some node options. You can open files and customize voices.
-
-## Workflow SDXL
-
-The [_portrait-master-workflow-SDXL.json_](/workflow/portrait-master-workflow-SDXL.json) file contains a **complete workflow** designed to work with **SDXL checkpoints**.
-
-An upscaler and 2 ControlNet have been integrated to manage the pose of the characters. I inserted 3 switches to disable the upscaler and control if necessary. The coloring of the nodes will help you understand how the switches affect the workflow.
-
-For the correct functioning of ControlNet with SDXL checkpoints, download this files:
-
-- [_control-lora-openposeXL2-rank256.safetensors_](https://huggingface.co/thibaud/controlnet-openpose-sdxl-1.0/blob/main/control-lora-openposeXL2-rank256.safetensors)
-- [sai_xl_depth_256lora.safetensors](https://huggingface.co/lllyasviel/sd_control_collection/blob/main/sai_xl_depth_256lora.safetensors)
-
-and copy it into the _./models/controlnet/_ folder of ComfyUI. Other similar files for ControlNet are available at [this link](https://huggingface.co/lllyasviel/sd_control_collection/tree/main).
-
-There are some files that can be used with ControlNet in the Portrait Master _openpose_ folder. To generate other poses use the free portal https://openposeai.com/
-
-![Workflow](/screenshot/portrait-master-workflow-2.3.png)
-
-There are some sample files in the _openpose_ folder for use with ControlNet nodes.
-
-### Workflow SDXL performances
-
-The SDXL workflow is designed to obtain the right balance between quality and generative performance. You can change the settings of the two KSamplers to adapt them to your needs.
-
-Tested on **Google Colab**, the workflow generates a high-resolution image in **60 seconds with V100 GPU** and in **30 seconds with A100 GPU**.
-
-## Workflow SD1.5
-
-The [_portrait-master-basic-workflow-SD1.5.json_](/workflow/portrait-master-basic-workflow-SD1.5.json) file contains a **basic workflow** designed to work with **SD1.5 checkpoints**.
-
-![Workflow](/screenshot/portrait-master-workflow-2.3-SD1.5.png)
+The nodes generates output string.
 
 ## Model Pose Library
 
-The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the _shot_ option.
+The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet, if in use,  in this case and adjust framing with the _shot_ option.
 
-![Model Pose Library](/screenshot/portrait-master-pose-library-2.2b.jpg)
+![Model Pose Library](/screenshot/legacy/portrait-master-pose-library-2.2b.jpg)
 
 ## Practical advice
 
 Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes, or insert in the negative prompt (closeup, close up, close-up:1.5), modifying the weight as needed.
 
-For total control of the pose, use the ControlNet nodes integrated into the workflow, setting the _shot_ parameter to null (-).
-
-## Optimal use of prompt fields
-
-- **prompt_start**: specify the type of image you want, for example _realistic_.
-- **prompt_additional**: its content is inserted between promot_start and the part of the prompt automatically generated by the node; specify clothing and other specific characteristics of the character; possibly also the setting or background.
-- **prompt_end**: in this field enter other requests to the AI, but taking into account that they are minor compared to the rest of the instructions; for example, you can move the background description or environment here. This field is not required, so you can ignore it.
-- **negative_prompt**: it works as usual, it allows you to declare what you don't want in the image.
-
-## SDXL Turbo
-
-ComfyUI Portrait Master also works correctly with SDXL Turbo.
-
-https://www.youtube.com/watch?v=9UbtfEH_iSk
-
 ## Notes
-
-When the generation of an image is started in the console you can read the complete prompt created by the node.
 
 The effectiveness of the parameters depends on the quality of the checkpoint used.
 
@@ -173,7 +117,9 @@ For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/model
 
 Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/).
 
+![Portrait Master 2.9.2 (legacy) documentation](/PORTRAIT_MASTER_2.9.2.md)
+
 ## Other projects
 
 - [ComfyUI Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)
-- [ComfyUI StabilityAI Suite](https://github.com/florestefano1975/ComfyUI-StabilityAI-Suite/)
+- [ComfyUI HiDiffusion](https://github.com/florestefano1975/ComfyUI-HiDiffusion/)

@@ -10,11 +10,11 @@ This nodes was designed to help AI image creators to generate prompts for human 
 
 ## Donations and markeplace
 
-**_If this project is useful to you and you like it, please consider a small donation to the author._**
+**_If this project is useful to you and you like it, please consider a small donation to the author_**
 
 ➡️ https://ko-fi.com/stefanoflore75
 
-Buy my workflows:
+**Buy my workflows!**
 
 ➡️ https://stefanoflore.it/en/download/stable-diffusion/
 
@@ -33,7 +33,7 @@ Buy my workflows:
 
 To install comfyui-portrait-master:
 
-1. open the terminal on the ComfyUI custom_nodes folder
+1. open the terminal on the ComfyUI `custom_nodes` folder
 2. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
 3. restart ComfyUI
 
@@ -41,7 +41,7 @@ To install comfyui-portrait-master:
 
 To update comfyui-portrait-master:
 
-1. open the terminal on the ComfyUI comfyui-portrait-master folder
+1. open the terminal on the ComfyUI `comfyui-portrait-master` folder
 2. digit: `git pull`
 3. restart ComfyUI
 

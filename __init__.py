@@ -267,24 +267,24 @@ class PortraitMasterBaseCharacter:
                     prompt.append(applyWeight(body_type,body_type_weight))
 
             if eyes_color == rand_opt:
-                prompt.append('(' + random.choice(lists['eyes_color']) + 'eyes:1.05)')
+                prompt.append('(' + random.choice(lists['eyes_color']) + ' eyes:1.05)')
             elif eyes_color != '-':
-                prompt.append('(' + eyes_color + 'eyes:1.05)')
+                prompt.append('(' + eyes_color + ' eyes:1.05)')
 
             if eyes_shape == rand_opt:
-                prompt.append('(' + random.choice(lists['eyes_shape']) + 'eyes:1.05)')
+                prompt.append('(' + random.choice(lists['eyes_shape']) + ' eyes:1.05)')
             elif eyes_shape != '-':
-                prompt.append('(' + eyes_shape + 'eyes:1.05)')
+                prompt.append('(' + eyes_shape + ' eyes:1.05)')
 
             if lips_color == rand_opt:
-                prompt.append('(' + random.choice(lists['lips_color']) + 'eyes:1.05)')
+                prompt.append('(' + random.choice(lists['lips_color']) + ' lips:1.05)')
             elif lips_color != '-':
-                prompt.append('(' + lips_color + ':1.05)')
+                prompt.append('(' + lips_color + ' lips:1.05)')
 
             if lips_shape == rand_opt:
-                prompt.append('(' + random.choice(lists['lips_shape']) + 'eyes:1.05)')
+                prompt.append('(' + random.choice(lists['lips_shape']) + ' Eye shape:1.05)')
             elif lips_shape != '-':
-                prompt.append('(' + lips_shape + ':1.05)')
+                prompt.append('(' + lips_shape + ' lips shape:1.05)')
 
             if facial_expression_weight > 0:
                 if facial_expression == rand_opt:
@@ -302,19 +302,19 @@ class PortraitMasterBaseCharacter:
                 prompt.append(applyWeight('facial asymmetry, face asymmetry',facial_asymmetry))
             
             if hair_style == rand_opt:
-                prompt.append('(' + random.choice(lists['hair_style']) + 'hair style:1.05)')
+                prompt.append('(' + random.choice(lists['hair_style']) + ' hair style:1.05)')
             elif hair_style != '-':
-                prompt.append('(' + hair_style + 'hair style:1.05)')
+                prompt.append('(' + hair_style + ' hair style:1.05)')
             
             if hair_color == rand_opt:
-                prompt.append('(' + random.choice(lists['hair_color']) + 'hair color:1.05)')
+                prompt.append('(' + random.choice(lists['hair_color']) + ' hair color:1.05)')
             elif hair_color != '-':
-                prompt.append('(' + hair_color + 'hair color:1.05)')
+                prompt.append('(' + hair_color + ' hair color:1.05)')
             
             if hair_length == rand_opt:
-                prompt.append('(' + random.choice(lists['hair_length']) + 'hair length:1.05)')
+                prompt.append('(' + random.choice(lists['hair_length']) + ' hair length:1.05)')
             elif hair_length != '-':
-                prompt.append('(' + hair_length + 'hair length:1.05)')
+                prompt.append('(' + hair_length + ' hair length:1.05)')
 
             if disheveled > 0:
                 prompt.append(applyWeight('disheveled',disheveled))

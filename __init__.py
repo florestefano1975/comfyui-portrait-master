@@ -277,14 +277,14 @@ class PortraitMasterBaseCharacter:
                 prompt.append('(' + eyes_shape + ':1.05)')
 
             if lips_color == rand_opt:
-                prompt.append('(' + random.choice(lists['lips_color']) + ' lips:1.05)')
+                prompt.append('(' + random.choice(lists['lips_color']) + ':1.05)')
             elif lips_color != '-':
-                prompt.append('(' + lips_color + ' lips:1.05)')
+                prompt.append('(' + lips_color + ':1.05)')
 
             if lips_shape == rand_opt:
-                prompt.append('(' + random.choice(lists['lips_shape']) + ' lips shape:1.05)')
+                prompt.append('(' + random.choice(lists['lips_shape']) + ':1.05)')
             elif lips_shape != '-':
-                prompt.append('(' + lips_shape + ' lips shape:1.05)')
+                prompt.append('(' + lips_shape + ':1.05)')
 
             if facial_expression_weight > 0:
                 if facial_expression == rand_opt:

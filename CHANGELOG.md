@@ -7,7 +7,7 @@ Portrait Master: Base Character
 
 Portrait Master: Style & Pose
 
-- Added new option: __female lingerie__
+- Added new option: __female lingerie__ (thank you __ataylorm__ from [Reddit](https://www.reddit.com/r/FluxAI/comments/1emaoex/flux_understanding_of_lingerie_customizations/))
 
 ## 14.07.2024
 

@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.1
+# Version: 3.2
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -35,10 +35,7 @@ rand_opt = 'random 🎲'
 def load_lists():
     lists = {}
     list_names = [
-        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style",
-        "light_type", "light_direction", "eyes_color", "eyes_shape", "beard_color",
-        "hair_color", "hair_length", "body_type", "beard", "model_pose", "style",
-        "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color"
+        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie"
     ]
     for name in list_names:
         list_path = os.path.join(script_dir, f"lists/{name}_list.txt")
@@ -78,6 +75,20 @@ class PortraitMasterBaseCharacter:
                     "default": '-',
                 }),
                 "androgynous": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
+                "ugly": ("FLOAT", {
+                    "default": 0,
+                    "min": 0,
+                    "max": max_float_value,
+                    "step": 0.05,
+                    "display": "slider",
+                }),
+                "ordinary_face": ("FLOAT", {
                     "default": 0,
                     "min": 0,
                     "max": max_float_value,
@@ -190,6 +201,8 @@ class PortraitMasterBaseCharacter:
             shot_weight=1,
             gender='-',
             androgynous=0,
+            ugly=0,
+            ordinary_face=0,
             age=30,
             nationality_1='-',
             nationality_2='-',
@@ -246,6 +259,11 @@ class PortraitMasterBaseCharacter:
             else:
                 androgynous_opt = ''
 
+            if ugly > 0:
+                ugly_opt = applyWeight('ugly',ugly) + ' '
+            else:
+                ugly_opt = ''
+
             nationality = ''
             if nationality_1 != '-' or nationality_2 != '-':
                 nationality_1_opt = random.choice(lists['nationality']) if nationality_1 == rand_opt else nationality_1
@@ -255,10 +273,13 @@ class PortraitMasterBaseCharacter:
                 else:
                     nationality = nationality_1_opt + ' ' if nationality_1_opt != '-' else nationality_2_opt + ' '
 
-            if androgynous_opt + nationality + gender_opt + age_opt != '':
-                t = f'{androgynous_opt}{nationality}{gender_opt}{age_opt}'
+            if androgynous_opt + ugly_opt + nationality + gender_opt + age_opt != '':
+                t = f'{androgynous_opt}{ugly_opt}{nationality}{gender_opt}{age_opt}'
                 t = t.strip()
                 prompt.append(t)
+            
+            if ordinary_face > 0:
+                prompt.append(applyWeight('ordinary face',ordinary_face))
 
             if body_type_weight > 0:
                 if body_type == rand_opt:
@@ -593,6 +614,9 @@ class PortraitMasterStylePose:
                 "clothes": (['-'] + [rand_opt] + lists['clothes'], {
                     "default": '-',
                 }),
+                "female_lingerie": (['-'] + [rand_opt] + lists['female_lingerie'], {
+                    "default": '-',
+                }),
                 "makeup": (['-'] + [rand_opt] + lists['makeup'], {
                     "default": '-',
                 }),
@@ -647,6 +671,7 @@ class PortraitMasterStylePose:
             seed=0,
             model_pose='-',
             clothes='-',
+            female_lingerie='-',
             makeup='-',
             light_type='-',
             light_direction='-',
@@ -680,6 +705,11 @@ class PortraitMasterStylePose:
                 prompt.append('(' + random.choice(lists['clothes']) + ':1.25)')
             elif clothes != '-':
                 prompt.append(f"({clothes}:1.25)")
+
+            if female_lingerie == rand_opt:
+                prompt.append('(' + random.choice(lists['female_lingerie']) + ':1.25)')
+            elif female_lingerie != '-':
+                prompt.append(f"({female_lingerie}:1.25)")
 
             if light_type == rand_opt:
                 prompt.append(applyWeight(random.choice(lists['light_type']),light_weight))

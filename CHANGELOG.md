@@ -1,3 +1,14 @@
+## 07.08.2024
+
+Portrait Master: Base Character
+
+- Added new option: __ugly__
+- Added new option: __ordinay_face__
+
+Portrait Master: Style & Pose
+
+- Added new option: __female lingerie__
+
 ## 14.07.2024
 
 - Added new node: Make-up

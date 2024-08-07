@@ -3,7 +3,7 @@
 Portrait Master: Base Character
 
 - Added new option: __ugly__
-- Added new option: __ordinay_face__
+- Added new option: __ordinary_face__
 
 Portrait Master: Style & Pose
 

@@ -1,3 +1,7 @@
+## 10.08.2024
+
+- General improvement of the prompt
+
 ## 07.08.2024
 
 Portrait Master: Base Character

@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.2
+# Version: 3.2.1
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -274,7 +274,7 @@ class PortraitMasterBaseCharacter:
                     nationality = nationality_1_opt + ' ' if nationality_1_opt != '-' else nationality_2_opt + ' '
 
             if androgynous_opt + ugly_opt + nationality + gender_opt + age_opt != '':
-                t = f'{androgynous_opt}{ugly_opt}{nationality}{gender_opt}{age_opt}'
+                t = f'({androgynous_opt}{ugly_opt}{nationality}{gender_opt}{age_opt}:1.15)'
                 t = t.strip()
                 prompt.append(t)
             

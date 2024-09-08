@@ -8,7 +8,7 @@ This nodes was designed to help AI image creators to generate prompts for human 
 - Eliminated randomization switches: selectors now have the built-in selectable option.
 - Improved code and performance.
 
-## Donations and markeplace
+## Donations and marketplace
 
 **_If this project is useful to you and you like it, please consider a small donation to the author_**
 

@@ -1,8 +1,8 @@
-# ComfyUI Portrait Master 3.1
+# ComfyUI Portrait Master
 
 This nodes was designed to help AI image creators to generate prompts for human portraits.
 
-## New major version!
+## New major version: 3!
 
 - The node has been divided into four separate modules: **Base Character**, **Skin Details**, **Style & Pose**, **Make-up**.
 - Eliminated randomization switches: selectors now have the built-in selectable option.

@@ -283,7 +283,7 @@ class PortraitMasterBaseCharacter:
 
             if body_type_weight > 0:
                 if body_type == rand_opt:
-                    prompt.append(applyWeight(random.choice(lists['body_type'] + ' body'),body_type_weight))
+                    prompt.append(applyWeight(random.choice(lists['body_type']) + ' body',body_type_weight))
                 elif body_type != '-':
                     prompt.append(applyWeight(body_type,body_type_weight) + ' body')
 

@@ -2,7 +2,7 @@
 name = "comfyui-portrait-master"
 description = "ComfyUI Portrait Master. A node designed to help AI image creators to generate prompts for human portraits."
 version = "3.2.1"
-license = "LICENSE"
+license = { file = "LICENSE" }
 
 [project.urls]
 Repository = "https://github.com/florestefano1975/comfyui-portrait-master"

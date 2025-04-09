@@ -14,10 +14,6 @@ This nodes was designed to help AI image creators to generate prompts for human 
 
 ➡️ https://ko-fi.com/stefanoflore75
 
-**Buy my workflows!**
-
-➡️ https://stefanoflore.it/en/download/stable-diffusion/
-
 ## Overview of the custom node
 
 ![ComfyUI Portrait Master Node](/screenshot/overview.png)

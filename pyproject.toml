@@ -10,5 +10,5 @@ Repository = "https://github.com/florestefano1975/comfyui-portrait-master"
 
 [tool.comfy]
 PublisherId = "florestefano1975"
-DisplayName = "comfyui-portrait-master"
+DisplayName = "Comfyui Portrait Master"
 Icon = ""

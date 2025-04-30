@@ -878,7 +878,7 @@ class PortraitMasterPromptStyler:
         # Dictionary styles
         style_prompts = {
             "descriptive": "A detailed photo of {subject} including the following features: {description}.",
-            "cinematic": "Cinematic portrait of {subject}, {description}, dramatic lighting, cinematic composition.",
+            "cinematic": "Cinematic photo of {subject}, {description}, dramatic lighting, cinematic composition.",
             "illustrative": "Illustration of {subject}, {description}, suitable for concept art or digital illustration.",
             "artistic": "{subject} portrayed artistically with the following traits: {description}. Rich details and textures.",
             "documentary": "Documentary-style photograph of {subject} showing: {description}. Natural lighting, realistic scene.",

@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-portrait-master"
-description = "ComfyUI Portrait Master. A node designed to help AI image creators to generate prompts for detailed human portraits."
-version = "3.2.1"
+description = "ComfyUI Portrait Master. A node designed to help AI image creators to generate prompts for human portraits."
+version = "3.3.0"
 license = { file = "LICENSE" }
 
 [project.urls]
@@ -10,5 +10,5 @@ Repository = "https://github.com/florestefano1975/comfyui-portrait-master"
 
 [tool.comfy]
 PublisherId = "florestefano1975"
-DisplayName = "Comfyui Portrait Master"
+DisplayName = "comfyui-portrait-master"
 Icon = ""

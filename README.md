@@ -2,10 +2,10 @@
 
 This nodes was designed to help AI image creators to generate prompts for human portraits.
 
-## New major version: 3!
+## Version 3.3.0
 
-- The node has been divided into four separate modules: **Base Character**, **Skin Details**, **Style & Pose**, **Make-up**.
-- Eliminated randomization switches: selectors now have the built-in selectable option.
+- The node has been divided into **five** separate modules: **Base Character**, **Skin Details**, **Style & Pose**, **Make-up**, **Prompt Styler**.
+- New node: __Prompt Styler__. This node removes the declarative weights typical of the SD1.5 and SDXL models to adapt the prompt with a conversational style, more suitable for modern checkpoints such as Flux, Sana, Hidream.
 - Improved code and performance.
 
 ## Donations and marketplace
@@ -52,7 +52,7 @@ To update comfyui-portrait-master:
 - **age**: the age of the subject portrayed
 - **nationality_1**: sets first ethnicity
 - **nationality_2**: sets second ethnicity
-- **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control). _This feature is still being tested_
+- **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control). _This feature is still being tested_.
 - **body_type**: set the type of the body
 - **body_type_weight**: coefficient (weight) of the body type
 - **model_pose**: select the pose from the list

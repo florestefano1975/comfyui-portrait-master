@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.2.2
+# Version: 3.3.0
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -58,7 +58,7 @@ class PortraitMasterBaseCharacter:
         return {
             "optional": {
                 "text_in": ("STRING", {"forceInput": True}),
-                "seed": ("INT", {"forceInput": True}),
+                "seed": ("INT", {"forceInput": False}),
             },
             "required": {
                 "shot": (['-'] + [rand_opt] + lists['shot'], {
@@ -370,7 +370,7 @@ class PortraitMasterSkinDetails:
         return {
             "optional": {
                 "text_in": ("STRING", {"forceInput": True}),
-                "seed": ("INT", {"forceInput": True}),
+                "seed": ("INT", {"forceInput": False}),
             },
             "required": {
                 "natural_skin": ("FLOAT", {
@@ -605,7 +605,7 @@ class PortraitMasterStylePose:
         return {
             "optional": {
                 "text_in": ("STRING", {"forceInput": True}),
-                "seed": ("INT", {"forceInput": True}),
+                "seed": ("INT", {"forceInput": False}),
             },
             "required": {
                 "model_pose": (['-'] + [rand_opt] + lists['model_pose'], {
@@ -754,7 +754,7 @@ class PortraitMasterMakeup:
         return {
             "optional": {
                 "text_in": ("STRING", {"forceInput": True}),
-                "seed": ("INT", {"forceInput": True}),
+                "seed": ("INT", {"forceInput": False}),
             },
             "required": {
                 "makeup_style": (['-'] + [rand_opt] + lists['makeup'], {
@@ -826,12 +826,93 @@ class PortraitMasterMakeup:
         else:
             return('',)
 
+# Portrait Master Prompt Styler
+
+class PortraitMasterPromptStyler:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "text_in": ("STRING", {"forceInput": True}),
+                "style": (
+                    [
+                        "descriptive",
+                        "cinematic",
+                        "illustrative",
+                        "artistic",
+                        "documentary",
+                        "fashion"
+                    ],
+                    {"default": "descriptive"}
+                ),
+                "add_extra_instructions": ("BOOLEAN", {"default": True}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text_out",)
+    FUNCTION = "pm_prompt_styler"
+    CATEGORY = "AI WizArt/Portrait Master"
+
+    def pm_prompt_styler(self, text_in, style="descriptive", add_extra_instructions=True):
+        # Clean prompt
+        tags = [t.strip() for t in text_in.split(',') if t.strip()]
+        clean_tags = []
+
+        for tag in tags:
+            # Remove weight
+            if '(' in tag and ')' in tag:
+                content = tag.split('(')[1].split(')')[0]
+                if ':' in content:
+                    content = content.split(':')[0].strip()
+                clean_tags.append(content)
+            else:
+                clean_tags.append(tag)
+
+        # Remove duplicates
+        clean_tags = list(dict.fromkeys(clean_tags))
+
+        # Dictionary styles
+        style_prompts = {
+            "descriptive": "A detailed photo of {subject} including the following features: {description}.",
+            "cinematic": "Cinematic portrait of {subject}, {description}, dramatic lighting, cinematic composition.",
+            "illustrative": "Illustration of {subject}, {description}, suitable for concept art or digital illustration.",
+            "artistic": "{subject} portrayed artistically with the following traits: {description}. Rich details and textures.",
+            "documentary": "Documentary-style photograph of {subject} showing: {description}. Natural lighting, realistic scene.",
+            "fashion": "Fashion editorial shot of {subject}, {description}, stylish pose, professional photography."
+        }
+
+        # Frase composition
+        subject = "a person"
+        description = ", ".join(clean_tags)
+
+        # Gender and age
+        for tag in clean_tags:
+            if any(x in tag for x in ['girl', 'woman', 'female']):
+                subject = "a woman"
+            elif any(x in tag for x in ['boy', 'man', 'male']):
+                subject = "a man"
+            elif 'young' in tag:
+                subject = f"a young {subject}"
+
+        prompt_base = style_prompts.get(style, style_prompts['descriptive'])
+        final_prompt = prompt_base.format(subject=subject, description=description)
+
+        if add_extra_instructions:
+            final_prompt += " Photorealistic, high resolution, dynamic lighting, intricate details."
+
+        return (final_prompt,)
+    
 NODE_CLASS_MAPPINGS = {
     "PortraitMasterBaseCharacter": PortraitMasterBaseCharacter,
     "PortraitMasterSkinDetails": PortraitMasterSkinDetails,
     "PortraitMasterStylePose": PortraitMasterStylePose,
     "PortraitMasterMakeup": PortraitMasterMakeup,
-    "PortraitMaster": PortraitMaster
+    "PortraitMasterPromptStyler": PortraitMasterPromptStyler,
+    "PortraitMaster": PortraitMaster,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -839,5 +920,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "PortraitMasterSkinDetails": "Portrait Master: Skin Details",
     "PortraitMasterStylePose": "Portrait Master: Style & Pose",
     "PortraitMasterMakeup": "Portrait Master: Make-up",
-    "PortraitMaster": "Portrait Master 2.9.2 (Legacy)"
+    "PortraitMasterPromptStyler": "Portrait Master: Prompt Styler",
+    "PortraitMaster": "Portrait Master 2.9.2 (Legacy)",
 }

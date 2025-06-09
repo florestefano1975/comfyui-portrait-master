@@ -1,3 +1,7 @@
+## 09.06.2025
+
+- Minor update
+
 ## 30.04.2025
 
 - New node: __Prompt Styler__. This node removes the declarative weights typical of the SD1.5 and SDXL models to adapt the prompt with a conversational style, more suitable for modern checkpoints such as Flux, Sana, Hidream.

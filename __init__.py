@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.3.0
+# Version: 3.3.1
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -309,9 +309,9 @@ class PortraitMasterBaseCharacter:
 
             if facial_expression_weight > 0:
                 if facial_expression == rand_opt:
-                    prompt.append(applyWeight(random.choice(lists['face_expression']),facial_expression_weight))
+                    prompt.append(applyWeight(random.choice(lists['face_expression']) + ' expression',facial_expression_weight))
                 elif facial_expression != '-':
-                    prompt.append(applyWeight(facial_expression,facial_expression_weight))
+                    prompt.append(applyWeight(facial_expression + ' expression',facial_expression_weight))
 
             if face_shape_weight > 0:
                 if face_shape == rand_opt:

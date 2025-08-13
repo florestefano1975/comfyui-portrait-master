@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.3.1
+# Version: 3.4.0
 # https://stefanoflore.it
 # https://ai-wiz.art
 

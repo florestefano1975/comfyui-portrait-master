@@ -6,24 +6,9 @@
 
 import os
 import random
+from .utils import pmReadTxt, applyWeight
 
 script_dir = os.path.dirname(__file__)
-
-# read txt file
-
-def pmReadTxt(file_path):
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-        values = [line.strip() for line in lines]
-        return values
-
-# apply weight
-    
-def applyWeight(text, weight):
-    if weight == 1:
-        return text
-    else:
-        return f"({text}:{round(weight,2)})"
 
 # setup vars
 
@@ -97,7 +82,7 @@ clothes_list.sort()
 
 age_list = pmReadTxt(os.path.join(script_dir, "lists/age_list.txt"))
 age_list.sort()
-    
+
 # Portrait Master version (Legacy)
 
 class PortraitMaster:

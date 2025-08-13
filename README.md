@@ -2,8 +2,9 @@
 
 This nodes was designed to help AI image creators to generate prompts for human portraits.
 
-## Version 3.3.0
+## Version 3.4.0
 
+- **New Preset System**: All main nodes now feature a system to save, load, and manage your favorite settings.
 - The node has been divided into **five** separate modules: **Base Character**, **Skin Details**, **Style & Pose**, **Make-up**, **Prompt Styler**.
 - New node: __Prompt Styler__. This node removes the declarative weights typical of the SD1.5 and SDXL models to adapt the prompt with a conversational style, more suitable for modern checkpoints such as Flux, Sana, Hidream.
 - Improved code and performance.
@@ -42,6 +43,29 @@ To update comfyui-portrait-master:
 3. restart ComfyUI
 
 **Warning: update command overwrites files modified and customized by users.**
+
+## Presets (New in v3.4.0)
+
+All main nodes (Base Character, Skin Details, Style & Pose, Make-up) now include a preset system to easily save and load your favorite configurations.
+
+### How to Save a Preset
+
+1.  Set up all the sliders and options on a node to your liking.
+2.  Go to the `--- PRESETS ---` section at the bottom of the node.
+3.  In the `save_preset_as` text field, type a name for your preset (e.g., "Cyberpunk Hero" or "Vintage Look").
+4.  Toggle the `save_preset` switch to `True`.
+5.  Queue the prompt. Your current settings will be saved as a `.json` file.
+6.  After saving, you can turn the `save_preset` switch back to `False`.
+
+### How to Load a Preset
+
+1.  Use the `load_preset` dropdown menu. It will automatically list all the presets you have saved for that specific node.
+2.  Select the preset you want to use.
+3.  Queue the prompt. The node will ignore the settings on the interface and use the values from your selected preset file instead.
+
+### Preset File Location
+
+Your presets are saved in the `comfyui-portrait-master/presets/` directory. Each node has its own sub-directory (e.g., `presets/BaseCharacter/`, `presets/SkinDetails/`), so presets for different nodes are kept separate.
 
 ## Available Options
 

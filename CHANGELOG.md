@@ -1,6 +1,7 @@
 ## 14.09.2025
 
 - New node: **Face Generator**
+- **Portrait Master Base Character**: added breast and butt options
 
 ## 09.06.2025
 

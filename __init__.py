@@ -22,7 +22,7 @@ rand_opt = 'random 🎲'
 def load_lists():
     lists = {}
     list_names = [
-        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie"
+        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie", "breast_size", "butt_size"
     ]
     for name in list_names:
         list_path = os.path.join(script_dir, f"lists/{name}_list.txt")
@@ -106,6 +106,10 @@ class PortraitMasterBaseCharacter:
                 "nationality_mix": ("FLOAT", {"default": 0.5, "min": 0, "max": 1, "step": 0.05, "display": "slider"}),
                 "body_type": (['-'] + [rand_opt] + lists['body_type'], {"default": '-'}),
                 "body_type_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "breast_size": (['-'] + [rand_opt] + lists['breast_size'], {"default": '-'}),
+                "breast_size_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "butt_size": (['-'] + [rand_opt] + lists['butt_size'], {"default": '-'}),
+                "butt_size_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
                 "eyes_color": (['-'] + [rand_opt] + lists['eyes_color'], {"default": '-'}),
                 "eyes_shape": (['-'] + [rand_opt] + lists['eyes_shape'], {"default": '-'}),
                 "lips_color": (['-'] + [rand_opt] + lists['lips_color'], {"default": '-'}),
@@ -149,6 +153,10 @@ class PortraitMasterBaseCharacter:
         nationality_mix=params.get('nationality_mix',0.5)
         body_type=params.get('body_type','-')
         body_type_weight=params.get('body_type_weight',1)
+        breast_size=params.get('breast_size','-')
+        breast_size_weight=params.get('breast_size_weight',1)
+        butt_size=params.get('butt_size','-')
+        butt_size_weight=params.get('butt_size_weight',1)
         eyes_color=params.get('eyes_color','-')
         eyes_shape=params.get('eyes_shape','-')
         lips_color=params.get('lips_color','-')
@@ -193,6 +201,12 @@ class PortraitMasterBaseCharacter:
             if body_type_weight > 0:
                 if body_type == rand_opt: prompt.append(applyWeight(random.choice(lists['body_type']) + ' body',body_type_weight))
                 elif body_type != '-': prompt.append(applyWeight(body_type,body_type_weight) + ' body')
+            if breast_size_weight > 0:
+                if breast_size == rand_opt: prompt.append(applyWeight(random.choice(lists['breast_size']) + ' breasts',breast_size_weight))
+                elif breast_size != '-': prompt.append(applyWeight(breast_size + ' breasts',breast_size_weight))
+            if butt_size_weight > 0:
+                if butt_size == rand_opt: prompt.append(applyWeight(random.choice(lists['butt_size']) + ' butt',butt_size_weight))
+                elif butt_size != '-': prompt.append(applyWeight(butt_size + ' butt',butt_size_weight))
             if eyes_color == rand_opt: prompt.append(f"({random.choice(lists['eyes_color'])} eyes:1.05)")
             elif eyes_color != '-': prompt.append(f"({eyes_color} eyes:1.05)")
             if eyes_shape == rand_opt: prompt.append(f"({random.choice(lists['eyes_shape'])}:1.05)")

@@ -7,6 +7,7 @@ This nodes was designed to help AI image creators to generate prompts for human 
 ### Version 3.5.0
 
 - New node: **Face Generator**
+- **Portrait Master Base Character**: added breast and butt options
 
 ### Version 3.4.0
 

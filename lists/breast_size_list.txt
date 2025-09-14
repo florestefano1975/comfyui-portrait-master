@@ -1,0 +1,5 @@
+flat
+small
+medium
+large
+huge

@@ -268,7 +268,6 @@ Your support helps maintain and improve this project for the entire community.
 - **[Legacy Documentation](PORTRAIT_MASTER_2.9.2.md)** - Documentation for Portrait Master 2.9.2
 - **[Example Workflows](workflow/)** - Sample workflows for different use cases
 - **[Developer Website](https://stefanoflore.it)** - More projects and resources
-- **[AI Wiz Art](https://ai-wiz.art)** - AI art community and tutorials
 
 ---
 

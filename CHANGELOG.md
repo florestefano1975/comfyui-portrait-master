@@ -1,3 +1,7 @@
+## 14.09.2025
+
+- New node: **Face Generator**
+
 ## 09.06.2025
 
 - Minor update

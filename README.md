@@ -2,7 +2,13 @@
 
 This nodes was designed to help AI image creators to generate prompts for human portraits.
 
-## Version 3.4.0
+## Last Updates
+
+### Version 3.5.0
+
+- New node: **Face Generator**
+
+### Version 3.4.0
 
 - **New Preset System**: All main nodes now feature a system to save, load, and manage your favorite settings.
 - The node has been divided into **five** separate modules: **Base Character**, **Skin Details**, **Style & Pose**, **Make-up**, **Prompt Styler**.

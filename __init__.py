@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.4.0
+# Version: 3.5.0
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -450,6 +450,139 @@ class PortraitMasterMakeup:
             if lip_gloss: prompt.append("(lip gloss make-up:1.05)")
         return (', '.join(prompt).lower(),) if prompt else ('',)
 
+# Portrait Master Face Generator
+
+class PortraitMasterFaceGenerator:
+    preset_class = "FaceGenerator"
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        preset_files = get_presets(s.preset_class)
+        return {
+            "optional": {"text_in": ("STRING", {"forceInput": True}), "seed": ("INT", {"forceInput": False})},
+            "required": {
+                "gender": (['-'] + [rand_opt] + lists['gender'], {"default": '-'}),
+                "age": (['-'] + [rand_opt] + lists['age'], {"default": '-'}),
+                "nationality": (['-'] + [rand_opt] + lists['nationality'], {"default": '-'}),
+                "body_type": (['-'] + [rand_opt] + lists['body_type'], {"default": '-'}),
+                "eyes_color": (['-'] + [rand_opt] + lists['eyes_color'], {"default": '-'}),
+                "hair_style": (['-'] + [rand_opt] + lists['hair_style'], {"default": '-'}),
+                "hair_color": (['-'] + [rand_opt] + lists['hair_color'], {"default": '-'}),
+                "hair_length": (['-'] + [rand_opt] + lists['hair_length'], {"default": '-'}),
+                "beard": (['-'] + [rand_opt] + lists['beard'], {"default": '-'}),
+                "beard_color": (['-'] + [rand_opt] + lists['beard_color'], {"default": '-'}),
+                "active": ("BOOLEAN", {"default": True}),
+                "load_preset": (["-- disabled --"] + preset_files, ),
+                "save_preset_as": ("STRING", {"default": ""}),
+                "save_preset": ("BOOLEAN", {"default": False}),
+            }
+        }
+
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("text_out",)
+    FUNCTION = "pmfg"
+    CATEGORY = "AI WizArt/Portrait Master"
+
+    def pmfg(self, **kwargs):
+        params = handle_presets(self, **kwargs)
+        
+        text_in = params.get('text_in', '')
+        gender = params.get('gender', '-')
+        age = params.get('age', '-')
+        nationality = params.get('nationality', '-')
+        body_type = params.get('body_type', '-')
+        eyes_color = params.get('eyes_color', '-')
+        hair_style = params.get('hair_style', '-')
+        hair_color = params.get('hair_color', '-')
+        hair_length = params.get('hair_length', '-')
+        beard = params.get('beard', '-')
+        beard_color = params.get('beard_color', '-')
+        active = params.get('active', True)
+
+        prompt = []
+        if text_in: 
+            prompt.append(text_in)
+        
+        if active:
+            # Base setup per volto frontale simmetrico
+            prompt.append("front view portrait")
+            prompt.append("symmetrical face")
+            prompt.append("neutral expression")
+            prompt.append("white background")
+            prompt.append("soft diffused lighting")
+            
+            # Caratteristiche del personaggio
+            character_parts = []
+            
+            # Genere
+            if gender == rand_opt:
+                character_parts.append(random.choice(lists['gender']).lower())
+            elif gender != '-':
+                character_parts.append(gender.lower())
+            
+            # Età
+            if age == rand_opt:
+                character_parts.append(f"{random.choice(lists['age'])}-years-old")
+            elif age != '-':
+                character_parts.append(f"{age}-years-old")
+            
+            # Nazionalità
+            if nationality == rand_opt:
+                character_parts.append(random.choice(lists['nationality']).lower())
+            elif nationality != '-':
+                character_parts.append(nationality.lower())
+            
+            # Tipo di corpo
+            if body_type == rand_opt:
+                character_parts.append(f"{random.choice(lists['body_type']).lower()} body")
+            elif body_type != '-':
+                character_parts.append(f"{body_type.lower()} body")
+            
+            if character_parts:
+                prompt.append(" ".join(character_parts))
+            
+            # Colore occhi
+            if eyes_color == rand_opt:
+                prompt.append(f"{random.choice(lists['eyes_color']).lower()} eyes")
+            elif eyes_color != '-':
+                prompt.append(f"{eyes_color.lower()} eyes")
+            
+            # Stile capelli
+            if hair_style == rand_opt:
+                prompt.append(f"{random.choice(lists['hair_style']).lower()} hair style")
+            elif hair_style != '-':
+                prompt.append(f"{hair_style.lower()} hair style")
+            
+            # Colore capelli
+            if hair_color == rand_opt:
+                prompt.append(f"{random.choice(lists['hair_color']).lower()} hair")
+            elif hair_color != '-':
+                prompt.append(f"{hair_color.lower()} hair")
+            
+            # Lunghezza capelli
+            if hair_length == rand_opt:
+                prompt.append(f"{random.choice(lists['hair_length']).lower()} hair length")
+            elif hair_length != '-':
+                prompt.append(f"{hair_length.lower()} hair length")
+            
+            # Barba
+            if beard == rand_opt:
+                prompt.append(random.choice(lists['beard']).lower())
+            elif beard != '-':
+                prompt.append(beard.lower())
+            
+            # Colore barba
+            if beard_color == rand_opt:
+                prompt.append(f"{random.choice(lists['beard_color']).lower()} beard")
+            elif beard_color != '-':
+                prompt.append(f"{beard_color.lower()} beard")
+        
+        return (', '.join(prompt),) if prompt else ('',)
+
+
 # Portrait Master Prompt Styler
 
 class PortraitMasterPromptStyler:
@@ -506,6 +639,7 @@ NODE_CLASS_MAPPINGS = {
     "PortraitMasterStylePose": PortraitMasterStylePose,
     "PortraitMasterMakeup": PortraitMasterMakeup,
     "PortraitMasterPromptStyler": PortraitMasterPromptStyler,
+    "PortraitMasterFaceGenerator": PortraitMasterFaceGenerator,
     "PortraitMaster": PortraitMaster,
 }
 
@@ -515,5 +649,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "PortraitMasterStylePose": "Portrait Master: Style & Pose",
     "PortraitMasterMakeup": "Portrait Master: Make-up",
     "PortraitMasterPromptStyler": "Portrait Master: Prompt Styler",
+    "PortraitMasterFaceGenerator": "Portrait Master: Face Generator",
     "PortraitMaster": "Portrait Master 2.9.2 (Legacy)",
 }

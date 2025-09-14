@@ -1,152 +1,276 @@
 # ComfyUI Portrait Master
 
-This nodes was designed to help AI image creators to generate prompts for human portraits.
+A comprehensive custom node for ComfyUI designed to help AI image creators generate detailed and professional prompts for human portraits. This powerful tool provides modular control over every aspect of portrait generation, from basic character features to advanced skin details and styling options.
 
-## Last Updates
+## 🌟 Features
 
-### Version 3.5.0
+### Modular Node System
+- **Portrait Master: Base Character** - Core character attributes (gender, age, nationality, body type, facial features)
+- **Portrait Master: Skin Details** - Advanced skin rendering controls (pores, imperfections, natural skin effects)
+- **Portrait Master: Style & Pose** - Lighting, poses, clothing, and artistic styles
+- **Portrait Master: Make-up** - Comprehensive makeup options with color controls
+- **Portrait Master: Face Generator** - Simplified face generation for quick results
+- **Portrait Master: Prompt Styler** - Converts weighted prompts to conversational style for modern models
 
-- New node: **Face Generator**
-- **Portrait Master Base Character**: added breast and butt options
+### Advanced Features
+- **Preset System** - Save and load your favorite configurations across all nodes
+- **Random Generation** - Built-in randomization for creative exploration
+- **Weight Control** - Fine-tune the influence of each parameter
+- **Nationality Mixing** - Blend multiple ethnicities with precise control
+- **Comprehensive Lists** - Over 1000+ options across all categories
+
+### Extensive Options Library
+- **192 Nationalities** - Complete global coverage
+- **65+ Artistic Styles** - From vintage photography to modern effects
+- **100+ Hair Styles** - Comprehensive hair options
+- **70+ Lighting Types** - Professional lighting setups
+- **87+ Model Poses** - Diverse pose library
+- **And much more** - Eyes, lips, makeup, clothing, expressions, and body types
+
+## 📋 Requirements
+
+- **ComfyUI** - Latest version recommended
+- **Python 3.8+** - Required for ComfyUI
+- **Compatible Models** - Works with SD1.5, SDXL, Flux, and other modern checkpoints
+- **Optional Dependencies**:
+  - [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) - For easy installation
+  - [ComfyUI Prompt Control](https://github.com/asagi4/comfyui-prompt-control) - For nationality mixing syntax
+
+## 🚀 Installation
+
+### Method 1: ComfyUI Manager (Recommended)
+1. Open ComfyUI Manager
+2. Search for `florestefano1975` in the search bar
+3. Click the install button for "ComfyUI Portrait Master"
+4. Restart ComfyUI
+
+### Method 2: Manual Installation
+1. Navigate to your ComfyUI `custom_nodes` folder
+2. Open terminal/command prompt in this directory
+3. Run: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
+4. Restart ComfyUI
+
+### Method 3: Manual Update
+To update an existing installation:
+1. Navigate to the `comfyui-portrait-master` folder
+2. Run: `git pull`
+3. Restart ComfyUI
+
+**⚠️ Warning**: The update command will overwrite any custom modifications you've made to the files.
+
+## 📖 Usage Guide
+
+### Basic Workflow
+1. **Add Base Character Node** - Start with [`PortraitMasterBaseCharacter`](nodes/base-character) for core features
+2. **Chain Additional Nodes** - Connect [`PortraitMasterSkinDetails`](nodes/skin-details), [`PortraitMasterStylePose`](nodes/style-pose), etc.
+3. **Configure Parameters** - Adjust sliders and dropdowns to your preferences
+4. **Connect to Prompt** - Link the final output to your [`CLIPTextEncode`](nodes/clip-text-encode) node
+5. **Generate** - Run your workflow to create detailed portrait prompts
+
+### Node Descriptions
+
+#### Portrait Master: Base Character
+Controls fundamental character attributes:
+- **Shot Types**: Head portrait, full body, close-up, etc.
+- **Demographics**: Gender, age, nationality with mixing support
+- **Physical Features**: Body type, breast/butt size, facial features
+- **Hair & Beard**: Style, color, length options
+- **Facial Details**: Expression, face shape, asymmetry controls
+
+#### Portrait Master: Skin Details
+Advanced skin rendering controls:
+- **Skin Quality**: Natural skin, bare face, washed/dried effects
+- **Details**: Skin pores, imperfections, acne, tanned skin
+- **Features**: Dimples, freckles, moles, wrinkles
+- **Eyes**: Detailed eye rendering, iris details, pupil shape
+
+#### Portrait Master: Style & Pose
+Environmental and artistic controls:
+- **Poses**: 87+ model poses from the pose library
+- **Clothing**: General clothing and female lingerie options
+- **Lighting**: 70+ professional lighting setups with direction control
+- **Styles**: 65+ artistic styles from vintage to modern
+- **Enhancement**: Photorealism improvement toggle
+
+#### Portrait Master: Make-up
+Comprehensive makeup system:
+- **Styles**: Various makeup styles and color schemes
+- **Individual Elements**: Eyeshadow, eyeliner, mascara, blush, lipstick, lip gloss
+- **Color Control**: Specific makeup color selection
+
+#### Portrait Master: Face Generator
+Simplified face generation for quick results:
+- **Optimized Settings**: Pre-configured for frontal, symmetrical faces
+- **Essential Controls**: Gender, age, nationality, basic features
+- **Clean Output**: Neutral expressions with professional lighting
+
+#### Portrait Master: Prompt Styler
+Converts traditional weighted prompts to conversational style:
+- **Style Options**: Descriptive, cinematic, illustrative, artistic, documentary, fashion
+- **Modern Compatibility**: Optimized for Flux, Sana, HiDream, and similar models
+- **Clean Conversion**: Removes SD1.5/SDXL weight syntax
+
+## 🎛️ Preset System
+
+### Saving Presets
+1. Configure all parameters in a node to your desired settings
+2. Scroll to the `--- PRESETS ---` section at the bottom
+3. Enter a descriptive name in the `save_preset_as` field (e.g., "Cyberpunk Hero")
+4. Toggle `save_preset` to `True`
+5. Queue the prompt to save the preset
+6. Turn `save_preset` back to `False`
+
+### Loading Presets
+1. Use the `load_preset` dropdown menu
+2. Select from your saved presets for that specific node
+3. Queue the prompt to apply the preset settings
+
+### Preset Storage
+Presets are stored in [`comfyui-portrait-master/presets/`](presets/) with separate subdirectories for each node type:
+- [`presets/BaseCharacter/`](presets/BaseCharacter/)
+- [`presets/SkinDetails/`](presets/SkinDetails/)
+- [`presets/StylePose/`](presets/StylePose/)
+- [`presets/Makeup/`](presets/Makeup/)
+- [`presets/FaceGenerator/`](presets/FaceGenerator/)
+
+## 🎲 Random Generation
+
+Enable creative exploration with built-in randomization:
+- **Random Option**: Select "random 🎲" from any dropdown
+- **Seed Control**: Connect a seed input for reproducible randomization
+- **Weight Control**: Use sliders to control the influence of random selections
+
+## 📊 Available Parameters
+
+### Core Parameters
+| Parameter | Description | Options |
+|-----------|-------------|---------|
+| [`shot`](lists/shot_list.txt) | Portrait framing type | 8 options (Head portrait, Full body, etc.) |
+| [`gender`](lists/gender_list.txt) | Character gender | Man, Woman |
+| [`age`](lists/age_list.txt) | Character age | Multiple age ranges |
+| [`nationality_1`](lists/nationality_list.txt) & [`nationality_2`](lists/nationality_list.txt) | Ethnicity options | 192 nationalities |
+| [`body_type`](lists/body_type_list.txt) | Body build | Multiple body types |
+| [`eyes_color`](lists/eyes_color_list.txt) | Eye color | 10+ color options |
+| [`hair_style`](lists/hair_style_list.txt) | Hairstyle | 100+ styles |
+| [`hair_color`](lists/hair_color_list.txt) | Hair color | 21 color options |
+
+### Advanced Controls
+- **Weight Parameters**: Fine-tune influence with decimal precision (0.00-2.00)
+- **Nationality Mixing**: Blend ethnicities using `nationality_mix` slider (0.0-1.0)
+- **Facial Asymmetry**: Add realistic facial variations
+- **Skin Details**: Control pores, imperfections, and natural skin effects
+- **Lighting Direction**: Professional lighting setups with directional control
+
+## 🖼️ Model Pose Library
+
+The [`model_pose`](lists/model_pose_list.txt) option provides 87+ predefined poses:
+- Disable ControlNet when using pose library
+- Adjust framing with the [`shot`](lists/shot_list.txt) parameter
+- Poses are optimized for portrait generation
+
+![Model Pose Library](screenshot/legacy/portrait-master-pose-library-2.2b.jpg)
+
+## 💡 Tips & Best Practices
+
+### Optimal Settings
+- **Skin Details**: High values may override shot settings - reduce if needed
+- **Eye Details**: Balance with shot type to avoid conflicts
+- **Negative Prompts**: Add `(closeup, close up, close-up:1.5)` if detail parameters interfere
+- **Model Selection**: Use high-quality checkpoints for best results
+
+### Recommended Models
+- **[FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525)** - Excellent for photorealistic portraits
+- **SDXL Models** - Generally provide superior portrait quality
+- **Flux Models** - Use with Prompt Styler for optimal results
+
+### Workflow Integration
+- **Compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)**
+- **Chain multiple Portrait Master nodes** for complex character creation
+- **Use presets** to maintain consistency across projects
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+**Node not appearing in ComfyUI**
+- Ensure ComfyUI is restarted after installation
+- Check that files are in the correct `custom_nodes` directory
+- Verify no Python errors in the console
+
+**Random options not working**
+- Connect a seed input to enable randomization
+- Ensure "random 🎲" is selected in dropdown menus
+- Check that the seed is properly connected
+
+**Preset system not working**
+- Verify write permissions in the ComfyUI directory
+- Check that the `presets` folder is created automatically
+- Ensure preset names don't contain invalid characters
+
+**Nationality mixing not working**
+- Install [ComfyUI Prompt Control](https://github.com/asagi4/comfyui-prompt-control) for full syntax support
+- Use the format: `[nationality_1:nationality_2:mix_value]`
+- This feature is experimental and may not work with all models
+
+**Output prompts too complex**
+- Use the Prompt Styler node to simplify for modern models
+- Reduce weight values for subtle effects
+- Set unused parameters to "-" to exclude them
+
+### Performance Issues
+- **Large workflows**: Consider using fewer nodes simultaneously
+- **Memory usage**: High detail settings may increase VRAM requirements
+- **Generation speed**: Complex prompts may slow down inference
+
+## 📝 Version History
+
+### Version 3.5.0 (Latest)
+- ✨ **New**: Face Generator node for simplified face creation
+- ✨ **Enhanced**: Base Character node with breast and butt size options
+- 🔧 **Improved**: Overall code performance and stability
 
 ### Version 3.4.0
+- ✨ **New**: Comprehensive preset system across all nodes
+- ✨ **New**: Prompt Styler node for modern model compatibility
+- 🔄 **Restructured**: Split into five specialized modules
+- 🔧 **Improved**: Code optimization and performance enhancements
 
-- **New Preset System**: All main nodes now feature a system to save, load, and manage your favorite settings.
-- The node has been divided into **five** separate modules: **Base Character**, **Skin Details**, **Style & Pose**, **Make-up**, **Prompt Styler**.
-- New node: __Prompt Styler__. This node removes the declarative weights typical of the SD1.5 and SDXL models to adapt the prompt with a conversational style, more suitable for modern checkpoints such as Flux, Sana, Hidream.
-- Improved code and performance.
+### Previous Versions
+See [CHANGELOG.md](CHANGELOG.md) for complete version history.
 
-## Donations and marketplace
+## 🤝 Contributing
 
-**_If this project is useful to you and you like it, please consider a small donation to the author_**
+We welcome contributions to improve Portrait Master:
+- **Bug Reports**: Use GitHub Issues for bug reports
+- **Feature Requests**: Suggest new features via GitHub Issues
+- **Code Contributions**: Submit pull requests with improvements
+- **Documentation**: Help improve documentation and examples
 
-➡️ https://ko-fi.com/stefanoflore75
+## 📄 License
 
-## Overview of the custom node
+This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
 
-![ComfyUI Portrait Master Node](/screenshot/overview.png)
+## 💖 Support the Project
 
-## Install from ComfyUI Manager
+If you find Portrait Master useful, please consider supporting the developer:
 
-- Type _florestefano1975_ on the search bar of [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager).
-- Click the install button.
+**☕ [Support on Ko-fi](https://ko-fi.com/stefanoflore75)**
 
-## Manual installation and update instructions
+Your support helps maintain and improve this project for the entire community.
 
-### Install
+## 🔗 Related Projects
 
-To install comfyui-portrait-master:
+- **[ComfyUI Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)** - Advanced prompt composition tools
+- **[ComfyUI HiDiffusion](https://github.com/florestefano1975/ComfyUI-HiDiffusion/)** - High-resolution diffusion enhancements
 
-1. open the terminal on the ComfyUI `custom_nodes` folder
-2. digit: `git clone https://github.com/florestefano1975/comfyui-portrait-master`
-3. restart ComfyUI
+## 📚 Additional Resources
 
-### Update
+- **[Legacy Documentation](PORTRAIT_MASTER_2.9.2.md)** - Documentation for Portrait Master 2.9.2
+- **[Example Workflows](workflow/)** - Sample workflows for different use cases
+- **[Developer Website](https://stefanoflore.it)** - More projects and resources
+- **[AI Wiz Art](https://ai-wiz.art)** - AI art community and tutorials
 
-To update comfyui-portrait-master:
+---
 
-1. open the terminal on the ComfyUI `comfyui-portrait-master` folder
-2. digit: `git pull`
-3. restart ComfyUI
-
-**Warning: update command overwrites files modified and customized by users.**
-
-## Presets (New in v3.4.0)
-
-All main nodes (Base Character, Skin Details, Style & Pose, Make-up) now include a preset system to easily save and load your favorite configurations.
-
-### How to Save a Preset
-
-1.  Set up all the sliders and options on a node to your liking.
-2.  Go to the `--- PRESETS ---` section at the bottom of the node.
-3.  In the `save_preset_as` text field, type a name for your preset (e.g., "Cyberpunk Hero" or "Vintage Look").
-4.  Toggle the `save_preset` switch to `True`.
-5.  Queue the prompt. Your current settings will be saved as a `.json` file.
-6.  After saving, you can turn the `save_preset` switch back to `False`.
-
-### How to Load a Preset
-
-1.  Use the `load_preset` dropdown menu. It will automatically list all the presets you have saved for that specific node.
-2.  Select the preset you want to use.
-3.  Queue the prompt. The node will ignore the settings on the interface and use the values from your selected preset file instead.
-
-### Preset File Location
-
-Your presets are saved in the `comfyui-portrait-master/presets/` directory. Each node has its own sub-directory (e.g., `presets/BaseCharacter/`, `presets/SkinDetails/`), so presets for different nodes are kept separate.
-
-## Available Options
-
-- **shot**: sets the shot type
-- **shot_weight**: coefficient (weight) of the shot type
-- **gender**: sets the character's gender
-- **androgynous**: coefficient (weight) to change the genetic appearance of the character
-- **age**: the age of the subject portrayed
-- **nationality_1**: sets first ethnicity
-- **nationality_2**: sets second ethnicity
-- **nationality_mix**: controls the mix between nationality_1 and nationality_2, according to the syntax [nationality_1: nationality_2: nationality_mix]. This syntax is not natively recognized by ComfyUI; we therefore recommend the use of [comfyui-prompt-control](https://github.com/asagi4/comfyui-prompt-control). _This feature is still being tested_.
-- **body_type**: set the type of the body
-- **body_type_weight**: coefficient (weight) of the body type
-- **model_pose**: select the pose from the list
-- **eyes_color**: set the eyes color
-- **eyes_shape**: set the eyes shape
-- **lips_color**: set the lips color
-- **lips_shape**: set the lips shape
-- **makeup**: set the makeup
-- **clothes**: set the clothes
-- **facial_expression** / **facial_expression_weight**: apply and adjust character's expression
-- **face_shape** / **face_shape_weight**: apply and adjust the face shape
-- **facial_asymmetry**: coefficient (weight) to set the asymmetry of the face
-- **hair_color**: set the hair color
-- **hairs_style**: hairstyle selector
-- **hairs_length**: hair length selector
-- **disheveled**: coefficient (weight) of the disheveled effect
-- **natural_skin**: coefficient (weight) for control the natural aspect of the skin
-- **bare_face**: coefficient (weight) for control bare face level
-- **washed_face**: coefficient (weight) for control washed face level
-- **dried_face**: coefficient (weight) for control dried face level
-- **skin_details**: coefficient (weight) of the skin detail
-- **skin_pores**: coefficient (weight) of the skin pores
-- **dimples**: coefficient (weight) for controlling facial dimples
-- **freckles**: coefficient (weight) of the freckles
-- **moles**: coefficient (weight) for the presence of moles on the skin
-- **skin_imperfections**: coefficient (weight) to introduce skin imperfections
-- **eyes_details**: coefficient (weight) for the general detail of the eyes
-- **iris_details**: coefficient (weight) for the iris detail
-- **circular_iris**: coefficient (weight) to increase or force the circular shape of the iris
-- **circular_pupil**: coefficient (weight) to increase or force the circular shape of the pupil
-- **light_type**: set global illumination
-- **light_direction**: set the direction of the light. _This feature is still being tested_
-- **photorealism_improvement**: experimental option to improve photorealism and the final result
-- **style_1** / **style_1_weight**: apply and adjust the first style
-- **style_1** / **style_1_weight**: apply and adjust the second style
-
-Parameters with null value (-) would be not included in the prompt generated.
-
-To enable the casual generation options, connect a random seed generator to the nodes.
-
-The nodes generates output string.
-
-## Model Pose Library
-
-The _model_pose_ option allows you to use a list of default poses. You need to disable ControlNet, if in use,  in this case and adjust framing with the _shot_ option.
-
-![Model Pose Library](/screenshot/legacy/portrait-master-pose-library-2.2b.jpg)
-
-## Practical advice
-
-Using high values for the skin and eye detail control parameters may override the setting for the chosen shot. In this case it is advisable to reduce the parameter values for the skin and eyes, or insert in the negative prompt (closeup, close up, close-up:1.5), modifying the weight as needed.
-
-## Notes
-
-The effectiveness of the parameters depends on the quality of the checkpoint used.
-
-For advanced photorealism we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525).
-
-Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/).
-
-[Portrait Master 2.9.2 (legacy) documentation](/PORTRAIT_MASTER_2.9.2.md)
-
-## Other projects
-
-- [ComfyUI Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)
-- [ComfyUI HiDiffusion](https://github.com/florestefano1975/ComfyUI-HiDiffusion/)
+**Created by [AI Wiz Art](https://ai-wiz.art) (Stefano Flore)**  
+**Version 3.5.0** | **[GitHub Repository](https://github.com/florestefano1975/comfyui-portrait-master)**

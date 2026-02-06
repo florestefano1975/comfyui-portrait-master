@@ -22,7 +22,7 @@ rand_opt = 'random 🎲'
 def load_lists():
     lists = {}
     list_names = [
-        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie", "breast_size", "butt_size"
+        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "eyebrows_color", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie", "breast_size", "butt_size"
     ]
     for name in list_names:
         list_path = os.path.join(script_dir, f"lists/{name}_list.txt")
@@ -112,6 +112,7 @@ class PortraitMasterBaseCharacter:
                 "butt_size_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
                 "eyes_color": (['-'] + [rand_opt] + lists['eyes_color'], {"default": '-'}),
                 "eyes_shape": (['-'] + [rand_opt] + lists['eyes_shape'], {"default": '-'}),
+                "eyebrows_color": (['-'] + [rand_opt] + lists['eyebrows_color'], {"default": '-'}),
                 "lips_color": (['-'] + [rand_opt] + lists['lips_color'], {"default": '-'}),
                 "lips_shape": (['-'] + [rand_opt] + lists['lips_shape'], {"default": '-'}),
                 "facial_expression": (['-'] + [rand_opt] + lists['face_expression'], {"default": '-'}),
@@ -159,6 +160,7 @@ class PortraitMasterBaseCharacter:
         butt_size_weight=params.get('butt_size_weight',1)
         eyes_color=params.get('eyes_color','-')
         eyes_shape=params.get('eyes_shape','-')
+        eyebrows_color=params.get('eyebrows_color','-')
         lips_color=params.get('lips_color','-')
         lips_shape=params.get('lips_shape','-')
         facial_expression=params.get('facial_expression','-')
@@ -211,6 +213,8 @@ class PortraitMasterBaseCharacter:
             elif eyes_color != '-': prompt.append(f"({eyes_color} eyes:1.05)")
             if eyes_shape == rand_opt: prompt.append(f"({random.choice(lists['eyes_shape'])}:1.05)")
             elif eyes_shape != '-': prompt.append(f"({eyes_shape}:1.05)")
+            if eyebrows_color == rand_opt: prompt.append(f"({random.choice(lists['eyebrows_color'])} eyebrows:1.05)")
+            elif eyebrows_color != '-': prompt.append(f"({eyebrows_color} eyebrows:1.05)")
             if lips_color == rand_opt: prompt.append(f"({random.choice(lists['lips_color'])}:1.05)")
             elif lips_color != '-': prompt.append(f"({lips_color}:1.05)")
             if lips_shape == rand_opt: prompt.append(f"({random.choice(lists['lips_shape'])}:1.05)")

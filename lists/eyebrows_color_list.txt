@@ -1,0 +1,26 @@
+blonde
+brown
+black
+dark brown
+light brown
+auburn
+gray
+white
+dark gray
+light gray
+dark blonde
+light blonde
+red
+ginger
+dark red
+chestnut
+dark chestnut
+light chestnut
+dark auburn
+light auburn
+dark
+light
+medium
+natural
+dark natural
+light natural

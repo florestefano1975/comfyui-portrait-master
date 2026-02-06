@@ -1,3 +1,7 @@
+## 06.02.2026
+
+- Added new option: **eyebrows_color**
+
 ## 14.09.2025
 
 - New node: **Face Generator**

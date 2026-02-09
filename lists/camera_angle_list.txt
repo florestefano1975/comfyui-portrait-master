@@ -1,0 +1,34 @@
+overhead
+top
+high
+medium
+low
+bottom
+eye level
+close up
+medium shot
+full body
+long shot
+wide shot
+extreme close up
+extreme wide shot
+low angle
+high angle
+bird's eye
+worm's eye
+profile
+three quarters
+front
+back
+side
+angled
+tilted
+cropped
+framed
+centered
+off-center
+asymmetrical
+symmetrical
+balanced
+dynamic
+static

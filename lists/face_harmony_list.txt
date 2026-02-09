@@ -1,0 +1,8 @@
+harmonious
+disharmonious
+balanced
+unbalanced
+even
+uneven
+regular
+irregular

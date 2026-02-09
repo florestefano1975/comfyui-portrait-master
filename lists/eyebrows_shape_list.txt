@@ -1,0 +1,21 @@
+arched
+straight
+curved
+rounded
+angular
+thick
+thin
+natural
+defined
+bold
+soft
+arched thick
+arched thin
+straight thick
+straight thin
+curved thick
+curved thin
+rounded thick
+rounded thin
+angular thick
+angular thin

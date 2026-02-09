@@ -1,6 +1,6 @@
 # PORTRAIT MASTER
 # Created by AI Wiz Art (Stefano Flore)
-# Version: 3.5.0
+# Version: 3.6.0
 # https://stefanoflore.it
 # https://ai-wiz.art
 
@@ -22,7 +22,7 @@ rand_opt = 'random 🎲'
 def load_lists():
     lists = {}
     list_names = [
-        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "eyebrows_color", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie", "breast_size", "butt_size"
+        "shot", "gender", "face_shape", "face_expression", "nationality", "hair_style", "light_type", "light_direction", "eyes_color", "eyes_shape", "eyebrows_color", "eyebrows_shape", "eyebrows_thickness", "beard_color", "hair_color", "hair_length", "body_type", "beard", "model_pose", "style", "lips_shape", "lips_color", "makeup", "clothes", "age", "makeup_color", "female_lingerie", "breast_size", "butt_size", "cheekbones", "jawline", "nose_shape", "nose_size", "neck", "skin_tone", "skin_texture", "skin_shine", "eyeshadow_color", "eyeliner_color", "mascara_color", "blush_color", "lipstick_color", "lip_gloss_color", "background", "camera_angle", "camera_distance", "camera_lens", "face_symmetry", "face_proportions", "face_balance", "face_harmony"
     ]
     for name in list_names:
         list_path = os.path.join(script_dir, f"lists/{name}_list.txt")
@@ -113,6 +113,9 @@ class PortraitMasterBaseCharacter:
                 "eyes_color": (['-'] + [rand_opt] + lists['eyes_color'], {"default": '-'}),
                 "eyes_shape": (['-'] + [rand_opt] + lists['eyes_shape'], {"default": '-'}),
                 "eyebrows_color": (['-'] + [rand_opt] + lists['eyebrows_color'], {"default": '-'}),
+                "eyebrows_shape": (['-'] + [rand_opt] + lists['eyebrows_shape'], {"default": '-'}),
+                "eyebrows_thickness": (['-'] + [rand_opt] + lists['eyebrows_thickness'], {"default": '-'}),
+                "eyebrows_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
                 "lips_color": (['-'] + [rand_opt] + lists['lips_color'], {"default": '-'}),
                 "lips_shape": (['-'] + [rand_opt] + lists['lips_shape'], {"default": '-'}),
                 "facial_expression": (['-'] + [rand_opt] + lists['face_expression'], {"default": '-'}),
@@ -126,6 +129,21 @@ class PortraitMasterBaseCharacter:
                 "disheveled": ("FLOAT", {"default": 0, "min": 0, "max": max_float_value, "step": 0.05, "display": "slider"}),
                 "beard": (['-'] + [rand_opt] + lists['beard'], {"default": '-'}),
                 "beard_color": (['-'] + [rand_opt] + lists['beard_color'], {"default": '-'}),
+                "cheekbones": (['-'] + [rand_opt] + lists['cheekbones'], {"default": '-'}),
+                "cheekbones_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "jawline": (['-'] + [rand_opt] + lists['jawline'], {"default": '-'}),
+                "jawline_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "nose_shape": (['-'] + [rand_opt] + lists['nose_shape'], {"default": '-'}),
+                "nose_size": (['-'] + [rand_opt] + lists['nose_size'], {"default": '-'}),
+                "neck": (['-'] + [rand_opt] + lists['neck'], {"default": '-'}),
+                "face_symmetry": (['-'] + [rand_opt] + lists['face_symmetry'], {"default": '-'}),
+                "face_symmetry_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "face_proportions": (['-'] + [rand_opt] + lists['face_proportions'], {"default": '-'}),
+                "face_proportions_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "face_balance": (['-'] + [rand_opt] + lists['face_balance'], {"default": '-'}),
+                "face_balance_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
+                "face_harmony": (['-'] + [rand_opt] + lists['face_harmony'], {"default": '-'}),
+                "face_harmony_weight": ("FLOAT", {"default": 1, "step": 0.05, "min": 0, "max": max_float_value, "display": "slider"}),
                 "active": ("BOOLEAN", {"default": True}),
                 "load_preset": (["-- disabled --"] + preset_files, ),
                 "save_preset_as": ("STRING", {"default": ""}),
@@ -161,6 +179,9 @@ class PortraitMasterBaseCharacter:
         eyes_color=params.get('eyes_color','-')
         eyes_shape=params.get('eyes_shape','-')
         eyebrows_color=params.get('eyebrows_color','-')
+        eyebrows_shape=params.get('eyebrows_shape','-')
+        eyebrows_thickness=params.get('eyebrows_thickness','-')
+        eyebrows_weight=params.get('eyebrows_weight',1)
         lips_color=params.get('lips_color','-')
         lips_shape=params.get('lips_shape','-')
         facial_expression=params.get('facial_expression','-')
@@ -174,6 +195,21 @@ class PortraitMasterBaseCharacter:
         disheveled=params.get('disheveled',0)
         beard=params.get('beard','-')
         beard_color=params.get('beard_color','-')
+        cheekbones=params.get('cheekbones','-')
+        cheekbones_weight=params.get('cheekbones_weight',1)
+        jawline=params.get('jawline','-')
+        jawline_weight=params.get('jawline_weight',1)
+        nose_shape=params.get('nose_shape','-')
+        nose_size=params.get('nose_size','-')
+        neck=params.get('neck','-')
+        face_symmetry=params.get('face_symmetry','-')
+        face_symmetry_weight=params.get('face_symmetry_weight',1)
+        face_proportions=params.get('face_proportions','-')
+        face_proportions_weight=params.get('face_proportions_weight',1)
+        face_balance=params.get('face_balance','-')
+        face_balance_weight=params.get('face_balance_weight',1)
+        face_harmony=params.get('face_harmony','-')
+        face_harmony_weight=params.get('face_harmony_weight',1)
         active=params.get('active',True)
 
         prompt = []
@@ -215,6 +251,13 @@ class PortraitMasterBaseCharacter:
             elif eyes_shape != '-': prompt.append(f"({eyes_shape}:1.05)")
             if eyebrows_color == rand_opt: prompt.append(f"({random.choice(lists['eyebrows_color'])} eyebrows:1.05)")
             elif eyebrows_color != '-': prompt.append(f"({eyebrows_color} eyebrows:1.05)")
+            if eyebrows_shape == rand_opt: prompt.append(f"({random.choice(lists['eyebrows_shape'])} eyebrows:1.05)")
+            elif eyebrows_shape != '-': prompt.append(f"({eyebrows_shape} eyebrows:1.05)")
+            if eyebrows_thickness == rand_opt: prompt.append(f"({random.choice(lists['eyebrows_thickness'])} eyebrows:1.05)")
+            elif eyebrows_thickness != '-': prompt.append(f"({eyebrows_thickness} eyebrows:1.05)")
+            if eyebrows_weight > 0:
+                if eyebrows_color == rand_opt: prompt.append(applyWeight(random.choice(lists['eyebrows_color']),eyebrows_weight))
+                elif eyebrows_color != '-': prompt.append(applyWeight(eyebrows_color,eyebrows_weight))
             if lips_color == rand_opt: prompt.append(f"({random.choice(lists['lips_color'])}:1.05)")
             elif lips_color != '-': prompt.append(f"({lips_color}:1.05)")
             if lips_shape == rand_opt: prompt.append(f"({random.choice(lists['lips_shape'])}:1.05)")
@@ -237,6 +280,33 @@ class PortraitMasterBaseCharacter:
             elif beard != '-': prompt.append(f"({beard}:1.05)")
             if beard_color == rand_opt: prompt.append(f"({random.choice(lists['beard_color'])} beard color:1.05)")
             elif beard_color != '-': prompt.append(f"({beard_color} beard color:1.05)")
+            if cheekbones_weight > 0:
+                if cheekbones == rand_opt: prompt.append(applyWeight(random.choice(lists['cheekbones']) + ' cheekbones',cheekbones_weight))
+                elif cheekbones != '-': prompt.append(applyWeight(cheekbones + ' cheekbones',cheekbones_weight))
+            if jawline_weight > 0:
+                if jawline == rand_opt: prompt.append(applyWeight(random.choice(lists['jawline']) + ' jawline',jawline_weight))
+                elif jawline != '-': prompt.append(applyWeight(jawline + ' jawline',jawline_weight))
+            if nose_shape != '-':
+                if nose_shape == rand_opt: prompt.append(f"({random.choice(lists['nose_shape'])} nose:1.05)")
+                else: prompt.append(f"({nose_shape} nose:1.05)")
+            if nose_size != '-':
+                if nose_size == rand_opt: prompt.append(f"({random.choice(lists['nose_size'])} nose size:1.05)")
+                else: prompt.append(f"({nose_size} nose size:1.05)")
+            if neck != '-':
+                if neck == rand_opt: prompt.append(f"({random.choice(lists['neck'])} neck:1.05)")
+                else: prompt.append(f"({neck} neck:1.05)")
+            if face_symmetry_weight > 0:
+                if face_symmetry == rand_opt: prompt.append(applyWeight(random.choice(lists['face_symmetry']) + ' face symmetry',face_symmetry_weight))
+                elif face_symmetry != '-': prompt.append(applyWeight(face_symmetry + ' face symmetry',face_symmetry_weight))
+            if face_proportions_weight > 0:
+                if face_proportions == rand_opt: prompt.append(applyWeight(random.choice(lists['face_proportions']) + ' face proportions',face_proportions_weight))
+                elif face_proportions != '-': prompt.append(applyWeight(face_proportions + ' face proportions',face_proportions_weight))
+            if face_balance_weight > 0:
+                if face_balance == rand_opt: prompt.append(applyWeight(random.choice(lists['face_balance']) + ' face balance',face_balance_weight))
+                elif face_balance != '-': prompt.append(applyWeight(face_balance + ' face balance',face_balance_weight))
+            if face_harmony_weight > 0:
+                if face_harmony == rand_opt: prompt.append(applyWeight(random.choice(lists['face_harmony']) + ' face harmony',face_harmony_weight))
+                elif face_harmony != '-': prompt.append(applyWeight(face_harmony + ' face harmony',face_harmony_weight))
         return (', '.join(prompt).lower(),) if prompt else ('',)
 
 # Portrait Master Skin Details
@@ -267,6 +337,9 @@ class PortraitMasterSkinDetails:
                 "skin_imperfections": ("FLOAT", {"default": 0,"min": 0,"max": max_float_value,"step": 0.05,"display": "slider"}),
                 "skin_acne": ("FLOAT", {"default": 0,"min": 0,"max": max_float_value,"step": 0.05,"display": "slider"}),
                 "tanned_skin": ("FLOAT", {"default": 0,"min": 0,"max": max_float_value,"step": 0.05,"display": "slider"}),
+                "skin_tone": (['-'] + [rand_opt] + lists['skin_tone'], {"default": '-'}),
+                "skin_texture": (['-'] + [rand_opt] + lists['skin_texture'], {"default": '-'}),
+                "skin_shine": (['-'] + [rand_opt] + lists['skin_shine'], {"default": '-'}),
                 "eyes_details": ("FLOAT", {"default": 0,"min": 0,"max": max_float_value,"step": 0.05,"display": "slider"}),
                 "iris_details": ("FLOAT", {"default": 0,"min": 0,"max": max_float_value,"step": 0.05,"display": "slider"}),
                 "circular_iris": ("FLOAT", {"default": 0,"min": 0,"max": max_float_value,"step": 0.05,"display": "slider"}),
@@ -299,6 +372,9 @@ class PortraitMasterSkinDetails:
         skin_imperfections=params.get('skin_imperfections',0)
         skin_acne=params.get('skin_acne',0)
         tanned_skin=params.get('tanned_skin',0)
+        skin_tone=params.get('skin_tone','-')
+        skin_texture=params.get('skin_texture','-')
+        skin_shine=params.get('skin_shine','-')
         eyes_details=params.get('eyes_details',0)
         iris_details=params.get('iris_details',0)
         circular_iris=params.get('circular_iris',0)
@@ -318,6 +394,12 @@ class PortraitMasterSkinDetails:
             if skin_acne > 0: prompt.append(applyWeight('acne, skin with acne',skin_acne))
             if wrinkles > 0: prompt.append(applyWeight('wrinkles',wrinkles))
             if tanned_skin > 0: prompt.append(applyWeight('tanned skin',tanned_skin))
+            if skin_tone == rand_opt: prompt.append(f"({random.choice(lists['skin_tone'])} skin tone:1.05)")
+            elif skin_tone != '-': prompt.append(f"({skin_tone} skin tone:1.05)")
+            if skin_texture == rand_opt: prompt.append(f"({random.choice(lists['skin_texture'])} skin texture:1.05)")
+            elif skin_texture != '-': prompt.append(f"({skin_texture} skin texture:1.05)")
+            if skin_shine == rand_opt: prompt.append(f"({random.choice(lists['skin_shine'])} skin shine:1.05)")
+            elif skin_shine != '-': prompt.append(f"({skin_shine} skin shine:1.05)")
             if dimples > 0: prompt.append(applyWeight('dimples',dimples))
             if freckles > 0: prompt.append(applyWeight('freckles',freckles))
             if moles > 0: prompt.append(applyWeight('moles',moles))
@@ -353,6 +435,10 @@ class PortraitMasterStylePose:
                 "style_1_weight": ("FLOAT", {"default": 1, "min": 0, "max": max_float_value, "step": 0.05, "display": "slider"}),
                 "style_2": (['-'] + [rand_opt] + lists['style'], {"default": '-'}),
                 "style_2_weight": ("FLOAT", {"default": 1, "min": 0, "max": max_float_value, "step": 0.05, "display": "slider"}),
+                "background": (['-'] + [rand_opt] + lists['background'], {"default": '-'}),
+                "camera_angle": (['-'] + [rand_opt] + lists['camera_angle'], {"default": '-'}),
+                "camera_distance": (['-'] + [rand_opt] + lists['camera_distance'], {"default": '-'}),
+                "camera_lens": (['-'] + [rand_opt] + lists['camera_lens'], {"default": '-'}),
                 "photorealism_improvement": ("BOOLEAN", {"default": True}),
                 "active": ("BOOLEAN", {"default": True}),
                 "load_preset": (["-- disabled --"] + preset_files, ),
@@ -380,6 +466,10 @@ class PortraitMasterStylePose:
         style_1_weight=params.get('style_1_weight',1)
         style_2=params.get('style_2','-')
         style_2_weight=params.get('style_2_weight',1)
+        background=params.get('background','-')
+        camera_angle=params.get('camera_angle','-')
+        camera_distance=params.get('camera_distance','-')
+        camera_lens=params.get('camera_lens','-')
         photorealism_improvement=params.get('photorealism_improvement',False)
         active=params.get('active',True)
 
@@ -402,6 +492,14 @@ class PortraitMasterStylePose:
             elif style_1 != '-': prompt.append(applyWeight(style_1,style_1_weight))
             if style_2 == rand_opt: prompt.append(applyWeight(random.choice(lists['style']),style_2_weight))
             elif style_2 != '-': prompt.append(applyWeight(style_2,style_2_weight))
+            if background == rand_opt: prompt.append(f"({random.choice(lists['background'])} background:1.05)")
+            elif background != '-': prompt.append(f"({background} background:1.05)")
+            if camera_angle == rand_opt: prompt.append(f"({random.choice(lists['camera_angle'])} camera angle:1.05)")
+            elif camera_angle != '-': prompt.append(f"({camera_angle} camera angle:1.05)")
+            if camera_distance == rand_opt: prompt.append(f"({random.choice(lists['camera_distance'])} camera distance:1.05)")
+            elif camera_distance != '-': prompt.append(f"({camera_distance} camera distance:1.05)")
+            if camera_lens == rand_opt: prompt.append(f"({random.choice(lists['camera_lens'])} camera lens:1.05)")
+            elif camera_lens != '-': prompt.append(f"({camera_lens} camera lens:1.05)")
             if photorealism_improvement: prompt.append('(professional photo, balanced photo, balanced exposure:1.2)')
         return (', '.join(prompt).lower(),) if prompt else ('',)
 
@@ -423,11 +521,17 @@ class PortraitMasterMakeup:
                 "makeup_style": (['-'] + [rand_opt] + lists['makeup'], {"default": '-'}),
                 "makeup_color": (['-'] + [rand_opt] + lists['makeup_color'], {"default": '-'}),
                 "eyeshadow": ("BOOLEAN", {"default": False}),
+                "eyeshadow_color": (['-'] + [rand_opt] + lists['eyeshadow_color'], {"default": '-'}),
                 "eyeliner": ("BOOLEAN", {"default": False}),
+                "eyeliner_color": (['-'] + [rand_opt] + lists['eyeliner_color'], {"default": '-'}),
                 "mascara": ("BOOLEAN", {"default": False}),
+                "mascara_color": (['-'] + [rand_opt] + lists['mascara_color'], {"default": '-'}),
                 "blush": ("BOOLEAN", {"default": False}),
+                "blush_color": (['-'] + [rand_opt] + lists['blush_color'], {"default": '-'}),
                 "lipstick": ("BOOLEAN", {"default": False}),
+                "lipstick_color": (['-'] + [rand_opt] + lists['lipstick_color'], {"default": '-'}),
                 "lip_gloss": ("BOOLEAN", {"default": False}),
+                "lip_gloss_color": (['-'] + [rand_opt] + lists['lip_gloss_color'], {"default": '-'}),
                 "active": ("BOOLEAN", {"default": True}),
                 "load_preset": (["-- disabled --"] + preset_files, ),
                 "save_preset_as": ("STRING", {"default": ""}),
@@ -446,11 +550,17 @@ class PortraitMasterMakeup:
         makeup_style=params.get('makeup_style','-')
         makeup_color=params.get('makeup_color','-')
         eyeshadow=params.get('eyeshadow',False)
+        eyeshadow_color=params.get('eyeshadow_color','-')
         eyeliner=params.get('eyeliner',False)
+        eyeliner_color=params.get('eyeliner_color','-')
         mascara=params.get('mascara',False)
+        mascara_color=params.get('mascara_color','-')
         blush=params.get('blush',False)
+        blush_color=params.get('blush_color','-')
         lipstick=params.get('lipstick',False)
+        lipstick_color=params.get('lipstick_color','-')
         lip_gloss=params.get('lip_gloss',False)
+        lip_gloss_color=params.get('lip_gloss_color','-')
         active=params.get('active',True)
 
         prompt = []
@@ -460,12 +570,12 @@ class PortraitMasterMakeup:
             elif makeup_style != '-': prompt.append(f"({makeup_style}:1.05)")
             if makeup_color == rand_opt: prompt.append(f"({random.choice(lists['makeup_color'])} make-up color:1.05)")
             elif makeup_color != '-': prompt.append(f"({makeup_color} make-up color:1.05)")
-            if eyeshadow: prompt.append("(eyeshadow make-up:1.05)")
-            if eyeliner: prompt.append("(eyeliner make-up:1.05)")
-            if mascara: prompt.append("(mascara make-up:1.05)")
-            if blush: prompt.append("(blush make-up:1.05)")
-            if lipstick: prompt.append("(lipstick make-up:1.05)")
-            if lip_gloss: prompt.append("(lip gloss make-up:1.05)")
+            if eyeshadow: prompt.append(f"({random.choice(lists['eyeshadow_color'])} eyeshadow:1.05)")
+            if eyeliner: prompt.append(f"({random.choice(lists['eyeliner_color'])} eyeliner:1.05)")
+            if mascara: prompt.append(f"({random.choice(lists['mascara_color'])} mascara:1.05)")
+            if blush: prompt.append(f"({random.choice(lists['blush_color'])} blush:1.05)")
+            if lipstick: prompt.append(f"({random.choice(lists['lipstick_color'])} lipstick:1.05)")
+            if lip_gloss: prompt.append(f"({random.choice(lists['lip_gloss_color'])} lip gloss:1.05)")
         return (', '.join(prompt).lower(),) if prompt else ('',)
 
 # Portrait Master Face Generator
@@ -492,6 +602,10 @@ class PortraitMasterFaceGenerator:
                 "hair_length": (['-'] + [rand_opt] + lists['hair_length'], {"default": '-'}),
                 "beard": (['-'] + [rand_opt] + lists['beard'], {"default": '-'}),
                 "beard_color": (['-'] + [rand_opt] + lists['beard_color'], {"default": '-'}),
+                "eyebrows_color": (['-'] + [rand_opt] + lists['eyebrows_color'], {"default": '-'}),
+                "eyebrows_shape": (['-'] + [rand_opt] + lists['eyebrows_shape'], {"default": '-'}),
+                "nose_shape": (['-'] + [rand_opt] + lists['nose_shape'], {"default": '-'}),
+                "face_symmetry": (['-'] + [rand_opt] + lists['face_symmetry'], {"default": '-'}),
                 "active": ("BOOLEAN", {"default": True}),
                 "load_preset": (["-- disabled --"] + preset_files, ),
                 "save_preset_as": ("STRING", {"default": ""}),
@@ -518,6 +632,10 @@ class PortraitMasterFaceGenerator:
         hair_length = params.get('hair_length', '-')
         beard = params.get('beard', '-')
         beard_color = params.get('beard_color', '-')
+        eyebrows_color = params.get('eyebrows_color', '-')
+        eyebrows_shape = params.get('eyebrows_shape', '-')
+        nose_shape = params.get('nose_shape', '-')
+        face_symmetry = params.get('face_symmetry', '-')
         active = params.get('active', True)
 
         prompt = []
@@ -525,35 +643,29 @@ class PortraitMasterFaceGenerator:
             prompt.append(text_in)
         
         if active:
-            # Base setup per volto frontale simmetrico
             prompt.append("front view portrait")
             prompt.append("symmetrical face")
             prompt.append("neutral expression")
             prompt.append("white background")
             prompt.append("soft diffused lighting")
             
-            # Caratteristiche del personaggio
             character_parts = []
             
-            # Genere
             if gender == rand_opt:
                 character_parts.append(random.choice(lists['gender']).lower())
             elif gender != '-':
                 character_parts.append(gender.lower())
             
-            # Età
             if age == rand_opt:
                 character_parts.append(f"{random.choice(lists['age'])}-years-old")
             elif age != '-':
                 character_parts.append(f"{age}-years-old")
             
-            # Nazionalità
             if nationality == rand_opt:
                 character_parts.append(random.choice(lists['nationality']).lower())
             elif nationality != '-':
                 character_parts.append(nationality.lower())
             
-            # Tipo di corpo
             if body_type == rand_opt:
                 character_parts.append(f"{random.choice(lists['body_type']).lower()} body")
             elif body_type != '-':
@@ -562,41 +674,55 @@ class PortraitMasterFaceGenerator:
             if character_parts:
                 prompt.append(" ".join(character_parts))
             
-            # Colore occhi
             if eyes_color == rand_opt:
                 prompt.append(f"{random.choice(lists['eyes_color']).lower()} eyes")
             elif eyes_color != '-':
                 prompt.append(f"{eyes_color.lower()} eyes")
             
-            # Stile capelli
             if hair_style == rand_opt:
                 prompt.append(f"{random.choice(lists['hair_style']).lower()} hair style")
             elif hair_style != '-':
                 prompt.append(f"{hair_style.lower()} hair style")
             
-            # Colore capelli
             if hair_color == rand_opt:
                 prompt.append(f"{random.choice(lists['hair_color']).lower()} hair")
             elif hair_color != '-':
                 prompt.append(f"{hair_color.lower()} hair")
             
-            # Lunghezza capelli
             if hair_length == rand_opt:
                 prompt.append(f"{random.choice(lists['hair_length']).lower()} hair length")
             elif hair_length != '-':
                 prompt.append(f"{hair_length.lower()} hair length")
             
-            # Barba
             if beard == rand_opt:
                 prompt.append(random.choice(lists['beard']).lower())
             elif beard != '-':
                 prompt.append(beard.lower())
             
-            # Colore barba
             if beard_color == rand_opt:
                 prompt.append(f"{random.choice(lists['beard_color']).lower()} beard")
             elif beard_color != '-':
                 prompt.append(f"{beard_color.lower()} beard")
+            
+            if eyebrows_color == rand_opt:
+                prompt.append(f"{random.choice(lists['eyebrows_color']).lower()} eyebrows")
+            elif eyebrows_color != '-':
+                prompt.append(f"{eyebrows_color.lower()} eyebrows")
+            
+            if eyebrows_shape == rand_opt:
+                prompt.append(f"{random.choice(lists['eyebrows_shape']).lower()} eyebrows")
+            elif eyebrows_shape != '-':
+                prompt.append(f"{eyebrows_shape.lower()} eyebrows")
+            
+            if nose_shape == rand_opt:
+                prompt.append(f"{random.choice(lists['nose_shape']).lower()} nose")
+            elif nose_shape != '-':
+                prompt.append(f"{nose_shape.lower()} nose")
+            
+            if face_symmetry == rand_opt:
+                prompt.append(f"{random.choice(lists['face_symmetry']).lower()} face symmetry")
+            elif face_symmetry != '-':
+                prompt.append(f"{face_symmetry.lower()} face symmetry")
         
         return (', '.join(prompt),) if prompt else ('',)
 
@@ -612,7 +738,7 @@ class PortraitMasterPromptStyler:
         return {
             "required": {
                 "text_in": ("STRING", {"forceInput": True}),
-                "style": (["descriptive", "cinematic", "illustrative", "artistic", "documentary", "fashion"], {"default": "descriptive"}),
+                "style": (["descriptive", "cinematic", "illustrative", "artistic", "documentary", "fashion", "portrait", "studio", "natural"], {"default": "descriptive"}),
                 "add_extra_instructions": ("BOOLEAN", {"default": True}),
             }
         }
@@ -638,7 +764,10 @@ class PortraitMasterPromptStyler:
             "illustrative": "Illustration of {subject}, {description}, suitable for concept art or digital illustration.",
             "artistic": "{subject} portrayed artistically with the following traits: {description}. Rich details and textures.",
             "documentary": "Documentary-style photograph of {subject} showing: {description}. Natural lighting, realistic scene.",
-            "fashion": "Fashion editorial shot of {subject}, {description}, stylish pose, professional photography."
+            "fashion": "Fashion editorial shot of {subject}, {description}, stylish pose, professional photography.",
+            "portrait": "Portrait photo of {subject}, {description}, professional studio lighting, high quality.",
+            "studio": "Studio photo of {subject}, {description}, controlled lighting, clean background.",
+            "natural": "Natural photo of {subject}, {description}, natural lighting, realistic scene."
         }
         subject = "a person"
         for tag in clean_tags:

@@ -1,0 +1,6 @@
+proportional
+disproportional
+balanced
+unbalanced
+harmonious
+disharmonious

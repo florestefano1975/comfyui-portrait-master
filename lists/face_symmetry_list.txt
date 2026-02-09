@@ -1,0 +1,8 @@
+symmetrical
+asymmetrical
+balanced
+unbalanced
+proportional
+disproportional
+harmonious
+disharmonious

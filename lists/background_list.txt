@@ -1,0 +1,89 @@
+angular
+arched
+ash
+athletic
+beige
+berry
+black
+blue
+bold
+bone
+broad
+bronze
+brown
+burgundy
+champagne
+charcoal
+copper
+coral
+cream
+curved
+cyan
+dark blue
+dark brown
+dark gray
+dark green
+dark purple
+defined
+delicate
+elevated
+flat
+flaccid
+fuchsia
+glitter
+glossy
+gold
+gray
+green
+ivory
+yellow
+khaki
+lavender
+light blue
+light brown
+light gray
+light green
+light purple
+magenta
+maroon
+matte
+mauve
+muscular
+natural
+narrow
+navy
+nude
+olive
+orange
+peach
+pearl
+pink
+plum
+prominent
+purple
+red
+robust
+rose
+rose gold
+rounded
+satin
+shimmer
+silver
+slender
+slate
+smoke
+soft
+sparkle
+straight
+strong
+subtle
+tan
+teal
+thick
+thin
+toned
+turquoise
+velvet
+violet
+white
+wine

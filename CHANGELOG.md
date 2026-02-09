@@ -1,6 +1,13 @@
-## 06.02.2026
+## 09.02.2026
 
-- Added new option: **eyebrows_color**
+- Updated to version 3.6.0
+- Added new parameters to PortraitMasterBaseCharacter: cheekbones, jawline, nose_shape, nose_size, neck, face_symmetry, face_proportions, face_balance, face_harmony
+- Added new parameters to PortraitMasterSkinDetails: skin_tone, skin_texture, skin_shine
+- Added new parameters to PortraitMasterStylePose: background, camera_angle, camera_distance, camera_lens
+- Added new parameters to PortraitMasterMakeup: eyeshadow_color, eyeliner_color, mascara_color, blush_color, lipstick_color, lip_gloss_color
+- Added new styles to PortraitMasterPromptStyler: portrait, studio, natural
+- Updated PortraitMasterFaceGenerator with new parameters for eyebrows and nose
+- Added new parameter lists for all nodes
 
 ## 14.09.2025
 

@@ -1,0 +1,22 @@
+close up
+medium
+full body
+long shot
+extreme close up
+macro
+telephoto
+wide angle
+zoom in
+zoom out
+far away
+near
+close
+distant
+nearby
+intimate
+public
+formal
+informal
+casual
+professional
+studio

@@ -1,0 +1,11 @@
+thin
+medium
+thick
+very thin
+very thick
+sparse
+dense
+natural
+defined
+bold
+soft
